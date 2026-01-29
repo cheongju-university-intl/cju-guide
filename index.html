@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新入插班生说明会指南 | 清州大学</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        
+        /* 隐藏滚动条但保留功能 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* 卡片悬浮效果 */
+        .section-card { transition: all 0.3s ease; }
+        .section-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+
+        /* 页面内小图样式 */
+        .content-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            cursor: zoom-in;
+            border-radius: 0.5rem;
+            transition: transform 0.2s;
+            background-color: #f3f4f6; /* 图片加载前的背景色 */
+        }
+        .content-img:hover { opacity: 0.95; transform: scale(1.01); }
+
+        /* 模态框（大图查看器）样式 */
+        #image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+        }
+        
+        /* 大图核心样式：保持你要求的 95vw/85vh */
+        #modal-img {
+            display: block;
+            margin: auto;
+            width: 95vw; 
+            height: 85vh; 
+            object-fit: contain; 
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        #modal-caption {
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0 20px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            background: rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            text-align: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+        .close-modal:hover { background: rgba(255,255,255,0.3); }
+
+        /* 侧边栏激活状态样式 */
+        .nav-link.active {
+            background-color: #1e40af; /* blue-800 */
+            border-left-color: #facc15; /* yellow-400 */
+        }
+
+        /* 回到顶部按钮 */
+        #back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Mobile Navigation Bar -->
+    <nav class="lg:hidden fixed top-0 w-full bg-blue-900 text-white z-50 shadow-md">
+        <div class="flex justify-between items-center p-4">
+            <h1 class="font-bold text-lg flex items-center"><i class="fas fa-university mr-2"></i>新生说明会指南</h1>
+            <button id="mobile-menu-btn" class="text-white focus:outline-none p-2 rounded hover:bg-blue-800 transition">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40" onclick="toggleMenu()"></div>
+        <!-- Mobile Menu Content -->
+        <div id="mobile-menu" class="hidden fixed right-0 top-0 h-full w-64 bg-blue-900 shadow-2xl z-50 overflow-y-auto transform transition-transform duration-300 ease-in-out translate-x-full">
+            <div class="p-4 border-b border-blue-800 flex justify-between items-center">
+                <span class="font-bold">菜单导航</span>
+                <button onclick="toggleMenu()" class="text-white"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="pb-20">
+                <a href="#portal" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">综合情报系统</a>
+                <a href="#password-recovery" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-key mr-2 w-5"></i>找回密码</a>
+                <a href="#schedule" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">主要学事日程</a>
+                <a href="#personal-info" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-user-edit mr-2 w-5"></i>个人信息修改</a>
+                <a href="#course-schedule" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-table mr-2 w-5"></i>课程表查询</a>
+                <a href="#course-screening" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-filter mr-2 w-5"></i>选课前筛选</a>
+                <a href="#sugang" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">选课指南</a>
+                <a href="#grad-credit" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-graduation-cap mr-2 w-5"></i>毕业学分查询</a>
+                <a href="#leave-request" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-calendar-check mr-2 w-5"></i>请假申请</a>
+                <a href="#cert-print" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-print mr-2 w-5"></i>打印证明</a>
+                <a href="#campus-map" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()"><i class="fas fa-map-marked-alt mr-2 w-5"></i>学校地图</a>
+                <a href="#online-class" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">网课与直播课</a>
+                <a href="#professor" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">教授联系方式</a>
+                <a href="#library" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">图书馆使用</a>
+                <a href="#activity" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">留学生活动</a>
+                <a href="#arc" class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800" onclick="toggleMenu()">登陆证办理</a>
+                <a href="#contact" class="block px-4 py-3 hover:bg-blue-800" onclick="toggleMenu()">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex min-h-screen pt-16 lg:pt-0">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="hidden lg:block w-72 bg-blue-900 text-gray-100 fixed h-full overflow-y-auto no-scrollbar shadow-2xl z-40 transition-all">
+            <div class="p-6 bg-blue-950 sticky top-0 z-10 shadow-md">
+                <h1 class="text-xl font-bold leading-tight flex items-center">
+                    <i class="fas fa-graduation-cap mr-2 text-yellow-400"></i>
+                    新入插班生<br>说明会指南
+                </h1>
+            </div>
+            <nav class="mt-2 pb-20" id="desktop-nav">
+                <a href="#portal" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-laptop-code w-6 text-center"></i><span class="ml-3">综合情报系统</span></a>
+                <a href="#password-recovery" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-key w-6 text-center"></i><span class="ml-3">找回密码</span></a>
+                <a href="#schedule" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-calendar-alt w-6 text-center"></i><span class="ml-3">主要学事日程</span></a>
+                <a href="#personal-info" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-user-edit w-6 text-center"></i><span class="ml-3">个人信息修改</span></a>
+                <a href="#course-schedule" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-table w-6 text-center"></i><span class="ml-3">课程表查询</span></a>
+                <a href="#course-screening" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-filter w-6 text-center"></i><span class="ml-3">选课前的筛选</span></a>
+                <a href="#sugang" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-mouse-pointer w-6 text-center"></i><span class="ml-3">选课指南</span></a>
+                <a href="#grad-credit" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-graduation-cap w-6 text-center"></i><span class="ml-3">毕业剩余学分</span></a>
+                <a href="#leave-request" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-calendar-check w-6 text-center"></i><span class="ml-3">请假申请指南</span></a>
+                <a href="#cert-print" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-print w-6 text-center"></i><span class="ml-3">打印各类证明</span></a>
+                <a href="#campus-map" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-map-marked-alt w-6 text-center"></i><span class="ml-3">学校地图</span></a>
+                <a href="#online-class" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-video w-6 text-center"></i><span class="ml-3">网课与直播课</span></a>
+                <a href="#professor" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-chalkboard-teacher w-6 text-center"></i><span class="ml-3">教授联系方式</span></a>
+                <a href="#library" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-book w-6 text-center"></i><span class="ml-3">图书馆使用</span></a>
+                <a href="#activity" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-users w-6 text-center"></i><span class="ml-3">留学生活动</span></a>
+                <a href="#arc" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-id-card w-6 text-center"></i><span class="ml-3">登陆证办理</span></a>
+                <a href="#contact" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-phone-alt w-6 text-center"></i><span class="ml-3">注意事项</span></a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 lg:ml-72 p-4 md:p-8 lg:p-12 max-w-6xl mx-auto">
+            
+            <div class="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl shadow-lg p-8 mb-10 text-white relative overflow-hidden">
+                <div class="absolute right-0 top-0 h-full w-1/3 bg-white opacity-5 transform skew-x-12 translate-x-12"></div>
+                <h2 class="text-3xl font-bold mb-3 relative z-10">欢迎来到清州大学</h2>
+                <p class="opacity-90 text-lg relative z-10">本页面整理了新生及插班生说明会的核心内容，请点击左侧菜单快速导航。</p>
+            </div>
+
+            <!-- 1. 综合情报系统 -->
+            <section id="portal" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-laptop-code text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">综合情报系统 (Portal)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="https://portal.cju.ac.kr/" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5"><i class="fas fa-external-link-alt mr-2"></i> 点击访问系统 portal.cju.ac.kr</a>
+                        
+                        <div class="my-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-gray-50 group">
+                            <img src="portal_guide.png" alt="综合情报系统操作指引" class="content-img" onclick="openModal(this)">
+                            <p class="text-center text-xs text-gray-400 mt-2 group-hover:text-blue-500 transition-colors"><i class="fas fa-search-plus mr-1"></i> 点击图片放大</p>
+                        </div>
+
+                        <ul class="list-disc list-inside space-y-3 text-gray-700 bg-gray-50 p-5 rounded-lg border border-gray-200">
+                            <li><span class="font-bold text-gray-900">初始密码：</span> 8位生日（例如：20030101）。</li>
+                            <li><span class="font-bold text-gray-900">账号锁定：</span> 输错10次会自动锁定，需自行重置。</li>
+                            <li><span class="font-bold text-gray-900">重要提示：</span> 
+                                <ul class="list-circle list-inside ml-6 mt-2 space-y-1 text-gray-600">
+                                    <li>首次登录后请务必填好电话和邮箱，这是找回密码的唯一途径。</li>
+                                    <li>尽量少用浏览器自带的翻译功能，可能会导致单词意思不准确。</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded-r-lg shadow-sm">
+                            <h4 class="font-bold text-yellow-800 mb-6 flex items-center text-lg border-b border-yellow-200 pb-2">
+                                <i class="fas fa-window-restore mr-2"></i> 常见弹窗处理指南
+                            </h4>
+                            
+                            <!-- 两种情况分列展示 -->
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- 情况1：不想改 -->
+                                <div class="bg-white p-4 rounded-lg shadow-sm border border-yellow-100 h-full flex flex-col">
+                                    <div class="flex-grow">
+                                        <p class="text-sm text-yellow-900 mb-2 font-bold">1. 如果进入系统跳出以下弹窗，不想改密码或者填信息的，可以按照下面的方法操作：</p>
+                                        <p class="text-base text-red-600 font-bold mb-3 flex items-center bg-red-50 p-2 rounded border border-red-100">
+                                            <i class="fas fa-hand-point-right mr-2"></i> 点击右上角的叉 (X) 关闭即可。
+                                        </p>
+                                    </div>
+                                    <div class="p-1 border border-gray-100 bg-gray-50 rounded shadow-sm overflow-hidden mt-2">
+                                        <img src="portal_popup_1.png" alt="关闭弹窗示意图" class="content-img" onclick="openModal(this)">
+                                        <p class="text-center text-xs text-gray-400 mt-1">示意图：点击右上角X</p>
+                                    </div>
+                                </div>
+
+                                <!-- 情况2：想改 -->
+                                <div class="bg-white p-4 rounded-lg shadow-sm border border-yellow-100 h-full flex flex-col">
+                                    <div class="flex-grow">
+                                        <p class="text-sm text-yellow-900 mb-3 font-bold">2. 如果想要填写信息、修改密码：</p>
+                                        <div class="p-1 border border-gray-100 bg-gray-50 rounded shadow-sm overflow-hidden mb-3">
+                                            <img src="portal_popup_2.png" alt="填写信息示意图" class="content-img" onclick="openModal(this)">
+                                        </div>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <div class="bg-blue-50 border border-blue-200 rounded p-3">
+                                            <p class="text-sm text-blue-800 font-bold mb-1"><i class="fas fa-pen-fancy mr-1"></i> 填写重要提示：</p>
+                                            <p class="text-sm text-gray-700 leading-relaxed">
+                                                如果想要填写信息改密码，在 <span class="font-bold text-red-600 bg-red-50 px-1 rounded">예금주 (户主名)</span> 处需要写自己 <span class="font-bold text-blue-700 underline">外国人登陆证上的名字</span> (包含空格)。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1.5 找回密码 -->
+            <section id="password-recovery" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-key text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">找回密码</h3>
+                    </div>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
+                         <h4 class="font-bold text-red-900 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>账号锁定与重置</h4>
+                         <p class="text-sm text-red-800">如果密码输错 <strong>10次</strong>，账号会自动锁定，此时必须自行重置密码。<br><span class="text-xs text-gray-600 mt-1 block">注意：必须在系统中预先填好手机号和邮箱，才能使用找回密码功能。</span></p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="mb-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                            <img src="password_reset_1.png" alt="找回密码操作步骤1" class="content-img" onclick="openModal(this)">
+                            <p class="text-center text-sm font-bold text-gray-600 mt-3"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mr-2">Step 1</span>点击找回密码</p>
+                        </div>
+                        <div class="mb-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                            <img src="password_reset_2.png" alt="找回密码操作步骤2" class="content-img" onclick="openModal(this)">
+                             <p class="text-center text-sm font-bold text-gray-600 mt-3"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mr-2">Step 2</span>填写验证信息</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 主要学事日程 -->
+            <section id="schedule" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-calendar-alt text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">主要学事日程</h3>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/2">
+                            <div class="bg-indigo-50 border-l-4 border-indigo-400 p-5 rounded-r-lg h-full">
+                                <h4 class="font-bold text-indigo-900 mb-4">📅 详细日程查看方法</h4>
+                                <ol class="list-decimal list-inside space-y-3 text-indigo-800">
+                                    <li>进入学校官网 <a href="https://portal.cju.ac.kr" target="_blank" class="underline font-bold text-indigo-700 hover:text-indigo-900">portal.cju.ac.kr</a></li>
+                                    <li>点击页面上的相关按钮（参考右图）</li>
+                                    <li>即可查看到从<strong>选课开始</strong>到<strong>领取毕业证</strong>的整个学期学事日程</li>
+                                </ol>
+                                <div class="mt-6 text-sm text-indigo-700 bg-white bg-opacity-50 p-3 rounded">
+                                    <i class="fas fa-info-circle mr-1"></i> 重要节点：选课、开学、期中/期末考试、放假。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                                <img src="schedule_guide.png" alt="官网学事日程查询操作指引" class="content-img" onclick="openModal(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.5 个人信息查看及修改 -->
+            <section id="personal-info" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-user-edit text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">个人信息查看及修改</h3>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-5 mb-6 text-gray-800 rounded-r-lg">
+                        <h4 class="font-bold text-green-900 mb-3 text-lg"><i class="fas fa-check-circle mr-2"></i>重要提示：完善个人信息</h4>
+                        <div class="space-y-3">
+                            <p class="font-medium">先进入系统填好自己的<span class="text-green-700 font-bold bg-green-100 px-1 rounded">电话</span>和<span class="text-green-700 font-bold bg-green-100 px-1 rounded">邮箱</span>。</p>
+                            <p class="text-sm bg-white p-3 rounded border border-green-200 shadow-sm"><i class="fas fa-exclamation-circle text-orange-500 mr-1"></i> 这里填好自己电话和邮箱才能重置密码。<br>在这个页面先写上能<strong>正常接收邮件</strong>的邮箱，以防日后密码忘记，方便重置密码。</p>
+                        </div>
+                    </div>
+                    <div class="mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                        <img src="personal_info.png" alt="个人信息修改页面示意图" class="content-img" onclick="openModal(this)">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.6 课程表查询 -->
+            <section id="course-schedule" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-table text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">课程表查询指南</h3>
+                    </div>
+                    <div class="space-y-10">
+                        <!-- Step 1 & 2 Grid -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-3 border-l-4 border-blue-500 pl-3 text-lg">第一步：进入查询页面</h4>
+                                <p class="text-sm text-gray-600 mb-3 h-10">进入综合情报系统后，点击上方的红框菜单，然后点击左侧菜单栏。</p>
+                                <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                                    <img src="schedule_step1.png" alt="课程表查询步骤1" class="content-img" onclick="openModal(this)">
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-3 border-l-4 border-blue-500 pl-3 text-lg">第二步：筛选与搜索</h4>
+                                <p class="text-sm text-gray-600 mb-3 h-10 flex items-center"><span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs mr-2 font-bold">TIP</span> 点击右上角的蓝色图标可以下载课程表。</p>
+                                <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                                    <img src="schedule_step2.png" alt="课程表查询步骤2" class="content-img" onclick="openModal(this)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 Reading the schedule -->
+                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-6 border-l-4 border-green-500 pl-3 text-lg">第三步：如何看懂课程表</h4>
+                            
+                            <div class="flex flex-col md:flex-row gap-8 items-center">
+                                <div class="w-full md:w-1/3">
+                                    <div class="bg-white border-2 border-green-100 rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                                        <div class="bg-green-600 text-white text-center py-2 font-bold">综合系统课表示例</div>
+                                        <div class="p-6 text-center">
+                                            <div class="text-3xl font-bold text-gray-800 mb-1">수 1,2,3</div>
+                                            <div class="text-sm text-gray-500 mb-4 bg-gray-100 inline-block px-2 rounded-full">时间代码</div>
+                                            <div class="border-t border-gray-200 my-3 w-1/2 mx-auto"></div>
+                                            <div class="text-2xl font-bold text-blue-700 mb-1">31-215</div>
+                                            <div class="text-sm text-gray-500 bg-gray-100 inline-block px-2 rounded-full">地点代码</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="w-full md:w-2/3 space-y-4">
+                                    <div class="bg-white p-4 rounded-lg shadow-sm border border-green-100 flex items-start">
+                                        <div class="bg-green-100 p-2 rounded-full mr-4 text-green-600"><i class="far fa-clock"></i></div>
+                                        <div>
+                                            <h5 class="font-bold text-green-800 mb-1">时间解读 (수 1,2,3)</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li><span class="font-bold">수：</span> 星期三 (수요일)</li>
+                                                <li><span class="font-bold">1,2,3：</span> 第1, 2, 3节课</li>
+                                                <li><span class="font-bold text-green-600">实际时间： 09:00 ~ 12:00</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm border border-blue-100 flex items-start">
+                                        <div class="bg-blue-100 p-2 rounded-full mr-4 text-blue-600"><i class="fas fa-map-marker-alt"></i></div>
+                                        <div>
+                                            <h5 class="font-bold text-blue-800 mb-1">地点解读 (31-215)</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li><span class="font-bold">31：</span> 31号楼</li>
+                                                <li><span class="font-bold">215：</span> 215号教室</li>
+                                                <li><span class="font-bold text-blue-600">完整地址： 31号楼 2楼 215室</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 overflow-x-auto">
+                                <h5 class="font-bold text-gray-700 mb-3 text-sm flex items-center"><i class="fas fa-hourglass-half mr-2"></i> 课时与时间对照表 (90分钟课程制)</h5>
+                                <table class="min-w-full text-xs text-center border bg-white shadow-sm rounded-lg overflow-hidden">
+                                    <thead class="bg-gray-100 font-bold text-gray-700"><tr><th class="px-2 py-3 border">课时 (교시)</th><th class="px-2 py-3 border">1</th><th class="px-2 py-3 border">2</th><th class="px-2 py-3 border">3</th><th class="px-2 py-3 border">4</th><th class="px-2 py-3 border">5</th></tr></thead>
+                                    <tbody class="text-gray-600"><tr><td class="px-2 py-3 border font-bold bg-gray-50">时间</td><td class="px-2 py-3 border">09:00<br>~10:00</td><td class="px-2 py-3 border">10:00<br>~11:00</td><td class="px-2 py-3 border">11:00<br>~12:00</td><td class="px-2 py-3 border">12:00<br>~13:00</td><td class="px-2 py-3 border">13:00<br>~14:00</td></tr></tbody>
+                                    <thead class="bg-gray-100 font-bold text-gray-700 border-t-2 border-gray-200"><tr><th class="px-2 py-3 border">课时 (교시)</th><th class="px-2 py-3 border">6</th><th class="px-2 py-3 border">7</th><th class="px-2 py-3 border">8</th><th class="px-2 py-3 border">9</th><th class="px-2 py-3 border">-</th></tr></thead>
+                                    <tbody class="text-gray-600"><tr><td class="px-2 py-3 border font-bold bg-gray-50">时间</td><td class="px-2 py-3 border">14:00<br>~15:00</td><td class="px-2 py-3 border">15:00<br>~16:00</td><td class="px-2 py-3 border">16:00<br>~17:00</td><td class="px-2 py-3 border">17:00<br>~18:00</td><td class="px-2 py-3 border">-</td></tr></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.7 选课前的课程筛选 -->
+            <section id="course-screening" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-filter text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">选课前的课程筛选</h3>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-8 shadow-sm">
+                        <h4 class="font-bold text-red-900 mb-2 flex items-center"><i class="fas fa-bullhorn mr-2"></i>选课开始前重要须知</h4>
+                        <p class="text-sm text-red-800 leading-relaxed">课程安排每天都可能有变动（如教授调整、选课人数不足导致停开等），Excel无法每天及时更新并上传最新课表。<br><strong>请需要的同学请自行下载课表查询最新信息。</strong></p>
+                    </div>
+
+                    <div class="space-y-12">
+                        <!-- Step Loop -->
+                        <div class="relative pl-8 border-l-2 border-gray-200 space-y-12">
+                            <!-- Step 1 -->
+                            <div class="relative">
+                                <div class="absolute -left-10 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</div>
+                                <h4 class="font-bold text-gray-800 mb-3 text-lg">进入系统菜单</h4>
+                                <p class="text-gray-600 mb-4 text-sm">进入系统之后，点击上方菜单栏红框位置。</p>
+                                <div class="p-1 border border-gray-200 rounded shadow-sm bg-white inline-block">
+                                    <img src="course_screen_step1.png" alt="课程筛选步骤1" class="content-img max-h-60" onclick="openModal(this)">
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="relative">
+                                <div class="absolute -left-10 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+                                <h4 class="font-bold text-gray-800 mb-3 text-lg">选择菜单项</h4>
+                                <p class="text-gray-600 mb-4 text-sm">点击左侧菜单指定位置。</p>
+                                <div class="p-1 border border-gray-200 rounded shadow-sm bg-white inline-block">
+                                    <img src="course_screen_step2.png" alt="课程筛选步骤2" class="content-img max-h-60" onclick="openModal(this)">
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="relative">
+                                <div class="absolute -left-10 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+                                <h4 class="font-bold text-gray-800 mb-3 text-lg">设置筛选条件</h4>
+                                <p class="text-gray-600 mb-4 text-sm">把筛选改成和下图显示的一样，然后点右上角的<strong>蓝色放大镜</strong>，最后按右下角的<strong>淡蓝色方块</strong>下载Excel。</p>
+                                <div class="p-1 border border-gray-200 rounded shadow-sm bg-white inline-block">
+                                    <img src="course_screen_step3.png" alt="课程筛选步骤3" class="content-img max-h-60" onclick="openModal(this)">
+                                </div>
+                            </div>
+
+                            <!-- Step 4,5,6 Grouped -->
+                            <div class="relative">
+                                <div class="absolute -left-10 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</div>
+                                <h4 class="font-bold text-gray-800 mb-3 text-lg">Excel 表格筛选处理</h4>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p class="text-xs font-bold text-gray-500 mb-2">1. 查看首行</p>
+                                        <img src="excel_step_1.png" alt="Excel首行" class="content-img" onclick="openModal(this)">
+                                    </div>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p class="text-xs font-bold text-gray-500 mb-2">2. 开启筛选 (Ctrl+Shift+L)</p>
+                                        <img src="excel_step_2.png" alt="点击第3行筛选" class="content-img" onclick="openModal(this)">
+                                    </div>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <p class="text-xs font-bold text-gray-500 mb-2">3. 筛选"이중" (双语)</p>
+                                        <img src="excel_step_3.png" alt="输入筛选条件" class="content-img" onclick="openModal(this)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 7 Result -->
+                             <div class="relative">
+                                <div class="absolute -left-10 bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"><i class="fas fa-check"></i></div>
+                                <h4 class="font-bold text-gray-800 mb-3 text-lg">查看结果与区分</h4>
+                                <p class="text-gray-600 mb-4 text-sm">截止到目前已经筛选出了所有双语课程。<br><span class="text-red-500 font-bold">如果是大一新生（非双语的学生），请直接避开刚才筛选出的这些课。</span></p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="p-1 border border-orange-200 rounded shadow-sm bg-orange-50 text-center">
+                                        <img src="excel_result_major.png" alt="找专业课结果" class="content-img" onclick="openModal(this)">
+                                        <p class="text-xs font-bold text-orange-600 mt-2 pb-1">找专业课 (中文授课)</p>
+                                    </div>
+                                    <div class="p-1 border border-green-200 rounded shadow-sm bg-green-50 text-center">
+                                        <img src="excel_result_general.png" alt="找教养课结果" class="content-img" onclick="openModal(this)">
+                                        <p class="text-xs font-bold text-green-600 mt-2 pb-1">找教养课</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-blue-50 border-t-4 border-blue-500 p-6 rounded-b-lg">
+                        <p class="font-bold text-blue-900 flex items-center text-lg"><i class="fas fa-info-circle mr-2"></i> 总结：</p>
+                        <p class="text-blue-800 text-base mt-2 ml-6">以上查找流程仅针对<strong>双语学生</strong>。<br>非双语学生不能选双语课程，直接参考 <strong>비고</strong> 的具体说明选择即可。</p>
+                    </div>
+
+                    <!-- Appendix Grid -->
+                    <div class="mt-12 grid lg:grid-cols-2 gap-10">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-4 text-lg flex items-center"><i class="fas fa-language mr-2 text-blue-600"></i> Excel 表头中韩对照表</h4>
+                            <div class="overflow-hidden bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <table class="min-w-full text-sm text-left">
+                                    <thead class="bg-gray-100 text-gray-700 font-bold">
+                                        <tr><th class="px-4 py-3 border-b text-center">No</th><th class="px-4 py-3 border-b">韩文</th><th class="px-4 py-3 border-b">中文</th></tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-100 text-gray-600">
+                                        <tr class="hover:bg-blue-50"><td class="px-4 py-2 text-center">3</td><td class="font-medium text-gray-800">과목명</td><td class="font-bold text-blue-600">课程名称</td></tr>
+                                        <tr class="hover:bg-blue-50"><td class="px-4 py-2 text-center">5</td><td class="font-medium text-gray-800">이수구분</td><td class="font-bold text-red-500">修读类别</td></tr>
+                                        <tr class="hover:bg-blue-50"><td class="px-4 py-2 text-center">15</td><td class="font-medium text-gray-800">시간표</td><td class="font-bold text-blue-600">课表</td></tr>
+                                        <tr class="hover:bg-blue-50"><td class="px-4 py-2 text-center">17</td><td class="font-medium text-gray-800">학점</td><td class="font-bold">学分</td></tr>
+                                        <tr class="bg-yellow-50 hover:bg-yellow-100"><td class="px-4 py-2 text-center">34</td><td class="font-bold text-gray-800">비고</td><td class="font-bold text-red-600">备注 (重要)</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-4 text-lg"><i class="far fa-image mr-2 text-gray-500"></i>表头原始截图参考</h4>
+                             <div class="space-y-3">
+                                <img src="excel_header_1.png" alt="Excel表头截图1" class="content-img border border-gray-200" onclick="openModal(this)">
+                                <img src="excel_header_2.png" alt="Excel表头截图2" class="content-img border border-gray-200" onclick="openModal(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sugang (Course Registration) Section - Keep as is but with refined spacing -->
+            <section id="sugang" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-mouse-pointer text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">选课指南</h3>
+                    </div>
+                    
+                    <div class="mb-8 text-center bg-gray-50 p-6 rounded-xl border border-dashed border-gray-300">
+                        <a href="https://sugang.cju.ac.kr" target="_blank" class="inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-bold text-xl"><i class="fas fa-external-link-alt mr-2"></i> 进入选课系统 (sugang.cju.ac.kr)</a>
+                        <p class="text-sm text-gray-500 mt-3"><i class="fas fa-desktop mr-1"></i> 请务必使用电脑浏览器访问</p>
+                    </div>
+
+                    <!-- Steps Container -->
+                    <div class="space-y-12">
+                         <div class="border-b border-gray-100 pb-8">
+                            <h4 class="font-bold text-gray-800 mb-4 text-xl"><span class="text-blue-500 mr-2">#1</span>选课系统登录</h4>
+                            <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white max-w-2xl">
+                                <img src="sugang_main.png" alt="选课登录主页" class="content-img" onclick="openModal(this)">
+                            </div>
+                        </div>
+
+                        <div class="border-b border-gray-100 pb-8">
+                             <h4 class="font-bold text-gray-800 mb-4 text-xl"><span class="text-blue-500 mr-2">#2</span>选课界面概览</h4>
+                             <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                                <img src="sugang_interface_1.png" alt="选课界面图1" class="content-img" onclick="openModal(this)">
+                            </div>
+                        </div>
+
+                        <div class="border-b border-gray-100 pb-8">
+                             <h4 class="font-bold text-gray-800 mb-4 text-xl"><span class="text-blue-500 mr-2">#3</span>学年选择与刷新 (必看)</h4>
+                             <div class="bg-blue-50 border-l-4 border-blue-500 p-5 mb-4 rounded-r-lg">
+                                <ul class="list-disc list-inside text-sm text-blue-900 space-y-2">
+                                    <li>Excel表格中课是第几学年，这里就改成第几学年。</li>
+                                    <li><span class="font-bold text-red-600">如果不修改学年，对应的课程不会出现！</span></li>
+                                    <li><strong>提示：</strong> 每一次更改筛选条件，都要点击右上角的<span class="text-blue-600 font-bold">小蓝色按钮</span>刷新。</li>
+                                </ul>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white max-w-md">
+                                <img src="sugang_refresh.png" alt="学年选择与刷新按钮" class="content-img" onclick="openModal(this)">
+                            </div>
+                        </div>
+
+                        <div class="border-b border-gray-100 pb-8">
+                            <h4 class="font-bold text-red-600 mb-4 text-xl flex items-center"><span class="text-red-500 mr-2">#4</span>备注确认 (生死攸关!)</h4>
+                            <div class="bg-red-50 border-2 border-red-500 rounded-xl p-6 mb-4 text-center">
+                                <p class="font-bold text-red-900 text-lg mb-4">⚠️ 双语学生务必确认备注栏 (비고)</p>
+                                <p class="text-gray-700 mb-2">必须包含以下文字之一，否则<strong>没有学分！</strong></p>
+                                <div class="bg-white p-3 rounded shadow-sm border border-red-200 inline-block font-bold text-red-600 mb-2">외국인대상 이중언어과정</div>
+                            </div>
+                             <div class="p-2 border border-red-200 rounded-lg shadow-sm bg-white">
+                                <img src="sugang_remarks.png" alt="备注栏确认示意图" class="content-img" onclick="openModal(this)">
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-6 text-xl"><span class="text-blue-500 mr-2">#5</span>常见报错速查</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                                    <h5 class="font-bold text-red-800 mb-2">❌ 时间冲突</h5>
+                                    <img src="sugang_error_1.png" alt="时间冲突报错" class="content-img mb-2 rounded border border-red-200" onclick="openModal(this)">
+                                    <p class="text-xs text-red-700">所选的课与已有课程时间重叠。</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                                    <h5 class="font-bold text-green-800 mb-2">✅ 申请成功</h5>
+                                    <img src="sugang_success.png" alt="申请成功提示" class="content-img mb-2 rounded border border-green-200" onclick="openModal(this)">
+                                    <p class="text-xs text-green-700">出现此弹窗代表课程已添加。</p>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                                    <h5 class="font-bold text-red-800 mb-2">❌ 学分超限</h5>
+                                    <img src="sugang_credit_limit.png" alt="学分超限报错" class="content-img mb-2 rounded border border-red-200" onclick="openModal(this)">
+                                    <p class="text-xs text-red-700">超过每学期最大选课学分（通常21分）。</p>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                                    <h5 class="font-bold text-yellow-800 mb-2">⚠️ 禁止重修</h5>
+                                    <img src="sugang_retake_ban.png" alt="禁止重修报错" class="content-img mb-2 rounded border border-yellow-200" onclick="openModal(this)">
+                                    <p class="text-xs text-yellow-800">上学期成绩在B0以上，无法重修。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.5 毕业剩余学分查询 -->
+            <section id="grad-credit" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-graduation-cap text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">毕业剩余学分查询</h3>
+                    </div>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <h4 class="font-bold text-red-900 mb-4 flex items-center text-lg"><i class="fas fa-exclamation-circle mr-2"></i> 非双语学生特别要求</h4>
+                        <p class="text-gray-800 font-medium mb-4">非双语学生必须完成以下 <strong>3门</strong> 课程方可毕业：</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center bg-white p-3 rounded shadow-sm border border-red-100 hover:shadow-md transition"><span class="bg-red-100 text-red-800 px-3 py-1 rounded text-sm font-bold mr-3">1</span><span class="font-bold text-gray-800">컴퓨팅사고</span><span class="text-gray-500 text-sm ml-2">(Computing Thinking)</span></li>
+                            <li class="flex items-center bg-white p-3 rounded shadow-sm border border-red-100 hover:shadow-md transition"><span class="bg-red-100 text-red-800 px-3 py-1 rounded text-sm font-bold mr-3">2</span><span class="font-bold text-gray-800">한국문화의이해</span><span class="text-gray-500 text-sm ml-2">(Korean Culture)</span></li>
+                            <li class="flex items-center bg-white p-3 rounded shadow-sm border border-red-100 hover:shadow-md transition"><span class="bg-red-100 text-red-800 px-3 py-1 rounded text-sm font-bold mr-3">3</span><span class="font-bold text-gray-800">인간의가치</span><span class="text-gray-500 text-sm ml-2">(Human Values)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leave Request -->
+            <section id="leave-request" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                        <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-calendar-check text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">请假申请指南</h3>
+                    </div>
+                    <div class="space-y-8">
+                         <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white">
+                            <img src="leave_request_3.png" alt="假期类型说明" class="content-img" onclick="openModal(this)">
+                            <p class="text-center text-xs text-gray-500 mt-2">假期类型与所需材料一览</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2">
+                                    <img src="leave_request_5.png" alt="请假申请填写" class="content-img" onclick="openModal(this)">
+                                </div>
+                                <p class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded">选择理由和日期，上传附件</p>
+                            </div>
+                            <div>
+                                <div class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2">
+                                    <img src="leave_request_6.png" alt="点击申请按钮" class="content-img" onclick="openModal(this)">
+                                </div>
+                                <p class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded">确认无误后点击申请</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cert Print -->
+            <section id="cert-print" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                         <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-print text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">打印各类证明</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="cert_print_1.png" alt="证明打印步骤1" class="content-img" onclick="openModal(this)"></div>
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="cert_print_2.png" alt="证明打印步骤2" class="content-img" onclick="openModal(this)"></div>
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="cert_print_3.png" alt="证明打印步骤3" class="content-img" onclick="openModal(this)"></div>
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="cert_print_4.png" alt="证明打印步骤4" class="content-img" onclick="openModal(this)"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Campus Map -->
+            <section id="campus-map" class="mb-16 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                     <div class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800">
+                         <div class="p-3 bg-blue-100 rounded-lg mr-4"><i class="fas fa-map-marked-alt text-2xl text-blue-700"></i></div>
+                        <h3 class="text-2xl font-bold">学校地图 & 校车</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="school_map_1.png" alt="学校地图1" class="content-img" onclick="openModal(this)"></div>
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="school_map_2.png" alt="学校地图2" class="content-img" onclick="openModal(this)"></div>
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><img src="school_map_3.png" alt="学校地图3" class="content-img" onclick="openModal(this)"></div>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg mb-8">
+                        <h4 class="font-bold text-blue-900 mb-4 text-lg"><i class="fas fa-bus-alt mr-2"></i> 校内校车站点</h4>
+                        <div class="flex flex-col md:flex-row gap-6 items-center">
+                            <div class="w-full md:w-1/2 p-1 bg-white border border-blue-200 rounded shadow-sm">
+                                <img src="school_map_4.png" alt="校内校车站牌示意图" class="content-img" onclick="openModal(this)">
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <ul class="space-y-3 text-gray-700 text-sm bg-white p-4 rounded-lg shadow-sm">
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>国际宿舍（43号楼）</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>艺大音乐馆（35号楼）</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>学生会馆（国际交流处）</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>保健医疗大（8号楼）</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>图书馆（11号楼）对面</li>
+                                    <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>正门</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><p class="text-center text-xs font-bold mb-1">校车时刻表 A</p><img src="school_map_5.png" alt="校车时间表1" class="content-img" onclick="openModal(this)"></div>
+                        <div class="p-1 border border-gray-200 rounded shadow-sm bg-white"><p class="text-center text-xs font-bold mb-1">校车时刻表 B</p><img src="school_map_6.png" alt="校车时间表2" class="content-img" onclick="openModal(this)"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Info Grid for remaining sections -->
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <!-- Online Class -->
+                <section id="online-class" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 section-card h-full scroll-mt-24">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center"><i class="fas fa-video mr-3"></i>网课系统 (HIVE)</h3>
+                    <a href="https://hive.cju.ac.kr" target="_blank" class="text-blue-600 hover:underline mb-4 block font-medium">👉 hive.cju.ac.kr</a>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-blue-50 p-3 rounded"><strong class="block text-blue-800">录播课程</strong>进度需达100%，点击中间弹出的确认窗口。</div>
+                        <div class="bg-green-50 p-3 rounded"><strong class="block text-green-800">直播课程 (Zoom)</strong>需打开摄像头，静音，着装端正。</div>
+                    </div>
+                </section>
+
+                <!-- Professor -->
+                <section id="professor" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 section-card h-full scroll-mt-24">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center"><i class="fas fa-chalkboard-teacher mr-3"></i>教授联系方式</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-gray-50 rounded border border-gray-200">
+                            <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">1</span>
+                            <span>登录 Portal 查询 <span class="font-bold">课程计划书</span></span>
+                        </div>
+                        <div class="flex items-center p-3 bg-gray-50 rounded border border-gray-200">
+                             <span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">2</span>
+                             <span>学校官网 <span class="font-bold">学科介绍</span> 页面查找</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Library -->
+                <section id="library" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 section-card h-full scroll-mt-24">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center"><i class="fas fa-book mr-3"></i>图书馆使用</h3>
+                     <div class="space-y-3 text-sm">
+                        <p><strong class="text-gray-700">APP:</strong> 搜索 "청주대학교 중앙도서관"</p>
+                        <p><strong class="text-gray-700">账号:</strong> 学号 / <strong class="text-gray-700">密码:</strong> 生日后6位</p>
+                        <p class="text-gray-500 mt-2 pt-2 border-t">用于扫码入馆、借书、预约座位。</p>
+                    </div>
+                </section>
+
+                <!-- ARC -->
+                <section id="arc" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 section-card h-full scroll-mt-24">
+                     <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center"><i class="fas fa-id-card mr-3"></i>登陆证办理</h3>
+                     <div class="bg-red-50 p-3 rounded border border-red-100 text-sm">
+                        <strong class="text-red-800 block mb-2">必备材料：</strong>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 pl-1">
+                            <li>在学证明、学费缴纳证明 (Portal打印)</li>
+                            <li>房屋合同、护照复印件</li>
+                            <li>3万韩元现金、白底证件照</li>
+                        </ul>
+                     </div>
+                </section>
+            </div>
+
+            <section id="activity" class="mb-16 scroll-mt-24">
+                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-md p-6 md:p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-users mr-3"></i>留学生活动</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="font-bold text-lg mb-2">中韩学生交流 (Mentoring)</h4>
+                            <p class="text-sm opacity-90">与韩国学生组队，学校提供经费支持，一起出游体验韩国文化。</p>
+                        </div>
+                         <div class="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="font-bold text-lg mb-2">治安巡逻队</h4>
+                            <p class="text-sm opacity-90">与当地警察局合作，每月活动两次，颁发正式委任状。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="mb-20 scroll-mt-24">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-800 flex items-center"><i class="fas fa-phone-alt mr-3"></i>联系方式与注意</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg mb-8 border-l-4 border-yellow-400">
+                        <p class="text-yellow-900 font-bold mb-1"><i class="fas fa-bell mr-2"></i>重要提醒</p>
+                        <p class="text-sm text-yellow-800">联系方式变更时，务必在 Portal 系统更新！连续缺勤会被警告。</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center md:text-left">
+                            <h4 class="font-bold text-gray-800 text-lg mb-3">国际交流处</h4>
+                            <p class="text-gray-600 mb-2"><i class="fas fa-phone mr-2 text-blue-500"></i>043-229-8810 / 7421</p>
+                            <p class="text-gray-600"><i class="fab fa-qq mr-2 text-blue-500"></i>QQ: 2217629612 (备注专业姓名)</p>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h4 class="font-bold text-gray-800 text-lg mb-3">学事支援组</h4>
+                             <p class="text-gray-600"><i class="fas fa-phone mr-2 text-blue-500"></i>043-229-8812</p>
+                             <p class="text-xs text-gray-400 mt-2">地址: 大学文化馆1楼 国际交流处 (28503)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center text-gray-400 text-sm py-8 border-t border-gray-200">
+                <p>&copy; 2025 清州大学 新生说明会指南 Web App</p>
+                <p class="text-xs mt-1">Made for CJU International Students</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none z-30">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- The Modal -->
+    <div id="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img id="modal-img" src="" onclick="event.stopPropagation()"> <!-- 阻止点击图片关闭 -->
+        <div id="modal-caption"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-menu-overlay');
+
+        function toggleMenu() {
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                // Open
+                menu.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    menu.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                // Close
+                menu.classList.add('translate-x-full');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // 2. Modal Logic
+        function openModal(imgElement) {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            const captionText = document.getElementById("modal-caption");
+            
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt || "查看图片";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // 3. Back to Top Button
+        const backToTopBtn = document.getElementById("back-to-top");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.add("show");
+            } else {
+                backToTopBtn.classList.remove("show");
+            }
+            
+            // Call scroll spy
+            highlightSidebar();
+        };
+
+        // 4. Scroll Spy (Active Sidebar Link)
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("#desktop-nav a");
+
+        function highlightSidebar() {
+            let scrollY = window.pageYOffset;
+            
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 150; // Offset for header
+                const sectionId = current.getAttribute("id");
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove("active");
+                        link.classList.remove("bg-blue-800"); // Remove tailwind hover class manually for cleaner look
+                        if (link.getAttribute("href").includes(sectionId)) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
