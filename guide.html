@@ -108,6 +108,7 @@
         }
     </style>
     <link href="styles.css" rel="stylesheet">
+    <link href="redesign.css" rel="stylesheet">
 </head>
 <body class="guide-page bg-gray-50 text-gray-800">
 
@@ -189,7 +190,7 @@
             <section class="guide-intro" aria-labelledby="page-title">
                 <div>
                     <a href="index.html" class="guide-breadcrumb"><i class="fas fa-home"></i>首页导航</a>
-                    <p class="guide-eyebrow">CJU Student Mission Control</p>
+                    <p class="guide-eyebrow">CJU Student Guide</p>
                     <h2 id="page-title">新生任务系统</h2>
                     <p class="guide-intro-copy">所有原说明内容和截图都在这里。用搜索快速定位流程，或按左侧任务目录逐项查看；截图可点击放大。</p>
                     <div class="guide-search-card" role="search">
@@ -1391,6 +1392,34 @@
                 }
             });
         }
+
+        function scrollToHashTarget() {
+            if (!window.location.hash) return;
+            const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+            if (!target) return;
+            const topOffset = window.innerWidth < 1024 ? 92 : 28;
+            const targetTop = target.getBoundingClientRect().top + window.pageYOffset - topOffset;
+            window.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+            highlightSidebar();
+        }
+
+        function stabilizeHashScroll() {
+            let attempts = 0;
+            scrollToHashTarget();
+            const timer = window.setInterval(() => {
+                scrollToHashTarget();
+                attempts += 1;
+                if (attempts >= 14) window.clearInterval(timer);
+            }, 250);
+        }
+
+        window.addEventListener("load", () => {
+            stabilizeHashScroll();
+        });
+
+        window.addEventListener("hashchange", () => {
+            setTimeout(stabilizeHashScroll, 80);
+        });
     </script>
 </body>
 
