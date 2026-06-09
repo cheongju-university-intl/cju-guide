@@ -154,14 +154,34 @@
 
     <div class="flex min-h-screen pt-16 lg:pt-0">
         <!-- Sidebar Navigation (Desktop) -->
-        <aside class="hidden lg:block w-72 bg-blue-900 text-gray-100 fixed h-full overflow-y-auto no-scrollbar shadow-2xl z-40 transition-all">
-            <div class="p-6 bg-blue-950 sticky top-0 z-10 shadow-md">
-                <h1 class="text-xl font-bold leading-tight flex items-center">
-                    <i class="fas fa-graduation-cap mr-2 text-yellow-400"></i>
-                    新入插班生<br>说明会指南
-                </h1>
+        <aside class="guide-doc-sidebar hidden lg:grid w-72 bg-blue-900 text-gray-100 fixed h-full overflow-y-auto no-scrollbar shadow-2xl z-40 transition-all">
+            <div class="guide-rail" aria-label="清州大学留学生指南">
+                <a href="index.html" class="guide-rail-logo" aria-label="返回首页">
+                    <i class="fas fa-university"></i>
+                </a>
+                <div class="guide-rail-stack" aria-hidden="true">
+                    <span>CJU</span>
+                    <span>GUIDE</span>
+                </div>
+                <div class="guide-rail-metric">
+                    <strong>18</strong>
+                    <span>主题</span>
+                </div>
+                <div class="guide-rail-metric">
+                    <strong>60+</strong>
+                    <span>截图</span>
+                </div>
             </div>
-            <nav class="mt-2 pb-20" id="desktop-nav">
+            <div class="guide-nav-pane">
+                <div class="guide-nav-head p-6 bg-blue-950 sticky top-0 z-10 shadow-md">
+                    <span class="guide-nav-label">International Office</span>
+                    <h1 class="text-xl font-bold leading-tight flex items-center">
+                        <i class="fas fa-graduation-cap mr-2 text-yellow-400"></i>
+                        留学生办事<br>文档中心
+                    </h1>
+                    <p>按任务选择模块，右侧保留完整流程与截图。</p>
+                </div>
+                <nav class="mt-2 pb-20" id="desktop-nav" aria-label="指南目录">
                 <a href="index.html" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-home w-6 text-center"></i><span class="ml-3">首页导航</span></a>
                 <a href="#portal" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-laptop-code w-6 text-center"></i><span class="ml-3">综合情报系统</span></a>
                 <a href="#password-recovery" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-key w-6 text-center"></i><span class="ml-3">找回密码</span></a>
@@ -181,7 +201,8 @@
                 <a href="#arc" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-id-card w-6 text-center"></i><span class="ml-3">登陆证办理</span></a>
                 <a href="#activity" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-users w-6 text-center"></i><span class="ml-3">留学生活动</span></a>
                 <a href="#contact" class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"><i class="fas fa-phone-alt w-6 text-center"></i><span class="ml-3">注意事项</span></a>
-            </nav>
+                </nav>
+            </div>
         </aside>
 
         <!-- Main Content Area -->
@@ -190,9 +211,9 @@
             <section class="guide-intro" aria-labelledby="page-title">
                 <div>
                     <a href="index.html" class="guide-breadcrumb"><i class="fas fa-home"></i>首页导航</a>
-                    <p class="guide-eyebrow">CJU Student Guide</p>
-                    <h2 id="page-title">新生任务系统</h2>
-                    <p class="guide-intro-copy">所有原说明内容和截图都在这里。用搜索快速定位流程，或按左侧任务目录逐项查看；截图可点击放大。</p>
+                    <p class="guide-eyebrow">CJU International Student Guide</p>
+                    <h2 id="page-title">留学生办事文档中心</h2>
+                    <p class="guide-intro-copy">把 Portal、选课、课程表、请假、校车、图书馆和登陆证办理整理成统一的文档流。左侧选择任务，右侧阅读完整流程；截图可点击放大。</p>
                     <div class="guide-search-card" role="search">
                         <label for="guide-search"><i class="fas fa-search"></i></label>
                         <input id="guide-search" aria-label="搜索指南内容" type="search" placeholder="搜索指南内容：密码、选课、图书馆、登陆证..." autocomplete="off">
@@ -208,7 +229,7 @@
             </section>
             <section class="guide-command-strip" aria-label="指南概览">
                 <div>
-                    <span>任务板块</span>
+                    <span>文档模块</span>
                     <strong>18</strong>
                     <p>覆盖入学、选课、生活与证件</p>
                 </div>
@@ -218,9 +239,9 @@
                     <p>保留原始截图说明</p>
                 </div>
                 <div>
-                    <span>快速定位</span>
-                    <strong>Search</strong>
-                    <p>输入关键词跳转对应流程</p>
+                    <span>重要提示</span>
+                    <strong>Alert</strong>
+                    <p>琥珀标签只用于关键通知</p>
                 </div>
             </section>
             <!-- 1. 综合情报系统 -->
