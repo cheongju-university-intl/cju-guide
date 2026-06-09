@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <link href="redesign.css?v=20260610-5" rel="stylesheet">
+    <link href="redesign.css?v=20260610-6" rel="stylesheet">
 </head>
 <body class="home-page">
     <main class="home-shell">
@@ -36,8 +36,33 @@
                 <p class="home-summary">Portal、选课、课程表、请假、校车、图书馆和登陆证办理都集中在这里。输入关键词，直接跳到对应流程和截图。</p>
                 <div class="home-quick-actions">
                     <a href="guide.html" class="home-primary-action"><i class="fas fa-book-open"></i>打开完整指南</a>
-                    <a href="guide.html#sugang" class="home-secondary-action"><i class="fas fa-mouse-pointer"></i>查看选课流程</a>
+                    <a href="#orientation-video" class="home-secondary-action"><i class="fas fa-play-circle"></i>查看说明会视频</a>
                 </div>
+            </div>
+
+            <div class="home-video-panel" id="orientation-video" aria-label="新生说明会视频">
+                <div class="home-video-heading">
+                    <div>
+                        <span>Orientation Video</span>
+                        <strong>新生说明会视频</strong>
+                    </div>
+                    <a href="guide.html#online-class" aria-label="查看网课指南"><i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="home-video-frame">
+                    <div class="home-video-guard" aria-hidden="true"></div>
+                    <iframe
+                        src="https://player.bilibili.com/player.html?bvid=BV1DJcwz3EG9&page=1&high_quality=1&danmaku=0&as_wide=1"
+                        title="清州大学新生说明会视频"
+                        scrolling="no"
+                        border="0"
+                        frameborder="no"
+                        framespacing="0"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+                <a class="home-video-fallback" href="https://www.bilibili.com/video/BV1DJcwz3EG9/" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> 播放器无法加载时，打开 Bilibili 视频
+                </a>
             </div>
 
             <div class="home-visual-panel" aria-label="重点流程预览">
