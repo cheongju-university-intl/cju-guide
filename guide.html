@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: auto; }
         body { font-family: 'Noto Sans SC', sans-serif; }
         
         /* 隐藏滚动条但保留功能 */
@@ -108,7 +108,7 @@
         }
     </style>
     <link href="styles.css" rel="stylesheet">
-    <link href="redesign.css" rel="stylesheet">
+    <link href="redesign.css?v=20260610-5" rel="stylesheet">
 </head>
 <body class="guide-page bg-gray-50 text-gray-800">
 
@@ -1458,32 +1458,40 @@
             });
         }
 
-        function scrollToHashTarget() {
+        function scrollToHashTarget(behavior = "smooth") {
             if (!window.location.hash) return;
             const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
             if (!target) return;
-            const topOffset = window.innerWidth < 1024 ? 92 : 28;
+            const topOffset = window.innerWidth < 1024 ? 86 : 28;
             const targetTop = target.getBoundingClientRect().top + window.pageYOffset - topOffset;
-            window.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+            window.scrollTo({ top: Math.max(targetTop, 0), behavior });
             highlightSidebar();
         }
 
-        function stabilizeHashScroll() {
-            let attempts = 0;
-            scrollToHashTarget();
-            const timer = window.setInterval(() => {
-                scrollToHashTarget();
-                attempts += 1;
-                if (attempts >= 14) window.clearInterval(timer);
-            }, 250);
-        }
-
-        window.addEventListener("load", () => {
-            stabilizeHashScroll();
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener("click", (event) => {
+                const targetId = decodeURIComponent(link.getAttribute("href").slice(1));
+                const target = document.getElementById(targetId);
+                if (!target) return;
+                event.preventDefault();
+                history.pushState(null, "", `#${targetId}`);
+                window.requestAnimationFrame(() => scrollToHashTarget("smooth"));
+            });
         });
 
+        function runInitialHashScroll() {
+            scrollToHashTarget("auto");
+            window.setTimeout(() => scrollToHashTarget("auto"), 300);
+        }
+
+        if (window.location.hash) {
+            window.requestAnimationFrame(runInitialHashScroll);
+        }
+
+        window.addEventListener("load", runInitialHashScroll);
+
         window.addEventListener("hashchange", () => {
-            setTimeout(stabilizeHashScroll, 80);
+            window.requestAnimationFrame(() => scrollToHashTarget("smooth"));
         });
     </script>
 </body>
