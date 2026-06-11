@@ -3,200 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0f172a">
-    <title>清州大学新生指南 | 首页导航</title>
+    <meta name="theme-color" content="#073573">
+    <title>清州大学国际学生指南 | 首页导航</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <link href="redesign.css?v=20260611-service-desk" rel="stylesheet">
+    <link href="redesign.css?v=20260611-reference-match" rel="stylesheet">
 </head>
-<body class="home-page">
-    <main class="home-shell">
-        <section class="home-hero" aria-labelledby="home-title">
-            <div class="home-topbar" aria-label="清州大学指南状态栏">
-                <div class="home-logo" aria-label="清州大学标识">
-                    <div class="home-logo-mark">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div>
-                        <p class="home-logo-korean">청주대학교</p>
-                        <p class="home-logo-english">CHEONGJU UNIVERSITY</p>
-                    </div>
-                </div>
-                <div class="home-status">
-                    <span><i class="fas fa-layer-group"></i> 18 个办事主题</span>
-                    <span><i class="fas fa-image"></i> 60+ 张步骤截图</span>
-                    <span><i class="fas fa-mobile-alt"></i> 手机/电脑都可查</span>
-                </div>
-            </div>
+<body class="service-home-page">
+    <header class="service-topbar">
+        <a class="service-brand" href="index.html" aria-label="清州大学国际学生指南首页">
+            <span class="service-brand-mark"><i class="fas fa-university"></i></span>
+            <span>
+                <strong>청주대학교</strong>
+                <small>CHEONGJU UNIVERSITY</small>
+            </span>
+        </a>
+        <h1 class="service-app-title">国际学生指南</h1>
+        <label class="service-global-search" for="service-global-search">
+            <i class="fas fa-search"></i>
+            <input id="service-global-search" type="search" placeholder="搜索指南、服务、页面..." autocomplete="off">
+        </label>
+        <button class="service-chip" type="button"><i class="fas fa-globe"></i> 中文 <i class="fas fa-chevron-down"></i></button>
+        <a class="service-help" href="guide.html#contact"><i class="fas fa-question-circle"></i> 帮助中心</a>
+    </header>
 
-            <div class="home-brand-panel">
-                <p class="home-kicker">CJU Student Guide</p>
-                <h1 id="home-title">新生办事<br>快速导航</h1>
-                <p class="home-summary">Portal、选课、课程表、请假、校车、图书馆和登陆证办理都集中在这里。输入关键词，直接跳到对应流程和截图。</p>
-                <div class="home-quick-actions">
-                    <a href="guide.html" class="home-primary-action"><i class="fas fa-book-open"></i>打开完整指南</a>
-                    <a href="#orientation-video" class="home-secondary-action"><i class="fas fa-play-circle"></i>查看说明会视频</a>
-                </div>
-            </div>
+    <div class="service-shell">
+        <aside class="service-sidebar" aria-label="指南分类">
+            <div class="service-sidebar-title">指南分类 <span>(18)</span></div>
+            <nav class="service-side-nav">
+                <a class="active" href="index.html"><i class="fas fa-home"></i><span>首页</span></a>
+                <a href="guide.html#portal"><i class="fas fa-laptop-code"></i><span>1. 综合情报系统</span></a>
+                <a href="guide.html#password-recovery"><i class="fas fa-key"></i><span>2. 找回密码</span></a>
+                <a href="guide.html#schedule"><i class="fas fa-calendar-alt"></i><span>3. 主要学事日程</span></a>
+                <a href="guide.html#personal-info"><i class="fas fa-user-edit"></i><span>4. 个人信息修改</span></a>
+                <a href="guide.html#course-schedule"><i class="fas fa-table"></i><span>5. 课程表查询</span></a>
+                <a href="guide.html#course-screening"><i class="fas fa-filter"></i><span>6. 选课前筛选</span></a>
+                <a href="guide.html#sugang"><i class="fas fa-mouse-pointer"></i><span>7. 选课指南</span></a>
+                <a href="guide.html#grad-credit"><i class="fas fa-graduation-cap"></i><span>8. 毕业剩余学分</span></a>
+                <a href="guide.html#leave-request"><i class="fas fa-calendar-check"></i><span>9. 请假申请</span></a>
+                <a href="guide.html#cert-print"><i class="fas fa-print"></i><span>10. 打印证明</span></a>
+                <a href="guide.html#campus-map"><i class="fas fa-map-marked-alt"></i><span>11. 学校地图与校车</span></a>
+                <a href="guide.html#online-class"><i class="fas fa-video"></i><span>12. 网课与直播课</span></a>
+                <a href="guide.html#professor"><i class="fas fa-chalkboard-teacher"></i><span>13. 教授联系方式</span></a>
+                <a href="guide.html#department-office"><i class="fas fa-map-marker-alt"></i><span>14. 学科办公室位置查询</span></a>
+                <a href="guide.html#library"><i class="fas fa-book"></i><span>15. 图书馆使用</span></a>
+                <a href="guide.html#arc"><i class="fas fa-id-card"></i><span>16. 登陆证办理</span></a>
+                <a href="guide.html#activity"><i class="fas fa-users"></i><span>17. 留学生活动</span></a>
+                <a href="guide.html#contact"><i class="fas fa-phone-alt"></i><span>18. 联系方式与注意</span></a>
+            </nav>
+            <a class="service-favorite" href="guide.html"><i class="far fa-star"></i> 查看完整指南</a>
+        </aside>
 
-            <div class="home-video-panel" id="orientation-video" aria-label="新生说明会视频">
-                <div class="home-video-heading">
-                    <div>
-                        <span>Orientation Video</span>
-                        <strong>新生说明会视频</strong>
-                    </div>
-                    <a href="guide.html#online-class" aria-label="查看网课指南"><i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="home-video-frame">
-                    <div class="home-video-guard" aria-hidden="true"></div>
-                    <iframe
-                        src="https://player.bilibili.com/player.html?bvid=BV1DJcwz3EG9&page=1&high_quality=1&danmaku=0&as_wide=1"
-                        title="清州大学新生说明会视频"
-                        scrolling="no"
-                        border="0"
-                        frameborder="no"
-                        framespacing="0"
-                        allowfullscreen="true">
-                    </iframe>
-                </div>
-                <a class="home-video-fallback" href="https://www.bilibili.com/video/BV1DJcwz3EG9/" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-external-link-alt"></i> 播放器无法加载时，打开 Bilibili 视频
-                </a>
-            </div>
-
-            <div class="home-visual-panel" aria-label="重点流程预览">
-                <div class="home-visual-card home-visual-main">
-                    <img src="portal_guide.png" alt="综合情报系统登录截图预览">
-                    <div>
-                        <span>Portal</span>
-                        <strong>综合情报系统入口</strong>
-                    </div>
-                </div>
-                <div class="home-visual-card">
-                    <img src="sugang_main.png" alt="选课系统截图预览">
-                    <div>
-                        <span>Course</span>
-                        <strong>选课流程</strong>
-                    </div>
-                </div>
-                <div class="home-visual-card">
-                    <img src="school_map_4.png" alt="校车站牌截图预览">
-                    <div>
-                        <span>Campus</span>
-                        <strong>地图与校车</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="home-nav-panel" aria-label="指南板块导航">
-                <div class="home-panel-heading">
-                    <div>
-                        <span>Task Menu</span>
-                        <strong>选择要处理的学生事项</strong>
-                    </div>
-                    <a href="guide.html" aria-label="进入完整指南"><i class="fas fa-arrow-right"></i></a>
-                </div>
-                <label class="home-search" for="home-search">
+        <main class="service-main" aria-labelledby="home-title">
+            <section class="service-hero">
+                <h2 id="home-title">清州大学国际学生指南</h2>
+                <p>把 Portal、选课、课程表、请假、校车、图书馆和登陆证办理都集中在这里。输入关键词，直接跳到对应流程和截图。</p>
+                <form class="service-search" action="guide.html">
                     <i class="fas fa-search"></i>
-                    <input id="home-search" aria-label="搜索指南板块" type="search" placeholder="搜索：选课、请假、地图、Portal..." autocomplete="off">
-                </label>
+                    <input id="home-search" type="search" placeholder="搜索指南（如：选课、Portal 登录、证明打印）" autocomplete="off">
+                    <button type="submit">搜索</button>
+                </form>
+            </section>
 
-                <div class="home-nav-grid">
-                    <a href="guide.html#portal" class="home-nav-card">
-                        <i class="fas fa-laptop-code"></i>
-                        <span>综合情报系统</span>
+            <section class="service-index" aria-labelledby="index-title">
+                <div class="service-section-heading">
+                    <h3 id="index-title">指南索引</h3>
+                    <span id="home-result-count">18 个指南</span>
+                </div>
+                <div class="service-card-grid">
+                    <a class="service-guide-card priority" href="guide.html#portal" data-keywords="portal 综合情报系统 登录 密码 个人信息">
+                        <span class="service-rank">1</span>
+                        <span class="service-card-icon"><i class="fas fa-laptop-code"></i></span>
+                        <span class="service-card-body"><strong>综合情报系统</strong><small>登录方法、密码重置、个人信息修改、各系统入口说明</small><em>优先</em></span>
+                        <img src="portal_guide.png" alt="综合情报系统截图">
                     </a>
-                    <a href="guide.html#password-recovery" class="home-nav-card">
-                        <i class="fas fa-key"></i>
-                        <span>找回密码</span>
+                    <a class="service-guide-card priority" href="guide.html#sugang" data-keywords="选课 课程 选课指南 sugang">
+                        <span class="service-rank">2</span>
+                        <span class="service-card-icon"><i class="fas fa-book-open"></i></span>
+                        <span class="service-card-body"><strong>选课指南</strong><small>选课日程、选课流程、注意事项、退课与加课</small><em>优先</em></span>
+                        <img src="sugang_main.png" alt="选课系统截图">
                     </a>
-                    <a href="guide.html#schedule" class="home-nav-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>主要学事日程</span>
+                    <a class="service-guide-card priority" href="guide.html#course-schedule" data-keywords="课程表 课表 查询 timetable">
+                        <span class="service-rank">3</span>
+                        <span class="service-card-icon"><i class="fas fa-calendar-alt"></i></span>
+                        <span class="service-card-body"><strong>课程表查询</strong><small>查询个人课表、教室信息、考试时间表</small><em>优先</em></span>
+                        <img src="schedule_step1.png" alt="课程表查询截图">
                     </a>
-                    <a href="guide.html#personal-info" class="home-nav-card">
-                        <i class="fas fa-user-edit"></i>
-                        <span>个人信息修改</span>
+                    <a class="service-guide-card priority" href="guide.html#campus-map" data-keywords="地图 校车 校园 交通">
+                        <span class="service-rank">4</span>
+                        <span class="service-card-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="service-card-body"><strong>学校地图与校车</strong><small>校区建筑、设施位置、交通与周边信息</small><em>优先</em></span>
+                        <img src="school_map_4.png" alt="学校地图截图">
                     </a>
-                    <a href="guide.html#course-schedule" class="home-nav-card">
-                        <i class="fas fa-table"></i>
-                        <span>课程表查询</span>
+                    <a class="service-guide-card" href="guide.html#password-recovery" data-keywords="找回密码 密码重置 password">
+                        <span class="service-rank">5</span>
+                        <span class="service-card-icon"><i class="fas fa-lock"></i></span>
+                        <span class="service-card-body"><strong>找回密码</strong><small>账号锁定、邮箱电话、密码重置流程</small></span>
+                        <img src="password_reset_1.png" alt="找回密码截图">
                     </a>
-                    <a href="guide.html#course-screening" class="home-nav-card">
-                        <i class="fas fa-filter"></i>
-                        <span>选课前筛选</span>
+                    <a class="service-guide-card" href="guide.html#cert-print" data-keywords="证明 打印 成绩证明 在学证明">
+                        <span class="service-rank">6</span>
+                        <span class="service-card-icon"><i class="fas fa-print"></i></span>
+                        <span class="service-card-body"><strong>打印证明</strong><small>在学证明、成绩证明、缴费证明等在线申请与打印</small></span>
+                        <img src="cert_print_1.png" alt="证明打印截图">
                     </a>
-                    <a href="guide.html#sugang" class="home-nav-card featured">
-                        <i class="fas fa-mouse-pointer"></i>
-                        <span>选课指南</span>
+                    <a class="service-guide-card" href="guide.html#grad-credit" data-keywords="毕业 学分 剩余学分 GPA 成绩">
+                        <span class="service-rank">7</span>
+                        <span class="service-card-icon"><i class="fas fa-chart-bar"></i></span>
+                        <span class="service-card-body"><strong>毕业剩余学分</strong><small>成绩查询方法、GPA 计算、成绩单说明</small></span>
+                        <img src="shengyuxuefen_1.png" alt="毕业剩余学分截图">
                     </a>
-                    <a href="guide.html#grad-credit" class="home-nav-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>毕业剩余学分</span>
+                    <a class="service-guide-card" href="guide.html#arc" data-keywords="登陆证 ARC 签证 延期 材料">
+                        <span class="service-rank">8</span>
+                        <span class="service-card-icon"><i class="fas fa-id-card"></i></span>
+                        <span class="service-card-body"><strong>登陆证办理</strong><small>ARC 申请、延期流程、所需材料、注意事项</small></span>
+                        <img src="QQ20260417-155044.png" alt="登陆证材料截图">
                     </a>
-                    <a href="guide.html#leave-request" class="home-nav-card">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>请假申请</span>
+                    <a class="service-guide-card" href="guide.html#library" data-keywords="图书馆 app LIB 座位 预约">
+                        <span class="service-rank">9</span>
+                        <span class="service-card-icon"><i class="fas fa-book"></i></span>
+                        <span class="service-card-body"><strong>图书馆使用</strong><small>图书馆使用指南、座位预约、电子资源、LIB App</small></span>
+                        <img src="tushuguan_app_1.png" alt="图书馆 App 截图">
                     </a>
-                    <a href="guide.html#cert-print" class="home-nav-card">
-                        <i class="fas fa-print"></i>
-                        <span>打印证明</span>
+                    <a class="service-guide-card" href="guide.html#leave-request" data-keywords="请假 缺勤 申请 出勤">
+                        <span class="service-rank">10</span>
+                        <span class="service-card-icon"><i class="fas fa-calendar-check"></i></span>
+                        <span class="service-card-body"><strong>请假申请</strong><small>请假申请入口、流程截图、出勤注意事项</small></span>
+                        <img src="leave_request_1.jpg" alt="请假申请截图">
                     </a>
-                    <a href="guide.html#campus-map" class="home-nav-card featured">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <span>学校地图与校车</span>
+                    <a class="service-guide-card extra" href="guide.html#schedule" data-keywords="学事 日程 校历">
+                        <span class="service-rank">11</span>
+                        <span class="service-card-icon"><i class="fas fa-calendar"></i></span>
+                        <span class="service-card-body"><strong>主要学事日程</strong><small>学期重要日期与学校日程查看方式</small></span>
+                        <img src="schedule_guide.png" alt="学事日程截图">
                     </a>
-                    <a href="guide.html#online-class" class="home-nav-card">
-                        <i class="fas fa-video"></i>
-                        <span>网课与直播课</span>
+                    <a class="service-guide-card extra" href="guide.html#personal-info" data-keywords="个人信息 电话 邮箱 地址">
+                        <span class="service-rank">12</span>
+                        <span class="service-card-icon"><i class="fas fa-user-edit"></i></span>
+                        <span class="service-card-body"><strong>个人信息修改</strong><small>联系方式、邮箱和个人资料更新说明</small></span>
+                        <img src="personal_info.png" alt="个人信息修改截图">
                     </a>
-                    <a href="guide.html#professor" class="home-nav-card">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <span>教授联系方式</span>
+                    <a class="service-guide-card extra" href="guide.html#course-screening" data-keywords="选课前 筛选 课程 查询">
+                        <span class="service-rank">13</span>
+                        <span class="service-card-icon"><i class="fas fa-filter"></i></span>
+                        <span class="service-card-body"><strong>选课前筛选</strong><small>提前查找课程、筛选条件和课程信息</small></span>
+                        <img src="course_screen_step1.png" alt="选课前筛选截图">
                     </a>
-                    <a href="guide.html#department-office" class="home-nav-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>学科办公室位置查询</span>
+                    <a class="service-guide-card extra" href="guide.html#online-class" data-keywords="网课 直播课 在线课程">
+                        <span class="service-rank">14</span>
+                        <span class="service-card-icon"><i class="fas fa-video"></i></span>
+                        <span class="service-card-body"><strong>网课与直播课</strong><small>在线课程登录、听课和出勤确认</small></span>
+                        <img src="wangke_1.png" alt="网课截图">
                     </a>
-                    <a href="guide.html#library" class="home-nav-card">
-                        <i class="fas fa-book"></i>
-                        <span>图书馆使用</span>
+                    <a class="service-guide-card extra" href="guide.html#professor" data-keywords="教授 联系方式 邮箱 电话">
+                        <span class="service-rank">15</span>
+                        <span class="service-card-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                        <span class="service-card-body"><strong>教授联系方式</strong><small>通过 Portal 或学校官网查询教授信息</small></span>
+                        <img src="jiaoshou_1.png" alt="教授联系方式截图">
                     </a>
-                    <a href="guide.html#arc" class="home-nav-card">
-                        <i class="fas fa-id-card"></i>
-                        <span>登陆证办理</span>
+                    <a class="service-guide-card extra" href="guide.html#department-office" data-keywords="学科办公室 办公室 位置">
+                        <span class="service-rank">16</span>
+                        <span class="service-card-icon"><i class="fas fa-building"></i></span>
+                        <span class="service-card-body"><strong>学科办公室位置查询</strong><small>查询学院与学科办公室位置</small></span>
+                        <img src="department_office_1.png" alt="学科办公室位置截图">
                     </a>
-                    <a href="guide.html#activity" class="home-nav-card">
-                        <i class="fas fa-users"></i>
-                        <span>留学生活动</span>
+                    <a class="service-guide-card extra" href="guide.html#activity" data-keywords="留学生活动 mentoring 治安巡逻">
+                        <span class="service-rank">17</span>
+                        <span class="service-card-icon"><i class="fas fa-users"></i></span>
+                        <span class="service-card-body"><strong>留学生活动</strong><small>中韩学生交流、治安巡逻队等活动说明</small></span>
+                        <img src="school_map_1.png" alt="留学生活动参考截图">
                     </a>
-                    <a href="guide.html#contact" class="home-nav-card">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>联系方式与注意</span>
+                    <a class="service-guide-card extra" href="guide.html#contact" data-keywords="联系方式 国际交流处 电话 QQ 地址">
+                        <span class="service-rank">18</span>
+                        <span class="service-card-icon"><i class="fas fa-phone-alt"></i></span>
+                        <span class="service-card-body"><strong>联系方式与注意</strong><small>国际交流处、学事支援组和重要提醒</small></span>
+                        <img src="department_office_2.png" alt="联系方式参考截图">
                     </a>
                 </div>
+                <button class="service-show-all" id="service-show-all" type="button">查看全部 18 个指南分类 <i class="fas fa-chevron-down"></i></button>
                 <p class="home-empty" hidden>没有找到匹配内容，换个关键词试试。</p>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+
+        <aside class="service-right-panel" aria-label="快速任务与帮助">
+            <section class="service-side-card">
+                <h3>快速任务</h3>
+                <nav class="service-task-list">
+                    <a href="guide.html#portal"><i class="fas fa-desktop"></i><span>Portal 登录</span><i class="fas fa-chevron-right"></i></a>
+                    <a href="guide.html#password-recovery"><i class="fas fa-lock"></i><span>密码重置</span><i class="fas fa-chevron-right"></i></a>
+                    <a href="guide.html#sugang"><i class="fas fa-book-open"></i><span>选课系统</span><i class="fas fa-chevron-right"></i></a>
+                    <a href="guide.html#course-schedule"><i class="fas fa-calendar-alt"></i><span>课程表查询</span><i class="fas fa-chevron-right"></i></a>
+                    <a href="guide.html#cert-print"><i class="fas fa-print"></i><span>证明打印</span><i class="fas fa-chevron-right"></i></a>
+                    <a href="guide.html#campus-map"><i class="fas fa-map-marker-alt"></i><span>校园地图</span><i class="fas fa-chevron-right"></i></a>
+                    <a href="guide.html#library"><i class="fas fa-mobile-alt"></i><span>图书馆 APP</span><i class="fas fa-chevron-right"></i></a>
+                </nav>
+            </section>
+
+            <section class="service-side-card">
+                <div class="service-side-card-head">
+                    <h3>重要通知</h3>
+                    <a href="guide.html#contact">更多 <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="service-notice-list">
+                    <a href="guide.html#portal"><span class="danger">重要</span><strong>首次登录后请填写电话和邮箱</strong><small>Portal</small></a>
+                    <a href="guide.html#portal"><span class="warn">提醒</span><strong>初始密码为 8 位生日，例如 20030101</strong><small>账号</small></a>
+                    <a href="guide.html#contact"><span class="info">公告</span><strong>联系方式变更时务必在 Portal 更新</strong><small>联系</small></a>
+                    <a href="guide.html#contact"><span class="info">提醒</span><strong>连续缺勤会被警告，请注意出勤</strong><small>学事</small></a>
+                    <a href="guide.html#library"><span class="success">活动</span><strong>图书馆 App 可用于入馆、借书、预约座位</strong><small>LIB</small></a>
+                </div>
+            </section>
+
+            <section class="service-side-card service-help-card">
+                <h3>需要帮助？</h3>
+                <strong>国际交流处</strong>
+                <p><i class="fas fa-phone-alt"></i> 043-229-8810 / 7421</p>
+                <p><i class="fab fa-qq"></i> QQ: 2217629612</p>
+                <p><i class="fas fa-map-marker-alt"></i> 大学文化馆 1 楼国际交流处</p>
+                <a href="guide.html#contact"><i class="fas fa-comments"></i> 查看联系方式</a>
+            </section>
+        </aside>
+    </div>
+
     <script>
-        const homeSearch = document.getElementById('home-search');
-        const homeCards = Array.from(document.querySelectorAll('.home-nav-card'));
-        const homeEmpty = document.querySelector('.home-empty');
+        const homeSearch = document.getElementById("home-search");
+        const globalSearch = document.getElementById("service-global-search");
+        const cards = Array.from(document.querySelectorAll(".service-guide-card"));
+        const emptyMessage = document.querySelector(".home-empty");
+        const resultCount = document.getElementById("home-result-count");
+        const showAll = document.getElementById("service-show-all");
 
-        homeSearch.addEventListener('input', () => {
-            const keyword = homeSearch.value.trim().toLowerCase();
+        function applySearch(value) {
+            const keyword = value.trim().toLowerCase();
             let visibleCount = 0;
+            document.body.classList.toggle("searching-guides", Boolean(keyword));
 
-            homeCards.forEach((card) => {
-                const text = `${card.textContent} ${card.getAttribute('href')}`.toLowerCase();
-                const isVisible = !keyword || text.includes(keyword);
-                card.hidden = !isVisible;
-                if (isVisible) visibleCount += 1;
+            cards.forEach((card) => {
+                const text = `${card.textContent} ${card.dataset.keywords || ""} ${card.getAttribute("href")}`.toLowerCase();
+                const visible = !keyword || text.includes(keyword);
+                card.hidden = !visible;
+                if (visible) visibleCount += 1;
             });
 
-            homeEmpty.hidden = visibleCount > 0;
+            emptyMessage.hidden = visibleCount > 0;
+            resultCount.textContent = keyword ? `${visibleCount} 个结果` : "18 个指南";
+        }
+
+        [homeSearch, globalSearch].forEach((input) => {
+            input.addEventListener("input", () => {
+                if (input === homeSearch) globalSearch.value = input.value;
+                if (input === globalSearch) homeSearch.value = input.value;
+                applySearch(input.value);
+            });
+        });
+
+        document.querySelector(".service-search").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const firstVisible = cards.find((card) => !card.hidden);
+            if (firstVisible) window.location.href = firstVisible.href;
+        });
+
+        showAll.addEventListener("click", () => {
+            document.body.classList.toggle("show-all-guides");
+            const expanded = document.body.classList.contains("show-all-guides");
+            showAll.innerHTML = expanded
+                ? '收起部分指南 <i class="fas fa-chevron-up"></i>'
+                : '查看全部 18 个指南分类 <i class="fas fa-chevron-down"></i>';
         });
     </script>
 </body>
