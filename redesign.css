@@ -3085,6 +3085,53 @@ body > nav {
     font-size: 0.76rem;
 }
 
+.service-video-card {
+    padding-bottom: 12px;
+}
+
+.service-video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #071a35;
+    border: 1px solid #d9e2ef;
+    border-radius: 6px;
+}
+
+.service-video-frame iframe,
+.service-video-guard {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.service-video-frame iframe {
+    border: 0;
+}
+
+.service-video-guard {
+    bottom: auto;
+    z-index: 1;
+    height: 38px;
+    pointer-events: auto;
+}
+
+.service-video-fallback {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: #06499b;
+    font-size: 0.84rem;
+    font-weight: 850;
+    text-decoration: none;
+}
+
+.service-video-fallback:hover {
+    color: #073573;
+}
+
 .service-notice-list {
     display: grid;
 }
