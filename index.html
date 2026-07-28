@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#073b7a" />
     <title>清州大学国际学生指南</title>
-    <meta name="description" content="清州大学国际学生常用系统、选课学业、校园生活及签证证件办事指南。" />
-    <link href="assets/css/site.css?v=20260728-2" rel="stylesheet" />
+    <meta
+      name="description"
+      content="清州大学国际学生常用系统、选课学业、校园生活及签证证件办事指南。"
+    />
+    <link href="assets/css/site.css?v=20260728-3" rel="stylesheet" />
   </head>
   <body class="portal-page">
     <header class="portal-header">
       <div class="portal-container portal-nav">
-        <a class="portal-brand" href="index.html" aria-label="清州大学国际学生指南首页">
+        <a
+          class="portal-brand"
+          href="index.html"
+          aria-label="清州大学国际学生指南首页"
+        >
           <span class="portal-brand-mark" aria-hidden="true">
             <svg><use href="assets/icons/lucide.svg#university"></use></svg>
           </span>
-          <span><strong>清州大学国际学生指南</strong><small>CJU International Student Guide</small></span>
+          <span
+            ><strong>清州大学国际学生指南</strong
+            ><small>CJU International Student Guide</small></span
+          >
         </a>
         <nav class="portal-nav-links" aria-label="主导航">
           <a href="#popular">常用办事</a>
@@ -24,8 +34,10 @@
           <a href="guide.html#contact">联系我们</a>
         </nav>
         <a class="portal-nav-action" href="guide.html">
-          进入完整指南
-          <svg aria-hidden="true"><use href="assets/icons/lucide.svg#arrow-right"></use></svg>
+          完整指南
+          <svg aria-hidden="true">
+            <use href="assets/icons/lucide.svg#book-open"></use>
+          </svg>
         </a>
       </div>
     </header>
@@ -34,14 +46,38 @@
       <section class="portal-hero" aria-labelledby="home-title">
         <div class="portal-container portal-hero-layout">
           <div class="portal-hero-copy">
-            <span class="portal-eyebrow">CHEONGJU UNIVERSITY · INTERNATIONAL AFFAIRS</span>
+            <span class="portal-eyebrow"
+              >CHEONGJU UNIVERSITY · INTERNATIONAL AFFAIRS</span
+            >
             <h1 id="home-title">清州大学<br />国际学生指南</h1>
-            <p>从登录 Portal、选课到校园生活与签证证件，把在校期间常用的办事信息集中在一个清晰、可信的入口。</p>
-            <form class="portal-search" action="guide.html" role="search">
-              <svg aria-hidden="true"><use href="assets/icons/lucide.svg#search"></use></svg>
+            <p>
+              从登录
+              Portal、选课到校园生活与签证证件，把在校期间常用的办事信息集中在一个清晰、可信的入口。
+            </p>
+            <form
+              class="portal-search"
+              action="guide.html"
+              role="search"
+              aria-controls="home-search-results"
+            >
+              <svg aria-hidden="true">
+                <use href="assets/icons/lucide.svg#search"></use>
+              </svg>
               <label class="sr-only" for="home-search">搜索指南</label>
-              <input id="home-search" name="q" type="search" placeholder="搜索指南，例如：选课、Portal、登陆证" autocomplete="off" />
+              <input
+                id="home-search"
+                name="q"
+                type="search"
+                placeholder="搜索指南，例如：选课、Portal、登陆证"
+                autocomplete="off"
+              />
               <button type="submit">搜索</button>
+              <section
+                id="home-search-results"
+                class="portal-search-results"
+                aria-label="指南搜索结果"
+                aria-live="polite"
+              ></section>
             </form>
             <nav class="portal-search-suggestions" aria-label="热门搜索">
               <span>热门：</span>
@@ -50,149 +86,458 @@
               <a href="guide.html#arc">登陆证</a>
             </nav>
           </div>
-          <div class="portal-hero-visual" aria-hidden="true">
-            <div class="portal-campus-photo">
-              <img src="school_map_4.png" alt="" />
-            </div>
-            <div class="portal-wayfinding">
-              <span><svg><use href="assets/icons/lucide.svg#map-pin"></use></svg></span>
-              <strong>你要办理什么？</strong>
-              <small>指南按真实校园任务组织</small>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section class="portal-section portal-popular" id="popular" aria-labelledby="popular-title">
+      <section
+        class="portal-section portal-popular"
+        id="popular"
+        aria-labelledby="popular-title"
+      >
         <div class="portal-container">
           <div class="portal-section-heading">
-            <div><span>QUICK SERVICES</span><h2 id="popular-title">高频办事入口</h2></div>
+            <div><h2 id="popular-title">高频办事入口</h2></div>
             <p>最常用的八项服务，一步进入对应章节。</p>
           </div>
           <div class="portal-task-grid">
-            <a href="guide.html#portal" data-keywords="Portal 综合情报系统 登录 账号">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#monitor-check"></use></svg></span>
-              <span><strong>Portal 登录</strong><small>综合情报系统与账号登录</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#portal">
+              <span class="portal-task-icon"
+                ><svg>
+                  <use href="assets/icons/lucide.svg#monitor-check"></use></svg
+              ></span>
+              <span
+                ><strong>Portal 登录</strong
+                ><small>综合情报系统与账号登录</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#password-recovery" data-keywords="密码 重置 找回">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#key-round"></use></svg></span>
-              <span><strong>找回密码</strong><small>重置与恢复登录密码</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#password-recovery">
+              <span class="portal-task-icon"
+                ><svg><use href="assets/icons/lucide.svg#key-round"></use></svg
+              ></span>
+              <span
+                ><strong>找回密码</strong
+                ><small>重置与恢复登录密码</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#course-schedule" data-keywords="课程表 查询 时间表">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#calendar-days"></use></svg></span>
-              <span><strong>查询课程表</strong><small>查看课程、教室与时间</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#course-schedule">
+              <span class="portal-task-icon"
+                ><svg>
+                  <use href="assets/icons/lucide.svg#calendar-days"></use></svg
+              ></span>
+              <span
+                ><strong>查询课程表</strong
+                ><small>查看课程、教室与时间</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#sugang" data-keywords="选课 sugang 课程">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#book-open-check"></use></svg></span>
-              <span><strong>选课指南</strong><small>进入系统并完成选课</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#sugang">
+              <span class="portal-task-icon"
+                ><svg>
+                  <use
+                    href="assets/icons/lucide.svg#book-open-check"
+                  ></use></svg
+              ></span>
+              <span
+                ><strong>选课指南</strong
+                ><small>进入系统并完成选课</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#cert-print" data-keywords="证明 打印 在学 成绩">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#printer"></use></svg></span>
-              <span><strong>打印各类证明</strong><small>在学、成绩等证明文件</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#cert-print">
+              <span class="portal-task-icon"
+                ><svg><use href="assets/icons/lucide.svg#printer"></use></svg
+              ></span>
+              <span
+                ><strong>打印各类证明</strong
+                ><small>在学、成绩等证明文件</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#campus-map" data-keywords="校园地图 校车 建筑">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#map"></use></svg></span>
-              <span><strong>校园地图与校车</strong><small>查找建筑与交通信息</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#campus-map">
+              <span class="portal-task-icon"
+                ><svg><use href="assets/icons/lucide.svg#map"></use></svg
+              ></span>
+              <span
+                ><strong>校园地图与校车</strong
+                ><small>查找建筑与交通信息</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#online-class" data-keywords="网课 HIVE 直播课">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#video"></use></svg></span>
-              <span><strong>网课系统</strong><small>HIVE 在线课程操作</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#online-class">
+              <span class="portal-task-icon"
+                ><svg><use href="assets/icons/lucide.svg#video"></use></svg
+              ></span>
+              <span
+                ><strong>网课系统</strong><small>HIVE 在线课程操作</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
-            <a href="guide.html#arc" data-keywords="登陆证 签证 延长 ARC">
-              <span class="portal-task-icon"><svg><use href="assets/icons/lucide.svg#id-card"></use></svg></span>
-              <span><strong>登陆证办理</strong><small>所需材料与延期说明</small></span>
-              <svg class="portal-arrow"><use href="assets/icons/lucide.svg#arrow-up-right"></use></svg>
+            <a href="guide.html#arc">
+              <span class="portal-task-icon"
+                ><svg><use href="assets/icons/lucide.svg#id-card"></use></svg
+              ></span>
+              <span
+                ><strong>登陆证办理</strong
+                ><small>所需材料与延期说明</small></span
+              >
+              <svg class="portal-arrow">
+                <use href="assets/icons/lucide.svg#arrow-up-right"></use>
+              </svg>
             </a>
           </div>
-          <p class="home-empty" id="home-empty" role="status" aria-live="polite" hidden>没有找到匹配内容，换个关键词试试。</p>
         </div>
       </section>
 
-      <section class="portal-section portal-guide-section" id="all-guides" aria-labelledby="guides-title">
+      <section
+        class="portal-section portal-guide-section"
+        id="all-guides"
+        aria-labelledby="guides-title"
+      >
         <div class="portal-container">
           <div class="portal-section-heading">
-            <div><span>ALL GUIDES</span><h2 id="guides-title">按类别查找完整指南</h2></div>
+            <div><h2 id="guides-title">按类别查找完整指南</h2></div>
             <p>18 个现有指南完整保留，按办事场景重新归类。</p>
           </div>
           <div class="portal-category-grid">
-            <article class="portal-category-card">
-              <header><span><svg><use href="assets/icons/lucide.svg#shield-check"></use></svg></span><div><h3>账号与系统</h3><p>登录、资料维护与校内数字服务</p></div></header>
-              <nav aria-label="账号与系统指南">
-                <a href="guide.html#portal"><span><strong>综合情报系统 (Portal)</strong><small>系统登录与基本操作</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#password-recovery"><span><strong>找回密码</strong><small>账号密码恢复</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#personal-info"><span><strong>个人信息查看及修改</strong><small>维护电话、邮箱与资料</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#online-class"><span><strong>网课系统 (HIVE)</strong><small>在线课程与直播课</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#library"><span><strong>图书馆使用</strong><small>App、入馆与座位预约</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-              </nav>
-            </article>
-            <article class="portal-category-card">
-              <header><span><svg><use href="assets/icons/lucide.svg#graduation-cap"></use></svg></span><div><h3>选课与学业</h3><p>课程安排、学分、请假与教师信息</p></div></header>
-              <nav aria-label="选课与学业指南">
-                <a href="guide.html#schedule"><span><strong>主要学事日程</strong><small>重要日期与学期安排</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#course-schedule"><span><strong>课程表查询指南</strong><small>课程时间与教室</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#course-screening"><span><strong>选课前的课程筛选</strong><small>筛选并确认课程</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#sugang"><span><strong>选课指南</strong><small>选课系统完整流程</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#grad-credit"><span><strong>毕业剩余学分查询</strong><small>确认毕业进度</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#leave-request"><span><strong>请假申请指南</strong><small>申请与提交材料</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#professor"><span><strong>教授联系方式</strong><small>查询教师联系信息</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-              </nav>
-            </article>
-            <article class="portal-category-card">
-              <header><span><svg><use href="assets/icons/lucide.svg#landmark"></use></svg></span><div><h3>校园与生活</h3><p>校园位置、活动与服务部门</p></div></header>
-              <nav aria-label="校园与生活指南">
-                <a href="guide.html#campus-map"><span><strong>学校地图 &amp; 校车</strong><small>建筑位置与校车信息</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#department-office"><span><strong>学科办公室位置查询</strong><small>查找所属学科办公室</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#activity"><span><strong>留学生活动</strong><small>中韩交流与校园活动</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#contact"><span><strong>联系方式与注意</strong><small>国际交流处与重要提醒</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-              </nav>
-            </article>
-            <article class="portal-category-card">
-              <header><span><svg><use href="assets/icons/lucide.svg#badge-check"></use></svg></span><div><h3>签证与证件</h3><p>证明文件、登陆证与延期材料</p></div></header>
-              <nav aria-label="签证与证件指南">
-                <a href="guide.html#cert-print"><span><strong>打印各类证明</strong><small>在学、成绩等证明</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-                <a href="guide.html#arc"><span><strong>登陆证办理以及延长</strong><small>材料清单与 PDF 下载</small></span><svg><use href="assets/icons/lucide.svg#chevron-right"></use></svg></a>
-              </nav>
-            </article>
+            <div class="portal-category-column">
+              <article class="portal-category-card">
+                <header>
+                  <span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#shield-check"
+                      ></use></svg
+                  ></span>
+                  <div>
+                    <h3>账号与系统</h3>
+                    <p>登录、密码与个人资料维护</p>
+                  </div>
+                </header>
+                <nav aria-label="账号与系统指南">
+                  <a href="guide.html#portal"
+                    ><span
+                      ><strong>综合情报系统 (Portal)</strong
+                      ><small>系统登录与基本操作</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#password-recovery"
+                    ><span
+                      ><strong>找回密码</strong
+                      ><small>账号密码恢复</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#personal-info"
+                    ><span
+                      ><strong>个人信息查看及修改</strong
+                      ><small>维护电话、邮箱与资料</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                </nav>
+              </article>
+              <article class="portal-category-card">
+                <header>
+                  <span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#graduation-cap"
+                      ></use></svg
+                  ></span>
+                  <div>
+                    <h3>选课与学业</h3>
+                    <p>课程安排、学分、请假与教师信息</p>
+                  </div>
+                </header>
+                <nav aria-label="选课与学业指南">
+                  <a href="guide.html#schedule"
+                    ><span
+                      ><strong>主要学事日程</strong
+                      ><small>重要日期与学期安排</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#course-schedule"
+                    ><span
+                      ><strong>课程表查询指南</strong
+                      ><small>课程时间与教室</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#course-screening"
+                    ><span
+                      ><strong>选课前的课程筛选</strong
+                      ><small>筛选并确认课程</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#sugang"
+                    ><span
+                      ><strong>选课指南</strong
+                      ><small>选课系统完整流程</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#grad-credit"
+                    ><span
+                      ><strong>毕业剩余学分查询</strong
+                      ><small>确认毕业进度</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#leave-request"
+                    ><span
+                      ><strong>请假申请指南</strong
+                      ><small>申请与提交材料</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#online-class"
+                    ><span
+                      ><strong>网课系统 (HIVE)</strong
+                      ><small>在线课程与直播课</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                </nav>
+              </article>
+            </div>
+            <div class="portal-category-column">
+              <article class="portal-category-card">
+                <header>
+                  <span
+                    ><svg>
+                      <use href="assets/icons/lucide.svg#landmark"></use></svg
+                  ></span>
+                  <div>
+                    <h3>校园与生活</h3>
+                    <p>校园位置、活动与服务部门</p>
+                  </div>
+                </header>
+                <nav aria-label="校园与生活指南">
+                  <a href="guide.html#campus-map"
+                    ><span
+                      ><strong>学校地图 &amp; 校车</strong
+                      ><small>建筑位置与校车信息</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#department-office"
+                    ><span
+                      ><strong>学科办公室位置查询</strong
+                      ><small>查找所属学科办公室</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#library"
+                    ><span
+                      ><strong>图书馆使用</strong
+                      ><small>App、入馆与座位预约</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#activity"
+                    ><span
+                      ><strong>留学生活动</strong
+                      ><small>中韩交流与校园活动</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#contact"
+                    ><span
+                      ><strong>联系方式与注意</strong
+                      ><small>国际交流处与重要提醒</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                </nav>
+              </article>
+              <article class="portal-category-card">
+                <header>
+                  <span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#badge-check"
+                      ></use></svg
+                  ></span>
+                  <div>
+                    <h3>校务与证件</h3>
+                    <p>校务查询、证明文件与登陆证材料</p>
+                  </div>
+                </header>
+                <nav aria-label="校务与证件指南">
+                  <a href="guide.html#professor"
+                    ><span
+                      ><strong>教授联系方式</strong
+                      ><small>查询教师联系信息</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#cert-print"
+                    ><span
+                      ><strong>打印各类证明</strong
+                      ><small>在学、成绩等证明</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                  <a href="guide.html#arc"
+                    ><span
+                      ><strong>登陆证办理以及延长</strong
+                      ><small>材料清单与 PDF 下载</small></span
+                    ><svg>
+                      <use
+                        href="assets/icons/lucide.svg#chevron-right"
+                      ></use></svg
+                  ></a>
+                </nav>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="portal-section portal-information" id="notices" aria-labelledby="notices-title">
+      <section
+        class="portal-section portal-information"
+        id="notices"
+        aria-labelledby="notices-title"
+      >
         <div class="portal-container portal-information-grid">
           <article class="portal-notices">
-            <div class="portal-section-heading compact"><div><span>NOTICE</span><h2 id="notices-title">重要通知</h2></div><a href="guide.html#contact">查看联系方式</a></div>
+            <div class="portal-section-heading compact">
+              <div><h2 id="notices-title">重要通知</h2></div>
+              <a href="guide.html#contact">查看联系方式</a>
+            </div>
             <div class="portal-notice-list">
-              <a href="guide.html#portal"><time>重要</time><strong>首次登录后请填写电话和邮箱</strong><span>Portal</span></a>
-              <a href="guide.html#portal"><time>提醒</time><strong>初始密码为 8 位生日，例如 20030101</strong><span>账号</span></a>
-              <a href="guide.html#contact"><time>公告</time><strong>联系方式变更时务必在 Portal 更新</strong><span>联系</span></a>
-              <a href="guide.html#contact"><time>提醒</time><strong>连续缺勤会被警告，请注意出勤</strong><span>学事</span></a>
-              <a href="guide.html#library"><time>服务</time><strong>图书馆 App 可用于入馆、借书、预约座位</strong><span>图书馆</span></a>
+              <a href="guide.html#portal"
+                ><time>重要</time><strong>首次登录后请填写电话和邮箱</strong
+                ><span>Portal</span></a
+              >
+              <a href="guide.html#portal"
+                ><time>提醒</time
+                ><strong>初始密码为 8 位生日，例如 20030101</strong
+                ><span>账号</span></a
+              >
+              <a href="guide.html#contact"
+                ><time>公告</time
+                ><strong>联系方式变更时务必在 Portal 更新</strong
+                ><span>联系</span></a
+              >
+              <a href="guide.html#contact"
+                ><time>提醒</time><strong>连续缺勤会被警告，请注意出勤</strong
+                ><span>学事</span></a
+              >
+              <a href="guide.html#library"
+                ><time>服务</time
+                ><strong>图书馆 App 可用于入馆、借书、预约座位</strong
+                ><span>图书馆</span></a
+              >
             </div>
           </article>
           <article class="portal-video" id="orientation-video">
-            <div class="portal-section-heading compact"><div><span>ORIENTATION</span><h2>新生说明会视频</h2></div><a href="guide.html#online-class">网课指南</a></div>
-            <div class="portal-video-frame">
-              <iframe src="https://player.bilibili.com/player.html?bvid=BV1DJcwz3EG9&page=1&high_quality=1&danmaku=0&as_wide=1" title="清州大学新生说明会视频" allowfullscreen></iframe>
+            <div class="portal-section-heading compact">
+              <div><h2>新生说明会视频</h2></div>
+              <a href="guide.html#online-class">网课指南</a>
             </div>
-            <a class="portal-video-link" href="https://www.bilibili.com/video/BV1DJcwz3EG9/" target="_blank" rel="noopener noreferrer"><svg><use href="assets/icons/lucide.svg#external-link"></use></svg>播放器无法加载时，在 Bilibili 打开</a>
+            <div class="portal-video-frame">
+              <iframe
+                src="https://player.bilibili.com/player.html?bvid=BV1DJcwz3EG9&page=1&high_quality=1&danmaku=0&as_wide=1"
+                title="清州大学新生说明会视频"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <a
+              class="portal-video-link"
+              href="https://www.bilibili.com/video/BV1DJcwz3EG9/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg>
+                <use href="assets/icons/lucide.svg#external-link"></use></svg
+              >播放器无法加载时，在 Bilibili 打开</a
+            >
           </article>
         </div>
       </section>
 
       <section class="portal-contact" aria-labelledby="contact-title">
         <div class="portal-container portal-contact-layout">
-          <div><span class="portal-eyebrow">INTERNATIONAL AFFAIRS</span><h2 id="contact-title">需要帮助？联系国际交流处</h2><p>如指南内容无法解决问题，请准备好学号与问题截图后联系我们。</p></div>
+          <div>
+            <span class="portal-eyebrow">INTERNATIONAL AFFAIRS</span>
+            <h2 id="contact-title">需要帮助？联系国际交流处</h2>
+            <p>如指南内容无法解决问题，请准备好学号与问题截图后联系我们。</p>
+          </div>
           <div class="portal-contact-items">
-            <a href="tel:+82432298810"><svg><use href="assets/icons/lucide.svg#phone"></use></svg><span><small>电话</small><strong>043&#8209;229&#8209;8810&nbsp;/&nbsp;7421</strong></span></a>
-            <div><svg><use href="assets/icons/lucide.svg#message-circle"></use></svg><span><small>QQ</small><strong>2217629612</strong></span></div>
-            <a href="guide.html#contact"><svg><use href="assets/icons/lucide.svg#map-pin"></use></svg><span><small>地址</small><strong>大学文化馆 1 楼国际交流处</strong></span></a>
+            <a href="tel:+82432298810"
+              ><svg><use href="assets/icons/lucide.svg#phone"></use></svg
+              ><span
+                ><small>电话</small
+                ><strong
+                  >043&#8209;229&#8209;8810&nbsp;/&nbsp;7421</strong
+                ></span
+              ></a
+            >
+            <div>
+              <svg>
+                <use href="assets/icons/lucide.svg#message-circle"></use></svg
+              ><span><small>QQ</small><strong>2217629612</strong></span>
+            </div>
+            <a href="guide.html#contact"
+              ><svg><use href="assets/icons/lucide.svg#map-pin"></use></svg
+              ><span
+                ><small>地址</small
+                ><strong>大学文化馆 1 楼国际交流处</strong></span
+              ></a
+            >
           </div>
         </div>
       </section>
@@ -200,10 +545,21 @@
 
     <footer class="portal-footer">
       <div class="portal-container">
-        <a class="portal-brand footer-brand" href="index.html"><span class="portal-brand-mark"><svg><use href="assets/icons/lucide.svg#university"></use></svg></span><span><strong>清州大学国际学生指南</strong><small>CJU International Student Guide</small></span></a>
-        <p>© <span id="current-year">2026</span> Cheongju University. International Student Guide.</p>
+        <a class="portal-brand footer-brand" href="index.html"
+          ><span class="portal-brand-mark"
+            ><svg>
+              <use href="assets/icons/lucide.svg#university"></use></svg></span
+          ><span
+            ><strong>清州大学国际学生指南</strong
+            ><small>CJU International Student Guide</small></span
+          ></a
+        >
+        <p>
+          © <span id="current-year">2026</span> Cheongju University.
+          International Student Guide.
+        </p>
       </div>
     </footer>
-    <script src="assets/js/home.js?v=20260728-2" defer></script>
+    <script src="assets/js/home.js?v=20260728-3" defer></script>
   </body>
 </html>

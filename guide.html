@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#073b7a" />
     <title>清州大学国际学生指南</title>
-    <link href="assets/css/site.css?v=20260728-2" rel="stylesheet" />
+    <link href="assets/css/site.css?v=20260728-3" rel="stylesheet" />
   </head>
   <body class="guide-page bg-gray-50 text-gray-800">
     <!-- Mobile Navigation Bar -->
@@ -15,7 +15,9 @@
     >
       <div class="flex justify-between items-center p-4">
         <h1 class="font-bold text-lg flex items-center">
-          <i class="fas fa-university mr-2"></i><span id="mobile-current-chapter">清州大学国际学生指南</span>
+          <svg class="lucide-icon mr-2" aria-hidden="true">
+            <use href="assets/icons/lucide.svg#university"></use></svg
+          ><span id="mobile-current-chapter">清州大学国际学生指南</span>
         </h1>
         <button
           id="mobile-menu-btn"
@@ -23,7 +25,9 @@
           aria-label="打开菜单"
           class="text-white focus:outline-none p-2 rounded hover:bg-blue-800 transition"
         >
-          <i class="fas fa-bars text-2xl"></i>
+          <svg class="lucide-icon text-2xl" aria-hidden="true">
+            <use href="assets/icons/lucide.svg#menu"></use>
+          </svg>
         </button>
       </div>
       <!-- Mobile Menu Overlay -->
@@ -47,7 +51,9 @@
             aria-label="关闭菜单"
             class="text-white"
           >
-            <i class="fas fa-times text-xl"></i>
+            <svg class="lucide-icon text-xl" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#x"></use>
+            </svg>
           </button>
         </div>
         <div class="pb-20">
@@ -55,7 +61,9 @@
             href="index.html"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-home mr-2 w-5"></i>返回首页导航</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#house"></use></svg
+            >返回首页导航</a
           >
           <a
             href="#portal"
@@ -67,7 +75,9 @@
             href="#password-recovery"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-key mr-2 w-5"></i>找回密码</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#key-round"></use></svg
+            >找回密码</a
           >
           <a
             href="#schedule"
@@ -79,19 +89,25 @@
             href="#personal-info"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-user-edit mr-2 w-5"></i>个人信息修改</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#user-round-pen"></use></svg
+            >个人信息修改</a
           >
           <a
             href="#course-schedule"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-table mr-2 w-5"></i>课程表查询</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#table-properties"></use></svg
+            >课程表查询</a
           >
           <a
             href="#course-screening"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-filter mr-2 w-5"></i>选课前筛选</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#list-filter"></use></svg
+            >选课前筛选</a
           >
           <a
             href="#sugang"
@@ -103,25 +119,33 @@
             href="#grad-credit"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-graduation-cap mr-2 w-5"></i>毕业学分查询</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#graduation-cap"></use></svg
+            >毕业学分查询</a
           >
           <a
             href="#leave-request"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-calendar-check mr-2 w-5"></i>请假申请</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#calendar-check"></use></svg
+            >请假申请</a
           >
           <a
             href="#cert-print"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-print mr-2 w-5"></i>打印证明</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#printer"></use></svg
+            >打印证明</a
           >
           <a
             href="#campus-map"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
             onclick="toggleMenu()"
-            ><i class="fas fa-map-marked-alt mr-2 w-5"></i>学校地图</a
+            ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#map"></use></svg
+            >学校地图</a
           >
           <a
             href="#online-class"
@@ -175,30 +199,15 @@
         class="guide-doc-sidebar hidden lg:grid w-72 bg-blue-900 text-gray-100 fixed h-full overflow-y-auto no-scrollbar shadow-2xl z-40 transition-all"
         aria-label="桌面端章节导航"
       >
-        <div class="guide-rail" role="group" aria-label="清州大学留学生指南">
-          <a href="index.html" class="guide-rail-logo" aria-label="返回首页">
-            <i class="fas fa-university"></i>
-          </a>
-          <div class="guide-rail-stack" aria-hidden="true">
-            <span>CJU</span>
-            <span>GUIDE</span>
-          </div>
-          <div class="guide-rail-metric">
-            <strong>18</strong>
-            <span>主题</span>
-          </div>
-          <div class="guide-rail-metric">
-            <strong>60+</strong>
-            <span>截图</span>
-          </div>
-        </div>
         <div class="guide-nav-pane">
           <div
             class="guide-nav-head p-6 bg-blue-950 sticky top-0 z-10 shadow-md"
           >
             <span class="guide-nav-label">International Office</span>
             <h1 class="text-xl font-bold leading-tight flex items-center">
-              <i class="fas fa-graduation-cap mr-2 text-yellow-400"></i>
+              <svg class="lucide-icon mr-2 text-yellow-400" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#graduation-cap"></use>
+              </svg>
               清州大学国际<br />学生指南
             </h1>
             <p>按任务选择模块，右侧保留完整流程与截图。</p>
@@ -207,115 +216,136 @@
             <a
               href="index.html"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-home w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#house"></use></svg
               ><span class="ml-3">首页导航</span></a
             >
             <a
               href="#portal"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-laptop-code w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#monitor-cog"></use></svg
               ><span class="ml-3">综合情报系统</span></a
             >
             <a
               href="#password-recovery"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-key w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#key-round"></use></svg
               ><span class="ml-3">找回密码</span></a
             >
             <a
               href="#schedule"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-calendar-alt w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#calendar-days"></use></svg
               ><span class="ml-3">主要学事日程</span></a
             >
             <a
               href="#personal-info"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-user-edit w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#user-round-pen"></use></svg
               ><span class="ml-3">个人信息修改</span></a
             >
             <a
               href="#course-schedule"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-table w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#table-properties"></use></svg
               ><span class="ml-3">课程表查询</span></a
             >
             <a
               href="#course-screening"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-filter w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#list-filter"></use></svg
               ><span class="ml-3">选课前的筛选</span></a
             >
             <a
               href="#sugang"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-mouse-pointer w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use
+                  href="assets/icons/lucide.svg#mouse-pointer-click"
+                ></use></svg
               ><span class="ml-3">选课指南</span></a
             >
             <a
               href="#grad-credit"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-graduation-cap w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#graduation-cap"></use></svg
               ><span class="ml-3">毕业剩余学分</span></a
             >
             <a
               href="#leave-request"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-calendar-check w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#calendar-check"></use></svg
               ><span class="ml-3">请假申请指南</span></a
             >
             <a
               href="#cert-print"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-print w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#printer"></use></svg
               ><span class="ml-3">打印各类证明</span></a
             >
             <a
               href="#campus-map"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-map-marked-alt w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#map"></use></svg
               ><span class="ml-3">学校地图</span></a
             >
             <a
               href="#online-class"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-video w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#video"></use></svg
               ><span class="ml-3">网课与直播课</span></a
             >
             <a
               href="#professor"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-chalkboard-teacher w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#presentation"></use></svg
               ><span class="ml-3">教授联系方式</span></a
             >
             <a
               href="#department-office"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-map-marker-alt w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#map-pin"></use></svg
               ><span class="ml-3">学科办公室位置查询</span></a
             >
             <a
               href="#library"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-book w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#book-open"></use></svg
               ><span class="ml-3">图书馆使用</span></a
             >
             <a
               href="#arc"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-id-card w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#id-card"></use></svg
               ><span class="ml-3">登陆证办理以及延长</span></a
             >
             <a
               href="#activity"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-users w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#users"></use></svg
               ><span class="ml-3">留学生活动</span></a
             >
             <a
               href="#contact"
               class="nav-link flex items-center px-6 py-3 hover:bg-blue-800 transition-colors border-l-4 border-transparent"
-              ><i class="fas fa-phone-alt w-6 text-center"></i
+              ><svg class="lucide-icon w-6 text-center" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#phone"></use></svg
               ><span class="ml-3">注意事项</span></a
             >
           </nav>
@@ -328,7 +358,9 @@
           <section class="guide-intro" aria-labelledby="page-title">
             <div>
               <a href="index.html" class="guide-breadcrumb"
-                ><i class="fas fa-home"></i>首页导航</a
+                ><svg class="lucide-icon" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#house"></use></svg
+                >首页导航</a
               >
               <p class="guide-eyebrow">CJU International Student Guide</p>
               <h2 id="page-title">清州大学国际学生指南</h2>
@@ -337,7 +369,10 @@
                 Portal、选课、课程表、请假、校车、图书馆和登陆证办理整理成统一的文档流。左侧选择任务，右侧阅读完整流程；截图可点击放大。
               </p>
               <div class="guide-search-card" role="search">
-                <label for="guide-search"><i class="fas fa-search"></i></label>
+                <label for="guide-search"
+                  ><svg class="lucide-icon" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#search"></use></svg
+                ></label>
                 <input
                   id="guide-search"
                   aria-label="搜索指南内容"
@@ -352,31 +387,6 @@
                 ></div>
               </div>
             </div>
-            <nav class="guide-shortcuts" aria-label="指南快捷入口">
-              <a href="#portal"><i class="fas fa-laptop-code"></i>Portal</a>
-              <a href="#sugang"><i class="fas fa-mouse-pointer"></i>选课</a>
-              <a href="#course-schedule"><i class="fas fa-table"></i>课程表</a>
-              <a href="#campus-map"
-                ><i class="fas fa-map-marked-alt"></i>地图校车</a
-              >
-            </nav>
-          </section>
-          <section class="guide-command-strip" aria-label="指南概览">
-            <div>
-              <span>文档模块</span>
-              <strong>18</strong>
-              <p>覆盖入学、选课、生活与证件</p>
-            </div>
-            <div>
-              <span>截图资料</span>
-              <strong>60+</strong>
-              <p>保留原始截图说明</p>
-            </div>
-            <div>
-              <span>重要提示</span>
-              <strong>Alert</strong>
-              <p>琥珀标签只用于关键通知</p>
-            </div>
           </section>
           <!-- 1. 综合情报系统 -->
           <section id="portal" class="mb-16 scroll-mt-24">
@@ -387,7 +397,12 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-laptop-code text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#monitor-cog"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">综合情报系统 (Portal)</h3>
               </div>
@@ -395,13 +410,15 @@
                 <a
                   href="https://portal.cju.ac.kr/"
                   target="_blank"
-                  class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-                  ><i class="fas fa-external-link-alt mr-2"></i> 点击访问系统
-                  portal.cju.ac.kr</a
+                  class="external-link-button inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                  ><svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#external-link"></use>
+                  </svg>
+                  点击访问系统 portal.cju.ac.kr</a
                 >
 
                 <div
-                  class="my-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-gray-50 group"
+                  class="screenshot-figure my-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-gray-50 group"
                 >
                   <img
                     decoding="async"
@@ -413,7 +430,10 @@
                   <p
                     class="text-center text-xs text-gray-400 mt-2 group-hover:text-blue-500 transition-colors"
                   >
-                    <i class="fas fa-search-plus mr-1"></i> 点击图片放大
+                    <svg class="lucide-icon mr-1" aria-hidden="true">
+                      <use href="assets/icons/lucide.svg#zoom-in"></use>
+                    </svg>
+                    点击图片放大
                   </p>
                 </div>
 
@@ -430,13 +450,15 @@
                   </li>
                 </ul>
                 <div
-                  class="bg-red-50 border-2 border-red-300 rounded-xl p-5 shadow-sm"
+                  class="danger-callout bg-red-50 border-2 border-red-300 rounded-xl p-5 shadow-sm"
                 >
                   <div class="flex items-start gap-3">
                     <div
                       class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center flex-shrink-0"
                     >
-                      <i class="fas fa-exclamation"></i>
+                      <svg class="lucide-icon" aria-hidden="true">
+                        <use href="assets/icons/lucide.svg#circle-alert"></use>
+                      </svg>
                     </div>
 
                     <div class="min-w-0">
@@ -480,12 +502,15 @@
                 </div>
 
                 <div
-                  class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded-r-lg shadow-sm"
+                  class="warning-callout mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded-r-lg shadow-sm"
                 >
                   <h4
                     class="font-bold text-yellow-800 mb-6 flex items-center text-lg border-b border-yellow-200 pb-2"
                   >
-                    <i class="fas fa-window-restore mr-2"></i> 常见弹窗处理指南
+                    <svg class="lucide-icon mr-2" aria-hidden="true">
+                      <use href="assets/icons/lucide.svg#panels-top-left"></use>
+                    </svg>
+                    常见弹窗处理指南
                   </h4>
 
                   <!-- 两种情况分列展示 -->
@@ -500,14 +525,18 @@
                           如果进入系统跳出以下弹窗，不想改密码或者填信息的，可以按照下面的方法操作：
                         </p>
                         <p
-                          class="text-base text-red-600 font-bold mb-3 flex items-center bg-red-50 p-2 rounded border border-red-100"
+                          class="text-sm text-red-700 font-bold mb-3 flex items-center gap-2"
                         >
-                          <i class="fas fa-hand-point-right mr-2"></i>
+                          <svg class="lucide-icon mr-2" aria-hidden="true">
+                            <use
+                              href="assets/icons/lucide.svg#move-right"
+                            ></use>
+                          </svg>
                           点击右上角的叉 (X) 关闭即可。
                         </p>
                       </div>
                       <div
-                        class="p-1 border border-gray-100 bg-gray-50 rounded shadow-sm overflow-hidden mt-2"
+                        class="screenshot-figure p-1 border border-gray-100 bg-gray-50 rounded shadow-sm overflow-hidden mt-2"
                       >
                         <img
                           decoding="async"
@@ -531,7 +560,7 @@
                           2. 如果想要填写信息、修改密码：
                         </p>
                         <div
-                          class="p-1 border border-gray-100 bg-gray-50 rounded shadow-sm overflow-hidden mb-3"
+                          class="screenshot-figure p-1 border border-gray-100 bg-gray-50 rounded shadow-sm overflow-hidden mb-3"
                         >
                           <img
                             decoding="async"
@@ -543,11 +572,14 @@
                         </div>
                       </div>
                       <div class="mt-auto">
-                        <div
-                          class="bg-blue-50 border border-blue-200 rounded p-3"
-                        >
+                        <div class="border-t border-yellow-200 pt-3">
                           <p class="text-sm text-blue-800 font-bold mb-1">
-                            <i class="fas fa-pen-fancy mr-1"></i> 填写重要提示：
+                            <svg class="lucide-icon mr-1" aria-hidden="true">
+                              <use
+                                href="assets/icons/lucide.svg#pen-line"
+                              ></use>
+                            </svg>
+                            填写重要提示：
                           </p>
                           <p class="text-sm text-gray-700 leading-relaxed">
                             如果想要填写信息改密码，在
@@ -579,15 +611,24 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-key text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#key-round"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">找回密码</h3>
               </div>
               <div
-                class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg"
+                class="danger-callout bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg"
               >
                 <h4 class="font-bold text-red-900 mb-2">
-                  <i class="fas fa-exclamation-triangle mr-2"></i>账号锁定与重置
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use
+                      href="assets/icons/lucide.svg#triangle-alert"
+                    ></use></svg
+                  >账号锁定与重置
                 </h4>
                 <p class="text-sm text-red-800">
                   如果密码输错
@@ -619,7 +660,7 @@
               </div>
               <div class="grid md:grid-cols-2 gap-6">
                 <div
-                  class="mb-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                  class="screenshot-figure mb-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -637,7 +678,7 @@
                   </p>
                 </div>
                 <div
-                  class="mb-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                  class="screenshot-figure mb-6 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -667,7 +708,12 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-calendar-alt text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#calendar-days"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">主要学事日程</h3>
               </div>
@@ -675,20 +721,20 @@
               <div class="flex flex-col md:flex-row gap-6 mb-4">
                 <div class="md:w-1/2">
                   <div
-                    class="bg-indigo-50 border-l-4 border-indigo-400 p-5 rounded-r-lg h-full"
+                    class="information-callout bg-indigo-50 border-l-4 border-indigo-400 p-5 rounded-r-lg h-full"
                   >
                     <h4 class="font-bold text-indigo-900 mb-4">
                       📅 详细日程查看方法
                     </h4>
                     <ol
-                      class="list-decimal list-inside space-y-3 text-indigo-800"
+                      class="step-list list-decimal list-inside space-y-3 text-indigo-800"
                     >
                       <li>
                         进入学校官网
                         <a
                           href="https://portal.cju.ac.kr"
                           target="_blank"
-                          class="underline font-bold text-indigo-700 hover:text-indigo-900"
+                          class="external-link-button underline font-bold text-indigo-700 hover:text-indigo-900"
                           >portal.cju.ac.kr</a
                         >
                       </li>
@@ -700,14 +746,16 @@
                     <div
                       class="mt-6 text-sm text-indigo-700 bg-white bg-opacity-50 p-3 rounded"
                     >
-                      <i class="fas fa-info-circle mr-1"></i>
+                      <svg class="lucide-icon mr-1" aria-hidden="true">
+                        <use href="assets/icons/lucide.svg#info"></use>
+                      </svg>
                       重要节点：选课、开学、期中/期末考试、放假。
                     </div>
                   </div>
                 </div>
                 <div class="md:w-1/2">
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                   >
                     <img
                       loading="lazy"
@@ -721,10 +769,11 @@
                 </div>
               </div>
               <div
-                class="bg-red-50 border-l-4 border-red-500 p-4 mb-4 shadow-sm"
+                class="danger-callout bg-red-50 border-l-4 border-red-500 p-4 mb-4 shadow-sm"
               >
                 <h4 class="font-bold text-red-900 mb-2 flex items-center">
-                  <i class="fas fa-bullhorn mr-2"></i
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#megaphone"></use></svg
                   >进入portal首页后学校通知查看方法
                 </h4>
                 <p class="text-sm text-red-800 leading-relaxed mb-4">
@@ -734,7 +783,7 @@
                 </p>
 
                 <div
-                  class="mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                  class="screenshot-figure mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -758,15 +807,22 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-user-edit text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#user-round-pen"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">个人信息查看及修改</h3>
               </div>
               <div
-                class="bg-green-50 border-l-4 border-green-500 p-5 mb-6 text-gray-800 rounded-r-lg"
+                class="information-callout bg-green-50 border-l-4 border-green-500 p-5 mb-6 text-gray-800 rounded-r-lg"
               >
                 <h4 class="font-bold text-green-900 mb-3 text-lg">
-                  <i class="fas fa-check-circle mr-2"></i>重要提示：完善个人信息
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#circle-check"></use></svg
+                  >重要提示：完善个人信息
                 </h4>
                 <div class="space-y-3">
                   <p class="font-medium">
@@ -781,15 +837,18 @@
                   <p
                     class="text-sm bg-white p-3 rounded border border-green-200 shadow-sm"
                   >
-                    <i
-                      class="fas fa-exclamation-circle text-orange-500 mr-1"
-                    ></i>
+                    <svg
+                      class="lucide-icon text-orange-500 mr-1"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/lucide.svg#circle-alert"></use>
+                    </svg>
                     这里填好自己电话和邮箱才能重置密码。<br />在这个页面先写上能<strong>正常接收邮件</strong>的邮箱，以防日后密码忘记，方便重置密码。
                   </p>
                 </div>
               </div>
               <div
-                class="mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                class="screenshot-figure mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
               >
                 <img
                   loading="lazy"
@@ -801,7 +860,7 @@
                 />
               </div>
               <div
-                class="mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                class="screenshot-figure mb-4 p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
               >
                 <img
                   loading="lazy"
@@ -824,7 +883,12 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-table text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#table-properties"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">课程表查询指南</h3>
               </div>
@@ -841,7 +905,7 @@
                       进入综合情报系统后，点击上方的红框菜单，然后点击左侧菜单栏。
                     </p>
                     <div
-                      class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                      class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                     >
                       <img
                         loading="lazy"
@@ -869,7 +933,7 @@
                       点击右上角的蓝色图标可以下载课程表。
                     </p>
                     <div
-                      class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                      class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                     >
                       <img
                         loading="lazy"
@@ -932,7 +996,9 @@
                         <div
                           class="bg-green-100 p-2 rounded-full mr-4 text-green-600"
                         >
-                          <i class="far fa-clock"></i>
+                          <svg class="lucide-icon" aria-hidden="true">
+                            <use href="assets/icons/lucide.svg#clock-3"></use>
+                          </svg>
                         </div>
                         <div>
                           <h5 class="font-bold text-green-800 mb-1">
@@ -961,7 +1027,9 @@
                         <div
                           class="bg-blue-100 p-2 rounded-full mr-4 text-blue-600"
                         >
-                          <i class="fas fa-map-marker-alt"></i>
+                          <svg class="lucide-icon" aria-hidden="true">
+                            <use href="assets/icons/lucide.svg#map-pin"></use>
+                          </svg>
                         </div>
                         <div>
                           <h5 class="font-bold text-blue-800 mb-1">
@@ -987,11 +1055,13 @@
                     <h5
                       class="font-bold text-gray-700 mb-3 text-sm flex items-center"
                     >
-                      <i class="fas fa-hourglass-half mr-2"></i>
+                      <svg class="lucide-icon mr-2" aria-hidden="true">
+                        <use href="assets/icons/lucide.svg#hourglass"></use>
+                      </svg>
                       课时与时间对照表 (90分钟课程制)
                     </h5>
                     <table
-                      class="min-w-full text-xs text-center border bg-white shadow-sm rounded-lg overflow-hidden"
+                      class="data-table min-w-full text-xs text-center border bg-white shadow-sm rounded-lg overflow-hidden"
                     >
                       <thead class="bg-gray-100 font-bold text-gray-700">
                         <tr>
@@ -1059,14 +1129,21 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-filter text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#list-filter"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">选课前的课程筛选</h3>
               </div>
 
               <div class="screening-notice">
                 <div class="screening-notice-icon">
-                  <i class="fas fa-bullhorn"></i>
+                  <svg class="lucide-icon" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#megaphone"></use>
+                  </svg>
                 </div>
                 <div>
                   <h4>选课开始前重要须知</h4>
@@ -1086,7 +1163,7 @@
                       <p>进入系统后，点击上方菜单栏红框位置。</p>
                     </div>
                   </div>
-                  <figure>
+                  <figure class="screenshot-figure">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -1106,7 +1183,7 @@
                       <p>在左侧菜单里找到对应项目并点击。</p>
                     </div>
                   </div>
-                  <figure>
+                  <figure class="screenshot-figure">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -1129,7 +1206,7 @@
                       </p>
                     </div>
                   </div>
-                  <figure>
+                  <figure class="screenshot-figure">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -1154,7 +1231,7 @@
                   </div>
                 </div>
                 <div class="screening-excel-grid">
-                  <figure>
+                  <figure class="screenshot-figure">
                     <figcaption>查看首行</figcaption>
                     <img
                       loading="lazy"
@@ -1165,7 +1242,7 @@
                       onclick="openModal(this)"
                     />
                   </figure>
-                  <figure>
+                  <figure class="screenshot-figure">
                     <figcaption>开启筛选 Ctrl + Shift + L</figcaption>
                     <img
                       loading="lazy"
@@ -1176,7 +1253,7 @@
                       onclick="openModal(this)"
                     />
                   </figure>
-                  <figure>
+                  <figure class="screenshot-figure">
                     <figcaption>筛选 “이중”（双语）</figcaption>
                     <img
                       loading="lazy"
@@ -1192,7 +1269,10 @@
 
               <div class="screening-block screening-result-block">
                 <div class="screening-block-head success">
-                  <span><i class="fas fa-check"></i></span>
+                  <span
+                    ><svg class="lucide-icon" aria-hidden="true">
+                      <use href="assets/icons/lucide.svg#check"></use></svg
+                  ></span>
                   <div>
                     <h4>查看结果与区分</h4>
                     <p>
@@ -1201,7 +1281,7 @@
                   </div>
                 </div>
                 <div class="screening-result-grid">
-                  <figure class="major">
+                  <figure class="screenshot-figure major">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -1212,7 +1292,7 @@
                     />
                     <figcaption>找专业课（中文授课）</figcaption>
                   </figure>
-                  <figure class="general">
+                  <figure class="screenshot-figure general">
                     <img
                       loading="lazy"
                       decoding="async"
@@ -1227,7 +1307,9 @@
               </div>
 
               <div class="screening-summary">
-                <i class="fas fa-info-circle"></i>
+                <svg class="lucide-icon" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#info"></use>
+                </svg>
                 <p>
                   <strong>总结：</strong
                   >以上查找流程仅针对双语学生。非双语学生不能选双语课程，直接参考
@@ -1243,13 +1325,18 @@
                   <h4
                     class="font-bold text-gray-800 mb-4 text-lg flex items-center"
                   >
-                    <i class="fas fa-language mr-2 text-blue-600"></i> Excel
-                    表头中韩对照表
+                    <svg
+                      class="lucide-icon mr-2 text-blue-600"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/lucide.svg#languages"></use>
+                    </svg>
+                    Excel 表头中韩对照表
                   </h4>
                   <div
                     class="overflow-hidden bg-white rounded-lg border border-gray-200 shadow-sm"
                   >
-                    <table class="min-w-full text-sm text-left">
+                    <table class="data-table min-w-full text-sm text-left">
                       <thead class="bg-gray-100 text-gray-700 font-bold">
                         <tr>
                           <th class="px-4 py-3 border-b text-center">No</th>
@@ -1486,15 +1573,24 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-mouse-pointer text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use
+                      href="assets/icons/lucide.svg#mouse-pointer-click"
+                    ></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">选课指南</h3>
               </div>
               <div
-                class="mt-10 bg-green-50 border-t-4 border-green-500 p-6 rounded-b-lg mb-4"
+                class="information-callout mt-10 bg-green-50 border-t-4 border-green-500 p-6 rounded-b-lg mb-4"
               >
                 <p class="font-bold text-green-900 flex items-center text-lg">
-                  <i class="fas fa-info-circle mr-2"></i>
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#info"></use>
+                  </svg>
                   在校生在正式选课前可以进行预选课：
                 </p>
                 <p class="text-green-800 text-base mt-2 ml-6">
@@ -1509,12 +1605,17 @@
                 <a
                   href="https://sugang.cju.ac.kr"
                   target="_blank"
-                  class="inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-bold text-xl"
-                  ><i class="fas fa-external-link-alt mr-2"></i> 进入选课系统
-                  (sugang.cju.ac.kr)</a
+                  class="external-link-button inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-bold text-xl"
+                  ><svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#external-link"></use>
+                  </svg>
+                  进入选课系统 (sugang.cju.ac.kr)</a
                 >
                 <p class="text-sm text-gray-500 mt-3">
-                  <i class="fas fa-desktop mr-1"></i> 请务必使用电脑浏览器访问
+                  <svg class="lucide-icon mr-1" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#monitor"></use>
+                  </svg>
+                  请务必使用电脑浏览器访问
                 </p>
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
@@ -1524,7 +1625,12 @@
                 >
                   <div class="flex items-start">
                     <div class="p-3 bg-green-100 rounded-lg mr-4">
-                      <i class="fas fa-file-excel text-xl text-green-700"></i>
+                      <svg
+                        class="lucide-icon text-xl text-green-700"
+                        aria-hidden="true"
+                      >
+                        <use href="assets/icons/lucide.svg#sheet"></use>
+                      </svg>
                     </div>
                     <div class="flex-1">
                       <h4 class="text-lg font-bold text-gray-900">
@@ -1536,10 +1642,13 @@
 
                       <a
                         href="https://qr61.cn/oX16YK/qfTR8PF"
-                        class="inline-flex items-center mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
+                        class="download-card inline-flex items-center mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
                         download
                       >
-                        <i class="fas fa-download mr-2"></i> 下载 Excel
+                        <svg class="lucide-icon mr-2" aria-hidden="true">
+                          <use href="assets/icons/lucide.svg#download"></use>
+                        </svg>
+                        下载 Excel
                       </a>
                     </div>
                   </div>
@@ -1551,7 +1660,12 @@
                 >
                   <div class="flex items-start">
                     <div class="p-3 bg-green-100 rounded-lg mr-4">
-                      <i class="fas fa-file-excel text-xl text-green-700"></i>
+                      <svg
+                        class="lucide-icon text-xl text-green-700"
+                        aria-hidden="true"
+                      >
+                        <use href="assets/icons/lucide.svg#sheet"></use>
+                      </svg>
                     </div>
                     <div class="flex-1">
                       <h4 class="text-lg font-bold text-gray-900">
@@ -1563,10 +1677,13 @@
 
                       <a
                         href="https://qr61.cn/oX16YK/q6JTC9t"
-                        class="inline-flex items-center mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
+                        class="download-card inline-flex items-center mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
                         download
                       >
-                        <i class="fas fa-download mr-2"></i> 下载 Excel
+                        <svg class="lucide-icon mr-2" aria-hidden="true">
+                          <use href="assets/icons/lucide.svg#download"></use>
+                        </svg>
+                        下载 Excel
                       </a>
                     </div>
                   </div>
@@ -1580,7 +1697,7 @@
                     <span class="text-blue-500 mr-2">#1</span>选课系统登录
                   </h4>
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white max-w-2xl"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white max-w-2xl"
                   >
                     <img
                       loading="lazy"
@@ -1598,7 +1715,7 @@
                     <span class="text-blue-500 mr-2">#2</span>选课界面概览
                   </h4>
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                   >
                     <img
                       loading="lazy"
@@ -1617,11 +1734,17 @@
                   </h4>
 
                   <div class="space-y-3 mb-4">
-                    <div class="bg-red-50 border border-red-200 rounded-lg p-3">
+                    <div
+                      class="danger-callout bg-red-50 border border-red-200 rounded-lg p-3"
+                    >
                       <p
                         class="text-red-700 font-extrabold flex items-center text-lg tracking-wide"
                       >
-                        <i class="fas fa-triangle-exclamation mr-2"></i>
+                        <svg class="lucide-icon mr-2" aria-hidden="true">
+                          <use
+                            href="assets/icons/lucide.svg#triangle-alert"
+                          ></use>
+                        </svg>
                         找不到想要的课？先检查<span
                           class="bg-yellow-200 text-red-800 px-2 py-0.5 rounded font-extrabold"
                           >学年 수강학년</span
@@ -1630,7 +1753,7 @@
                     </div>
 
                     <div
-                      class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-5"
+                      class="information-callout bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-5"
                     >
                       <p class="text-blue-900 font-bold">
                         规则：Excel
@@ -1654,7 +1777,7 @@
                   </div>
 
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white max-w-md"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white max-w-md"
                   >
                     <img
                       loading="lazy"
@@ -1675,7 +1798,7 @@
                     (生死攸关!)
                   </h4>
                   <div
-                    class="bg-red-50 border-2 border-red-500 rounded-xl p-6 mb-4 text-center"
+                    class="danger-callout bg-red-50 border-2 border-red-500 rounded-xl p-6 mb-4 text-center"
                   >
                     <p class="font-bold text-red-900 text-lg mb-4">
                       ⚠️ 双语学生务必确认备注栏 (비고)
@@ -1690,7 +1813,7 @@
                     </div>
                   </div>
                   <div
-                    class="p-2 border border-red-200 rounded-lg shadow-sm bg-white"
+                    class="screenshot-figure p-2 border border-red-200 rounded-lg shadow-sm bg-white"
                   >
                     <img
                       loading="lazy"
@@ -1708,7 +1831,7 @@
                     <span class="text-blue-500 mr-2">#5</span>常见报错速查
                   </h4>
                   <div
-                    class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4 rounded-r-lg text-yellow-900"
+                    class="warning-callout bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4 rounded-r-lg text-yellow-900"
                   >
                     <p class="font-bold">
                       网课申请时不能超过当前学期总学分的30%。例如：这学期一共18分，18*30%=5.4分
@@ -1716,7 +1839,9 @@
                     </p>
                   </div>
                   <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                    <div
+                      class="screenshot-figure bg-red-50 p-4 rounded-lg border border-red-100"
+                    >
                       <h5 class="font-bold text-red-800 mb-2">❌ 时间冲突</h5>
                       <img
                         src="sugang_error_1.png"
@@ -1729,7 +1854,7 @@
                       </p>
                     </div>
                     <div
-                      class="bg-green-50 p-4 rounded-lg border border-green-100"
+                      class="screenshot-figure bg-green-50 p-4 rounded-lg border border-green-100"
                     >
                       <h5 class="font-bold text-green-800 mb-2">✅ 申请成功</h5>
                       <img
@@ -1740,7 +1865,9 @@
                       />
                       <p class="text-xs text-green-700">课程申请成功。</p>
                     </div>
-                    <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                    <div
+                      class="screenshot-figure bg-red-50 p-4 rounded-lg border border-red-100"
+                    >
                       <h5 class="font-bold text-red-800 mb-2">❌ 学分超限</h5>
                       <img
                         src="sugang_credit_limit.png"
@@ -1752,7 +1879,9 @@
                         超过每学期最大选课学分（通常21分）。
                       </p>
                     </div>
-                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                    <div
+                      class="screenshot-figure bg-red-50 p-4 rounded-lg border border-red-200"
+                    >
                       <h5 class="font-bold text-yellow-800 mb-2">
                         ⚠️ 是否重修
                       </h5>
@@ -1767,7 +1896,7 @@
                       </p>
                     </div>
                     <div
-                      class="bg-yellow-50 p-4 rounded-lg border border-yellow-200"
+                      class="screenshot-figure bg-yellow-50 p-4 rounded-lg border border-yellow-200"
                     >
                       <h5 class="font-bold text-yellow-800 mb-2">
                         ⚠️ 禁止重修
@@ -1797,16 +1926,25 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-graduation-cap text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#graduation-cap"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">毕业剩余学分查询</h3>
               </div>
 
-              <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+              <div
+                class="danger-callout bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg"
+              >
                 <h4
                   class="font-bold text-red-900 mb-4 flex items-center text-lg"
                 >
-                  <i class="fas fa-exclamation-circle mr-2"></i>
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#circle-alert"></use>
+                  </svg>
                   非双语学生特别要求
                 </h4>
                 <p class="text-gray-800 font-medium mb-4">
@@ -1866,7 +2004,12 @@
                 <h4
                   class="font-bold text-gray-800 mb-4 text-lg flex items-center"
                 >
-                  <i class="fas fa-images mr-2 text-blue-600"></i>
+                  <svg
+                    class="lucide-icon mr-2 text-blue-600"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#images"></use>
+                  </svg>
                   操作图示（点击可放大）
                 </h4>
 
@@ -1957,13 +2100,18 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-calendar-check text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#calendar-check"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">请假申请指南</h3>
               </div>
               <div class="space-y-4">
                 <div
-                  class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900"
+                  class="warning-callout bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900"
                 >
                   <p class="font-bold">
                     以下两张图为学校允许的假期类型，请需要请假的同学参考
@@ -1971,7 +2119,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                   >
                     <img
                       loading="lazy"
@@ -1986,7 +2134,7 @@
                     </p>
                   </div>
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                   >
                     <img
                       loading="lazy"
@@ -2013,7 +2161,7 @@
                 </div>
                 <div class="space-y-2">
                   <div
-                    class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
+                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                   >
                     <img
                       loading="lazy"
@@ -2032,7 +2180,7 @@
                   <div class="grid md:grid-cols-2 gap-6">
                     <div>
                       <div
-                        class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2"
+                        class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2"
                       >
                         <img
                           loading="lazy"
@@ -2051,7 +2199,7 @@
                     </div>
                     <div>
                       <div
-                        class="p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2"
+                        class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2"
                       >
                         <img
                           loading="lazy"
@@ -2083,12 +2231,17 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-print text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#printer"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">打印各类证明</h3>
               </div>
               <div
-                class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900 mb-4"
+                class="warning-callout bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900 mb-4"
               >
                 <p class="font-bold">
                   在校生可以自己打印学校的各类证明，这里打印的证明均为原件
@@ -2096,7 +2249,7 @@
               </div>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2113,7 +2266,7 @@
                   </p>
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2130,7 +2283,7 @@
                   </p>
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2147,7 +2300,7 @@
                   </p>
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2176,7 +2329,12 @@
                 class="flex items-center mb-6 pb-4 border-b border-gray-100 text-blue-800"
               >
                 <div class="p-3 bg-blue-100 rounded-lg mr-4">
-                  <i class="fas fa-map-marked-alt text-2xl text-blue-700"></i>
+                  <svg
+                    class="lucide-icon text-2xl text-blue-700"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/lucide.svg#map"></use>
+                  </svg>
                 </div>
                 <h3 class="text-2xl font-bold">学校地图 &amp; 校车</h3>
               </div>
@@ -2185,25 +2343,31 @@
                   href="https://www.cju.ac.kr/site/campusmap/sub.jsp"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold"
-                  ><i class="fas fa-map-marked-alt mr-2"></i> 打开学校地图</a
+                  class="external-link-button inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold"
+                  ><svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#map"></use>
+                  </svg>
+                  打开学校地图</a
                 >
                 <a
                   href="https://www.cju.ac.kr/www/contents.do?key=4473&"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold"
-                  ><i class="fas fa-bus-alt mr-2"></i> 打开校车页面</a
+                  class="external-link-button inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold"
+                  ><svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#bus-front"></use>
+                  </svg>
+                  打开校车页面</a
                 >
               </div>
               <div
-                class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-blue-900 mb-4"
+                class="information-callout bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-blue-900 mb-4"
               >
                 <p class="font-bold">根据第一张图进入后可以查看学校地图</p>
               </div>
               <div class="grid md:grid-cols-3 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2215,7 +2379,7 @@
                   />
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2227,7 +2391,7 @@
                   />
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <img
                     loading="lazy"
@@ -2241,14 +2405,17 @@
               </div>
 
               <div
-                class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg mb-8"
+                class="information-callout bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg mb-8"
               >
                 <h4 class="font-bold text-blue-900 mb-4 text-lg">
-                  <i class="fas fa-bus-alt mr-2"></i> 校内校车站点
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#bus-front"></use>
+                  </svg>
+                  校内校车站点
                 </h4>
                 <div class="flex flex-col md:flex-row gap-6 items-center">
                   <div
-                    class="w-full md:w-1/2 p-1 bg-white border border-blue-200 rounded shadow-sm"
+                    class="screenshot-figure w-full md:w-1/2 p-1 bg-white border border-blue-200 rounded shadow-sm"
                   >
                     <img
                       loading="lazy"
@@ -2304,13 +2471,13 @@
                 </div>
               </div>
               <div
-                class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-blue-900 mb-4"
+                class="information-callout bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-blue-900 mb-4"
               >
                 <p class="font-bold">根据下面步骤查看学校校车时间</p>
               </div>
               <div class="grid md:grid-cols-2 gap-4">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p class="text-center text-xs font-bold mb-1">校车时刻表 A</p>
                   <img
@@ -2323,7 +2490,7 @@
                   />
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p class="text-center text-xs font-bold mb-1">校车时刻表 B</p>
                   <img
@@ -2348,10 +2515,12 @@
               <h3
                 class="text-xl font-bold mb-4 text-blue-800 flex items-center pb-4 mb-6 border-b border-gray-100"
               >
-                <i class="fas fa-video mr-3"> </i>网课系统 (HIVE)
+                <svg class="lucide-icon mr-3" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#video"></use></svg
+                >网课系统 (HIVE)
               </h3>
               <div
-                class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4 rounded-r-lg text-yellow-900"
+                class="warning-callout bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4 rounded-r-lg text-yellow-900"
               >
                 <p class="font-bold">
                   网课申请时不能超过当前学期总学分的30%。例如：这学期一共18分，18*30%=5.4分
@@ -2361,13 +2530,15 @@
               <a
                 href="https://hive.cju.ac.kr/"
                 target="_blank"
-                class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 mb-4"
-                ><i class="fas fa-external-link-alt mr-2"></i> 点击进入雪绒花
-                hive.cju.ac.kr</a
+                class="external-link-button inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 mb-4"
+                ><svg class="lucide-icon mr-2" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#external-link"></use>
+                </svg>
+                点击进入雪绒花 hive.cju.ac.kr</a
               >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
                 >
                   <img
                     loading="lazy"
@@ -2384,7 +2555,7 @@
                   </p>
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
                 >
                   <img
                     loading="lazy"
@@ -2401,7 +2572,7 @@
                   </p>
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
                 >
                   <img
                     loading="lazy"
@@ -2418,7 +2589,7 @@
                   </p>
                 </div>
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white flex flex-col h-full"
                 >
                   <img
                     loading="lazy"
@@ -2436,7 +2607,7 @@
                 </div>
               </div>
               <div class="space-y-3 text-sm">
-                <div class="bg-blue-50 p-3 rounded">
+                <div class="information-callout bg-blue-50 p-3 rounded">
                   <strong class="block text-blue-800">录播课程</strong
                   >进度需达100%，点击中间弹出的确认窗口。
                 </div>
@@ -2452,7 +2623,9 @@
               <h3
                 class="text-xl font-bold mb-4 text-blue-800 flex items-center pb-4 mb-6 border-b border-gray-100"
               >
-                <i class="fas fa-chalkboard-teacher mr-3"></i>教授联系方式
+                <svg class="lucide-icon mr-3" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#presentation"></use></svg
+                >教授联系方式
               </h3>
               <!--div class="space-y-3"-->
               <div
@@ -2469,7 +2642,7 @@
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2485,7 +2658,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mt-auto mb-4"
@@ -2502,7 +2675,7 @@
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2533,7 +2706,7 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mt-auto mb-4"
@@ -2549,7 +2722,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2565,7 +2738,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mt-auto mb-4"
@@ -2581,7 +2754,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2609,21 +2782,25 @@
               <h3
                 class="text-xl font-bold mb-4 text-blue-800 flex items-center pb-4 mb-6 border-b border-gray-100"
               >
-                <i class="fas fa-map-marker-alt mr-3"></i>学科办公室位置查询
+                <svg class="lucide-icon mr-3" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#map-pin"></use></svg
+                >学科办公室位置查询
               </h3>
               <div class="mb-6">
                 <a
                   href="https://www.cju.ac.kr/www/contents.do?key=8176&"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold"
-                  ><i class="fas fa-external-link-alt mr-2"></i>
+                  class="external-link-button inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold"
+                  ><svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#external-link"></use>
+                  </svg>
                   打开学科办公室位置查询页面</a
                 >
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2639,7 +2816,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2664,11 +2841,13 @@
             class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 section-card scroll-mt-24 mb-16"
           >
             <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center">
-              <i class="fas fa-book mr-3"></i>图书馆使用
+              <svg class="lucide-icon mr-3" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#book-open"></use></svg
+              >图书馆使用
             </h3>
             <div class="space-y-3 text-sm">
               <div
-                class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-blue-900 mb-4"
+                class="information-callout bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-blue-900 mb-4"
               >
                 <p class="font-bold">
                   APP:<strong> 搜索 "청주대학교 중앙도서관"</strong>
@@ -2677,7 +2856,7 @@
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mb-4"
@@ -2693,7 +2872,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mt-auto mb-4"
@@ -2709,7 +2888,7 @@
                 </div>
               </div>
               <div
-                class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900"
+                class="warning-callout bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900"
               >
                 <p>
                   <strong class="text-yellow-700">账号:</strong> 学号 /
@@ -2719,7 +2898,7 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mt-auto mb-4"
@@ -2735,7 +2914,7 @@
                 </div>
 
                 <div
-                  class="p-1 border border-gray-200 rounded shadow-sm bg-white"
+                  class="screenshot-figure p-1 border border-gray-200 rounded shadow-sm bg-white"
                 >
                   <p
                     class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded mt-auto mb-4"
@@ -2751,7 +2930,7 @@
                 </div>
               </div>
               <div
-                class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900"
+                class="warning-callout bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg text-yellow-900"
               >
                 <p class="text-yellow-500 mt-2 pt-2">
                   用于扫码入馆、借书、预约座位。
@@ -2766,9 +2945,13 @@
             class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 section-card scroll-mt-24 mb-16"
           >
             <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center">
-              <i class="fas fa-id-card mr-3"></i>登陆证办理以及延长
+              <svg class="lucide-icon mr-3" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#id-card"></use></svg
+              >登陆证办理以及延长
             </h3>
-            <div class="bg-red-50 p-3 rounded border border-red-100 text-sm">
+            <div
+              class="danger-callout bg-red-50 p-3 rounded border border-red-100 text-sm"
+            >
               <strong class="text-xl text-red-800 block mb-2"
                 >必备材料：</strong
               >
@@ -2776,18 +2959,21 @@
                 href="downloads/visa-materials-cn.pdf"
                 download="清州大学国际交流处签证材料清单(中文版).pdf"
                 type="application/pdf"
-                class="inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-bold text-xl"
-                ><i class="fas fa-download mr-2"></i> 点击下载查看所需文件
+                class="download-card inline-flex items-center px-8 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-bold text-xl"
+                ><svg class="lucide-icon mr-2" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#download"></use>
+                </svg>
+                点击下载查看所需文件
               </a>
             </div>
           </section>
 
           <section id="activity" class="mb-16 scroll-mt-24">
-            <div
-              class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-md p-6 md:p-8 text-white"
-            >
+            <div class="section-card rounded-xl shadow-md p-6 md:p-8">
               <h3 class="text-2xl font-bold mb-6 flex items-center">
-                <i class="fas fa-users mr-3"></i>留学生活动
+                <svg class="lucide-icon mr-3" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#users"></use></svg
+                >留学生活动
               </h3>
               <div class="grid md:grid-cols-2 gap-6">
                 <div
@@ -2819,14 +3005,18 @@
               <h3
                 class="text-2xl font-bold mb-6 text-blue-800 flex items-center"
               >
-                <i class="fas fa-phone-alt mr-3"></i>联系方式与注意
+                <svg class="lucide-icon mr-3" aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#phone"></use></svg
+                >联系方式与注意
               </h3>
 
               <div
-                class="bg-yellow-50 p-4 rounded-lg mb-8 border-l-4 border-yellow-400"
+                class="warning-callout bg-yellow-50 p-4 rounded-lg mb-8 border-l-4 border-yellow-400"
               >
                 <p class="text-yellow-900 font-bold mb-1">
-                  <i class="fas fa-bell mr-2"></i>重要提醒
+                  <svg class="lucide-icon mr-2" aria-hidden="true">
+                    <use href="assets/icons/lucide.svg#bell"></use></svg
+                  >重要提醒
                 </p>
                 <p class="text-sm text-yellow-800">
                   联系方式变更时，务必在 Portal 系统更新！连续缺勤会被警告。
@@ -2834,25 +3024,40 @@
               </div>
 
               <div class="grid md:grid-cols-2 gap-8">
-                <div class="text-center md:text-left">
+                <div class="contact-card text-center md:text-left">
                   <h4 class="font-bold text-gray-800 text-lg mb-3">
                     国际交流处
                   </h4>
                   <p class="text-gray-600 mb-2">
-                    <i class="fas fa-phone mr-2 text-blue-500"></i>043-229-8810
-                    / 7421
+                    <svg
+                      class="lucide-icon mr-2 text-blue-500"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/lucide.svg#phone"></use></svg
+                    >043-229-8810 / 7421
                   </p>
                   <p class="text-gray-600">
-                    <i class="fab fa-qq mr-2 text-blue-500"></i>QQ: 2217629612
-                    (备注专业姓名)
+                    <svg
+                      class="lucide-icon mr-2 text-blue-500"
+                      aria-hidden="true"
+                    >
+                      <use
+                        href="assets/icons/lucide.svg#message-circle"
+                      ></use></svg
+                    >QQ: 2217629612 (备注专业姓名)
                   </p>
                 </div>
-                <div class="text-center md:text-left">
+                <div class="contact-card text-center md:text-left">
                   <h4 class="font-bold text-gray-800 text-lg mb-3">
                     学事支援组
                   </h4>
                   <p class="text-gray-600">
-                    <i class="fas fa-phone mr-2 text-blue-500"></i>043-229-8812
+                    <svg
+                      class="lucide-icon mr-2 text-blue-500"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/lucide.svg#phone"></use></svg
+                    >043-229-8812
                   </p>
                   <p class="text-xs text-gray-400 mt-2">
                     地址: 大学文化馆1楼 国际交流处 (28503)
@@ -2866,62 +3071,13 @@
           <footer
             class="text-center text-gray-400 text-sm py-8 border-t border-gray-200"
           >
-            <p>&copy; <span id="guide-current-year">2026</span> 清州大学国际学生指南</p>
+            <p>
+              &copy;
+              <span id="guide-current-year">2026</span> 清州大学国际学生指南
+            </p>
             <p class="text-xs mt-1">CJU International Student Guide</p>
           </footer>
         </main>
-
-        <aside class="guide-context-panel" aria-label="本页速览">
-          <div class="guide-context-card">
-            <p class="guide-context-kicker">Page Overview</p>
-            <h2>本页速览</h2>
-            <div class="guide-context-stats" role="group" aria-label="指南统计">
-              <div>
-                <strong>18</strong>
-                <span>文档模块</span>
-              </div>
-              <div>
-                <strong>60+</strong>
-                <span>步骤截图</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="guide-context-card">
-            <h3><i class="fas fa-compass"></i> 常用入口</h3>
-            <nav class="guide-context-links" aria-label="侧栏常用入口">
-              <a href="#portal"
-                ><i class="fas fa-laptop-code"></i><span>Portal 登录</span></a
-              >
-              <a href="#sugang"
-                ><i class="fas fa-mouse-pointer"></i><span>选课指南</span></a
-              >
-              <a href="#cert-print"
-                ><i class="fas fa-print"></i><span>证明打印</span></a
-              >
-              <a href="#campus-map"
-                ><i class="fas fa-map-marked-alt"></i><span>地图校车</span></a
-              >
-            </nav>
-          </div>
-
-          <div class="guide-context-card guide-context-alert">
-            <h3><i class="fas fa-bell"></i> 阅读提示</h3>
-            <p>
-              遇到红色或琥珀色提示时，优先确认账号、邮箱、电话和申请截止时间。
-            </p>
-          </div>
-
-          <div class="guide-context-card">
-            <h3><i class="fas fa-layer-group"></i> 文档分类</h3>
-            <div class="guide-context-tags">
-              <span>入学账号</span>
-              <span>选课学业</span>
-              <span>校园生活</span>
-              <span>证件材料</span>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
 
@@ -2933,7 +3089,9 @@
       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none z-30"
     >
-      <i class="fas fa-arrow-up"></i>
+      <svg class="lucide-icon" aria-hidden="true">
+        <use href="assets/icons/lucide.svg#arrow-up"></use>
+      </svg>
     </button>
 
     <!-- The Modal -->
@@ -2963,6 +3121,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/guide.js?v=20260728-2" defer></script>
+    <script src="assets/js/guide.js?v=20260728-3" defer></script>
   </body>
 </html>
