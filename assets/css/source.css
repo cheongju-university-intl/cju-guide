@@ -2988,6 +2988,77 @@
 .guide-page .leave-submit-shot {
   width: min(100%, 430px);
 }
+
+/* Library: keep screenshots close to their useful reading size and pair them
+   with a clear step label instead of stretching every image to the card width. */
+.guide-page .library-step-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+  margin: 18px 0 24px;
+}
+.guide-page .library-step {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--portal-line);
+  border-radius: 13px;
+  background: #fbfcfe;
+}
+.guide-page .library-step > header {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.guide-page .library-step > header > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: white;
+  border-radius: 8px;
+  background: var(--portal-blue-800);
+  font-size: 12px;
+  font-weight: 850;
+}
+.guide-page .library-step h4 {
+  margin: 0;
+  color: var(--portal-blue-950);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+.guide-page .library-shot {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  background: white !important;
+}
+.guide-page .library-shot .content-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.guide-page .library-shot-login .content-img {
+  max-height: 430px;
+}
+.guide-page .library-shot-course .content-img {
+  max-height: 520px;
+}
+.guide-page .library-shot-attendance .content-img {
+  max-height: 440px;
+}
+.guide-page .library-shot-confirm .content-img {
+  width: min(100%, 760px);
+}
 .guide-page .contact-card {
   padding: 18px !important;
   border: 1px solid var(--portal-line) !important;
@@ -3206,6 +3277,25 @@
   .guide-page .leave-portrait-shot,
   .guide-page .leave-submit-shot {
     width: 100%;
+  }
+  .guide-page .library-step-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin: 16px 0 20px;
+  }
+  .guide-page .library-step {
+    padding: 14px;
+  }
+  .guide-page .library-step > header {
+    margin-bottom: 12px;
+  }
+  .guide-page .library-step h4 {
+    font-size: 16px;
+  }
+  .guide-page .library-shot-login .content-img,
+  .guide-page .library-shot-course .content-img,
+  .guide-page .library-shot-attendance .content-img {
+    max-height: 460px;
   }
   .guide-page .external-link-button,
   .guide-page .download-card {
