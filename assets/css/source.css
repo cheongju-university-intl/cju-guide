@@ -2380,16 +2380,18 @@
 
 .guide-page .guide-content-grid {
   display: block !important;
-  width: auto !important;
+  flex: 1 1 auto;
+  width: calc(100% - 270px) !important;
+  min-width: 0;
   max-width: none !important;
   margin-left: 270px;
   padding: 0 !important;
 }
 .guide-page .guide-content-grid > main {
-  width: min(100%, 920px);
-  max-width: 920px !important;
+  width: 100%;
+  max-width: 1440px !important;
   margin: 0 auto !important;
-  padding: 48px 36px 76px !important;
+  padding: 48px clamp(28px, 3vw, 52px) 76px !important;
 }
 .guide-page .guide-intro {
   display: block;
@@ -2959,6 +2961,7 @@
     display: none !important;
   }
   .guide-page .guide-content-grid {
+    width: 100% !important;
     margin-left: 0;
   }
   .guide-page .guide-content-grid > main {
