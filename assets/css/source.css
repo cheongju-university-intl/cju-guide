@@ -1602,7 +1602,8 @@
 
 .portal-hero {
   position: relative;
-  overflow: hidden;
+  z-index: 10;
+  overflow: visible;
   border-bottom: 1px solid var(--portal-line);
   background: linear-gradient(112deg, #f7faff 0%, #eef5fc 58%, #f8f6ef 100%);
 }
@@ -2734,6 +2735,166 @@
   outline: 3px solid rgba(20, 97, 183, 0.25);
   outline-offset: 3px;
 }
+
+/* Course screening: keep every instruction visually attached to its screenshot. */
+.guide-page .screening-notice {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+  margin: 6px 0 24px;
+  padding: 16px 18px;
+  border: 1px solid #eadfbf;
+  border-left: 4px solid #b58a2d;
+  border-radius: 10px;
+  background: #fcfaf3;
+}
+.guide-page .screening-notice-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: #8c691f;
+  border-radius: 8px;
+  background: #f4ead0;
+}
+.guide-page .screening-notice-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.guide-page .screening-notice h4,
+.guide-page .screening-step h4,
+.guide-page .screening-block h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+.guide-page .screening-notice p,
+.guide-page .screening-step p,
+.guide-page .screening-block p {
+  margin: 0;
+  font-size: 13px;
+}
+.guide-page .screening-steps {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+.guide-page .screening-step,
+.guide-page .screening-block {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  column-gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--portal-line);
+  border-radius: 13px;
+  background: #fbfcfe;
+}
+.guide-page .screening-step-head,
+.guide-page .screening-block-head {
+  display: contents;
+}
+.guide-page .screening-step-head > span,
+.guide-page .screening-block-head > span {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: white;
+  border-radius: 9px;
+  background: var(--portal-blue-800);
+  font-size: 13px;
+  font-weight: 850;
+}
+.guide-page .screening-step-head > div,
+.guide-page .screening-block-head > div {
+  grid-column: 2;
+  min-width: 0;
+  padding: 1px 0 14px;
+}
+.guide-page .screening-step > .screenshot-figure,
+.guide-page .screening-block > :not(.screening-block-head) {
+  grid-column: 2;
+  min-width: 0;
+}
+.guide-page .screening-step > .screenshot-figure {
+  width: 100%;
+  margin: 0;
+  padding: 8px !important;
+  background: white !important;
+}
+.guide-page .screening-step-tall > .screenshot-figure {
+  width: min(100%, 360px);
+}
+.guide-page .screening-step > .screenshot-figure img.content-img {
+  display: block;
+  height: auto;
+}
+.guide-page .screening-block {
+  margin-top: 20px;
+}
+.guide-page .screening-block-head.success > span {
+  background: #35725d;
+}
+.guide-page .screening-block-head.success > span svg {
+  width: 16px;
+  height: 16px;
+}
+.guide-page .screening-excel-grid,
+.guide-page .screening-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.guide-page .screening-excel-grid > .screenshot-figure,
+.guide-page .screening-result-grid > .screenshot-figure {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  flex-direction: column;
+}
+.guide-page .screening-excel-grid > .screenshot-figure:last-child {
+  grid-column: 1 / -1;
+  width: min(100%, 420px);
+}
+.guide-page .screening-excel-grid figcaption,
+.guide-page .screening-result-grid figcaption {
+  order: -1;
+  margin: 0 0 9px;
+  color: #344b66;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+.guide-page .screening-result-grid .content-img {
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+}
+.guide-page .screening-summary {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  color: #405269;
+  border: 1px solid #d9e4ef;
+  border-left: 4px solid #3979b7;
+  border-radius: 9px;
+  background: #f3f8fd;
+}
+.guide-page .screening-summary svg {
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  color: #3979b7;
+}
+.guide-page .screening-summary p {
+  margin: 0;
+  font-size: 13px;
+}
 .guide-page .contact-card {
   padding: 18px !important;
   border: 1px solid var(--portal-line) !important;
@@ -2910,6 +3071,34 @@
   .guide-page .screenshot-figure {
     width: 100%;
     min-width: 0;
+  }
+  .guide-page .screening-notice {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 10px;
+    padding: 14px;
+  }
+  .guide-page .screening-notice-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .guide-page .screening-step,
+  .guide-page .screening-block {
+    grid-template-columns: 34px minmax(0, 1fr);
+    column-gap: 10px;
+    padding: 14px;
+  }
+  .guide-page .screening-step-head > span,
+  .guide-page .screening-block-head > span {
+    width: 30px;
+    height: 30px;
+  }
+  .guide-page .screening-excel-grid,
+  .guide-page .screening-result-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .guide-page .screening-excel-grid > .screenshot-figure:last-child {
+    grid-column: auto;
+    width: 100%;
   }
   .guide-page .external-link-button,
   .guide-page .download-card {
