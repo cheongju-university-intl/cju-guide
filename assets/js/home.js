@@ -132,6 +132,8 @@
   const input = document.getElementById("home-search");
   const results = document.getElementById("home-search-results");
   const year = document.getElementById("current-year");
+  let guideIndex = guides.map((guide) => ({ ...guide, content: "" }));
+  let contentIndexReady = false;
   let matches = [];
   let activeIndex = -1;
 
@@ -139,28 +141,87 @@
   if (!form || !input || !results) return;
 
   const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
-  const searchableText = (guide) =>
-    normalize(
-      `${guide.title} ${guide.description} ${guide.keywords} ${guide.anchor}`,
-    );
+  const collapseWhitespace = (value) => value.replace(/\s+/g, " ").trim();
+
+  function matchingExcerpt(guide, keyword) {
+    const content = guide.content || "";
+    const normalizedContent = normalize(content);
+    const index = normalizedContent.indexOf(keyword);
+    if (index < 0) return guide.description;
+
+    const start = Math.max(0, index - 28);
+    const end = Math.min(content.length, index + keyword.length + 52);
+    const excerpt = content.slice(start, end).trim();
+    return `${start > 0 ? "…" : ""}${excerpt}${end < content.length ? "…" : ""}`;
+  }
+
+  async function loadGuideContentIndex() {
+    try {
+      const response = await fetch("guide.html", { cache: "no-cache" });
+      if (!response.ok)
+        throw new Error(`Guide index request failed: ${response.status}`);
+      const html = await response.text();
+      const documentIndex = new DOMParser().parseFromString(html, "text/html");
+
+      guideIndex = guides.map((guide) => {
+        const section = documentIndex.getElementById(guide.anchor);
+        if (!section) return { ...guide, content: "" };
+        const searchableSection = section.cloneNode(true);
+        searchableSection
+          .querySelectorAll("script, style, .section-tools, button")
+          .forEach((element) => element.remove());
+        return {
+          ...guide,
+          content: collapseWhitespace(searchableSection.textContent || ""),
+        };
+      });
+    } catch (error) {
+      console.warn("Guide content search is using its fallback index.", error);
+    } finally {
+      contentIndexReady = true;
+      if (normalize(input.value)) renderResults(input.value);
+    }
+  }
 
   function rankedMatches(value) {
     const keyword = normalize(value);
     if (!keyword) return [];
-    return guides
+    return guideIndex
       .map((guide) => {
         const title = normalize(guide.title);
-        const text = searchableText(guide);
+        const metadata = normalize(
+          `${guide.title} ${guide.description} ${guide.keywords} ${guide.anchor}`,
+        );
+        const content = normalize(guide.content || "");
         let score = 0;
         if (title === keyword) score += 100;
         if (title.startsWith(keyword)) score += 60;
         if (title.includes(keyword)) score += 40;
-        if (text.includes(keyword)) score += 15;
-        return { guide, score };
+        if (metadata.includes(keyword)) score += 20;
+        if (content.includes(keyword)) score += 15;
+        return {
+          guide: {
+            ...guide,
+            matchDescription: content.includes(keyword)
+              ? matchingExcerpt(guide, keyword)
+              : guide.description,
+          },
+          score,
+        };
       })
       .filter((item) => item.score > 0)
       .sort((a, b) => b.score - a.score)
       .map((item) => item.guide);
+  }
+
+  function createResultIcon(name, className = "") {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    if (className) svg.classList.add(className);
+    svg.setAttribute("aria-hidden", "true");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `assets/icons/lucide.svg#${name}`);
+    svg.append(use);
+    return svg;
   }
 
   function setActive(index) {
@@ -175,7 +236,7 @@
   }
 
   function renderResults(value) {
-    matches = rankedMatches(value).slice(0, 8);
+    matches = rankedMatches(value);
     activeIndex = -1;
     results.replaceChildren();
     if (!normalize(value)) {
@@ -186,13 +247,25 @@
     if (!matches.length) {
       const empty = document.createElement("p");
       empty.className = "portal-search-empty";
-      empty.textContent = "没有找到相关指南，请尝试更短的关键词。";
+      empty.textContent = contentIndexReady
+        ? "没有找到相关指南，请尝试更短的关键词。"
+        : "正在搜索全部指南内容…";
       results.append(empty);
     } else {
       matches.forEach((guide, index) => {
         const link = document.createElement("a");
         link.href = `guide.html#${guide.anchor}`;
-        link.innerHTML = `<svg aria-hidden="true"><use href="assets/icons/lucide.svg#${guide.icon}"></use></svg><span><strong>${guide.title}</strong><small>${guide.description}</small></span><svg class="result-arrow" aria-hidden="true"><use href="assets/icons/lucide.svg#arrow-right"></use></svg>`;
+        const copy = document.createElement("span");
+        const title = document.createElement("strong");
+        const description = document.createElement("small");
+        title.textContent = guide.title;
+        description.textContent = guide.matchDescription || guide.description;
+        copy.append(title, description);
+        link.append(
+          createResultIcon(guide.icon),
+          copy,
+          createResultIcon("arrow-right", "result-arrow"),
+        );
         link.addEventListener("pointerenter", () => setActive(index));
         results.append(link);
       });
@@ -220,7 +293,7 @@
     }
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const keyword = normalize(input.value);
     if (!keyword) {
@@ -228,6 +301,10 @@
       input.setAttribute("aria-expanded", "false");
       input.focus();
       return;
+    }
+    if (!contentIndexReady) {
+      await guideIndexPromise;
+      matches = rankedMatches(input.value);
     }
     const target = matches[activeIndex >= 0 ? activeIndex : 0];
     if (target) window.location.assign(`guide.html#${target.anchor}`);
@@ -240,4 +317,6 @@
       input.setAttribute("aria-expanded", "false");
     }
   });
+
+  const guideIndexPromise = loadGuideContentIndex();
 })();
