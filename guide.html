@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#073b7a" />
     <title>清州大学国际学生指南</title>
-    <link href="assets/css/site.css?v=20260729-3" rel="stylesheet" />
+    <link href="assets/css/site.css?v=20260729-4" rel="stylesheet" />
   </head>
   <body class="guide-page bg-gray-50 text-gray-800">
     <!-- Mobile Navigation Bar -->
@@ -2092,7 +2092,7 @@
           </section>
 
           <!-- Leave Request -->
-          <section id="leave-request" class="mb-16 scroll-mt-24">
+          <section id="leave-request" class="leave-guide mb-16 scroll-mt-24">
             <div
               class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 section-card"
             >
@@ -2117,7 +2117,9 @@
                     以下两张图为学校允许的假期类型，请需要请假的同学参考
                   </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                  class="leave-types-grid grid grid-cols-1 md:grid-cols-2 gap-8"
+                >
                   <div
                     class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
                   >
@@ -2149,39 +2151,40 @@
                     </p>
                   </div>
                 </div>
-                <div
-                  class="flex items-center gap-3 py-2 my-2 text-sm text-gray-500"
-                >
-                  <div class="h-px flex-1 bg-gray-200"></div>
-                  <span
-                    class="px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-600 font-medium"
-                    >下面是申请方法</span
-                  >
-                  <div class="h-px flex-1 bg-gray-200"></div>
+                <div class="leave-method-heading">
+                  <span>申请步骤</span>
+                  <h4>下面是申请方法</h4>
                 </div>
-                <div class="space-y-2">
-                  <div
-                    class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white"
-                  >
-                    <img
-                      loading="lazy"
-                      decoding="async"
-                      src="leave_request_3.png"
-                      alt="假期类型说明"
-                      class="content-img"
-                      onclick="openModal(this)"
-                    />
-                  </div>
-                  <p
-                    class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded"
-                  >
-                    第一步：点击上图按钮
-                  </p>
-                  <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <div
-                        class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2"
-                      >
+                <div class="leave-application-steps">
+                  <article class="leave-application-step leave-step-primary">
+                    <header>
+                      <span>1</span>
+                      <div>
+                        <h5>进入请假申请</h5>
+                        <p>第一步：点击下图按钮</p>
+                      </div>
+                    </header>
+                    <figure class="screenshot-figure leave-portrait-shot">
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        src="leave_request_3.png"
+                        alt="假期类型说明"
+                        class="content-img"
+                        onclick="openModal(this)"
+                      />
+                    </figure>
+                  </article>
+                  <div class="leave-application-grid">
+                    <article class="leave-application-step">
+                      <header>
+                        <span>2</span>
+                        <div>
+                          <h5>填写申请信息</h5>
+                          <p>第二步：选择理由和日期，上传附件</p>
+                        </div>
+                      </header>
+                      <figure class="screenshot-figure">
                         <img
                           loading="lazy"
                           decoding="async"
@@ -2190,17 +2193,17 @@
                           class="content-img"
                           onclick="openModal(this)"
                         />
-                      </div>
-                      <p
-                        class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded"
-                      >
-                        第二步：选择理由和日期，上传附件
-                      </p>
-                    </div>
-                    <div>
-                      <div
-                        class="screenshot-figure p-2 border border-gray-200 rounded-lg shadow-sm bg-white mb-2"
-                      >
+                      </figure>
+                    </article>
+                    <article class="leave-application-step">
+                      <header>
+                        <span>3</span>
+                        <div>
+                          <h5>提交申请</h5>
+                          <p>第三步：确认无误后点击申请</p>
+                        </div>
+                      </header>
+                      <figure class="screenshot-figure leave-submit-shot">
                         <img
                           loading="lazy"
                           decoding="async"
@@ -2209,13 +2212,8 @@
                           class="content-img"
                           onclick="openModal(this)"
                         />
-                      </div>
-                      <p
-                        class="text-center text-sm text-gray-600 bg-gray-50 p-2 rounded"
-                      >
-                        第三步：确认无误后点击申请
-                      </p>
-                    </div>
+                      </figure>
+                    </article>
                   </div>
                 </div>
               </div>
