@@ -2897,6 +2897,97 @@
   margin: 0;
   font-size: 13px;
 }
+
+/* Leave request: preserve screenshot scale and make the application steps explicit. */
+.guide-page .leave-types-grid {
+  grid-template-columns: repeat(2, minmax(0, 520px));
+  align-items: start;
+  justify-content: start;
+}
+.guide-page .leave-method-heading {
+  margin: 34px 0 18px;
+  padding-top: 26px;
+  border-top: 1px solid var(--portal-line);
+}
+.guide-page .leave-method-heading > span {
+  color: var(--portal-blue-700);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.guide-page .leave-method-heading h4 {
+  margin: 5px 0 0;
+  color: var(--portal-blue-950) !important;
+  font-size: 22px;
+  font-weight: 850;
+  line-height: 1.35;
+}
+.guide-page .leave-application-steps {
+  display: grid;
+  gap: 18px;
+}
+.guide-page .leave-application-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.guide-page .leave-application-step {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--portal-line);
+  border-radius: 13px;
+  background: #fbfcfe;
+}
+.guide-page .leave-application-step > header {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.guide-page .leave-application-step > header > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: white;
+  border-radius: 8px;
+  background: var(--portal-blue-800);
+  font-size: 12px;
+  font-weight: 850;
+}
+.guide-page .leave-application-step h5 {
+  margin: 0;
+  color: var(--portal-blue-950);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.guide-page .leave-application-step header p {
+  margin: 3px 0 0;
+  color: var(--portal-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.guide-page .leave-application-step > .screenshot-figure {
+  margin: 0;
+  background: white !important;
+}
+.guide-page .leave-step-primary {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(280px, 390px);
+  align-items: center;
+  gap: 24px;
+}
+.guide-page .leave-step-primary > header {
+  margin-bottom: 0;
+}
+.guide-page .leave-portrait-shot {
+  width: min(100%, 390px);
+}
+.guide-page .leave-submit-shot {
+  width: min(100%, 430px);
+}
 .guide-page .contact-card {
   padding: 18px !important;
   border: 1px solid var(--portal-line) !important;
@@ -3101,6 +3192,19 @@
   }
   .guide-page .screening-excel-grid > .screenshot-figure:last-child {
     grid-column: auto;
+    width: 100%;
+  }
+  .guide-page .leave-types-grid,
+  .guide-page .leave-application-grid,
+  .guide-page .leave-step-primary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .guide-page .leave-step-primary {
+    align-items: stretch;
+    gap: 14px;
+  }
+  .guide-page .leave-portrait-shot,
+  .guide-page .leave-submit-shot {
     width: 100%;
   }
   .guide-page .external-link-button,
