@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="guide-scroll-controlled">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#073b7a" />
     <title>清州大学国际学生指南</title>
-    <link href="assets/css/site.css?v=20260729-5" rel="stylesheet" />
+    <link href="assets/css/site.css?v=20260730-1" rel="stylesheet" />
   </head>
   <body class="guide-page bg-gray-50 text-gray-800">
     <!-- Mobile Navigation Bar -->
@@ -34,7 +34,6 @@
       <div
         id="mobile-menu-overlay"
         class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-        onclick="toggleMenu()"
       ></div>
       <!-- Mobile Menu Content -->
       <div
@@ -46,8 +45,8 @@
         >
           <span class="font-bold">菜单导航</span>
           <button
+            id="mobile-menu-close"
             type="button"
-            onclick="toggleMenu()"
             aria-label="关闭菜单"
             class="text-white"
           >
@@ -60,7 +59,6 @@
           <a
             href="index.html"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#house"></use></svg
             >返回首页导航</a
@@ -68,13 +66,11 @@
           <a
             href="#portal"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >综合情报系统</a
           >
           <a
             href="#password-recovery"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#key-round"></use></svg
             >找回密码</a
@@ -82,13 +78,11 @@
           <a
             href="#schedule"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >主要学事日程</a
           >
           <a
             href="#personal-info"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#user-round-pen"></use></svg
             >个人信息修改</a
@@ -96,7 +90,6 @@
           <a
             href="#course-schedule"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#table-properties"></use></svg
             >课程表查询</a
@@ -104,7 +97,6 @@
           <a
             href="#course-screening"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#list-filter"></use></svg
             >选课前筛选</a
@@ -112,13 +104,11 @@
           <a
             href="#sugang"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >选课指南</a
           >
           <a
             href="#grad-credit"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#graduation-cap"></use></svg
             >毕业学分查询</a
@@ -126,7 +116,6 @@
           <a
             href="#leave-request"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#calendar-check"></use></svg
             >请假申请</a
@@ -134,7 +123,6 @@
           <a
             href="#cert-print"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#printer"></use></svg
             >打印证明</a
@@ -142,7 +130,6 @@
           <a
             href="#campus-map"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             ><svg class="lucide-icon mr-2 w-5" aria-hidden="true">
               <use href="assets/icons/lucide.svg#map"></use></svg
             >学校地图</a
@@ -150,43 +137,34 @@
           <a
             href="#online-class"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >网课与直播课</a
           >
           <a
             href="#professor"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >教授联系方式</a
           >
           <a
             href="#department-office"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >学科办公室位置查询</a
           >
           <a
             href="#library"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >图书馆使用</a
           >
           <a
             href="#arc"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >登陆证办理以及延长</a
           >
           <a
             href="#activity"
             class="block px-4 py-3 border-b border-blue-800 hover:bg-blue-800"
-            onclick="toggleMenu()"
             >留学生活动</a
           >
-          <a
-            href="#contact"
-            class="block px-4 py-3 hover:bg-blue-800"
-            onclick="toggleMenu()"
+          <a href="#contact" class="block px-4 py-3 hover:bg-blue-800"
             >联系方式</a
           >
         </div>
@@ -3088,7 +3066,6 @@
       id="back-to-top"
       type="button"
       aria-label="回到顶部"
-      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none z-30"
     >
       <svg class="lucide-icon" aria-hidden="true">
@@ -3123,6 +3100,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/guide.js?v=20260728-3" defer></script>
+    <script src="assets/js/guide.js?v=20260730-1" defer></script>
   </body>
 </html>
