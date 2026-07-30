@@ -1,6 +1,7 @@
 (() => {
   const iconSprite = "assets/icons/lucide.svg";
   const menuButton = document.getElementById("mobile-menu-btn");
+  const menuCloseButton = document.getElementById("mobile-menu-close");
   const menu = document.getElementById("mobile-menu");
   const overlay = document.getElementById("mobile-menu-overlay");
   const backToTopButton = document.getElementById("back-to-top");
@@ -24,6 +25,13 @@
   let lastFocusedElement = null;
   let toastTimer = 0;
   let chapterNavigator = null;
+  let activeNavigationIndex = -1;
+  let backToTopVisible = false;
+  let scrollUpdateFrame = 0;
+  let scrollAnimationFrame = 0;
+  let offsetRefreshFrame = 0;
+  let sectionOffsets = [];
+  let stopAnchorPreservation = () => {};
 
   function makeIcon(name, className = "") {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -78,11 +86,11 @@
     menu.classList.add("translate-x-full");
     menu.setAttribute("aria-hidden", "true");
     menuButton?.setAttribute("aria-expanded", "false");
+    setScrollLock(modal?.classList.contains("is-open"));
     window.setTimeout(
       () => {
         menu.classList.add("hidden");
         overlay.classList.add("hidden");
-        setScrollLock(modal?.classList.contains("is-open"));
         if (restoreFocus) lastFocusedElement?.focus();
       },
       reduceMotion ? 0 : 180,
@@ -169,11 +177,22 @@
     guideSearchResults.classList.add("show");
   }
 
+  function refreshSectionOffsets() {
+    sectionOffsets = guideSections.map((section) => section.offsetTop);
+  }
+  function scheduleOffsetRefresh() {
+    if (offsetRefreshFrame) return;
+    offsetRefreshFrame = requestAnimationFrame(() => {
+      offsetRefreshFrame = 0;
+      refreshSectionOffsets();
+      scheduleActiveNavigationUpdate();
+    });
+  }
   function activeSectionIndex() {
-    const marker = window.scrollY + (window.innerWidth < 1024 ? 112 : 96);
+    const marker = window.scrollY + (window.innerWidth < 1024 ? 152 : 96);
     let index = 0;
-    guideSections.forEach((section, itemIndex) => {
-      if (section.offsetTop <= marker) index = itemIndex;
+    sectionOffsets.forEach((offset, itemIndex) => {
+      if (offset <= marker) index = itemIndex;
     });
     return index;
   }
@@ -191,6 +210,13 @@
     const index = activeSectionIndex();
     const current = guideSections[index];
     if (!current) return;
+    const shouldShowBackToTop = window.scrollY > 500;
+    if (shouldShowBackToTop !== backToTopVisible) {
+      backToTopVisible = shouldShowBackToTop;
+      backToTopButton?.classList.toggle("show", shouldShowBackToTop);
+    }
+    if (index === activeNavigationIndex) return;
+    activeNavigationIndex = index;
     navLinks.forEach((link) => {
       const active = link.getAttribute("href") === `#${current.id}`;
       link.classList.toggle("active", active);
@@ -218,7 +244,43 @@
       chapterNavigator.querySelector(".chapter-position").textContent =
         `${index + 1} / ${guideSections.length}`;
     }
-    backToTopButton?.classList.toggle("show", window.scrollY > 500);
+  }
+  function scheduleActiveNavigationUpdate() {
+    if (scrollUpdateFrame) return;
+    scrollUpdateFrame = requestAnimationFrame(() => {
+      scrollUpdateFrame = 0;
+      updateActiveNavigation();
+    });
+  }
+  function stopScrollAnimation() {
+    if (!scrollAnimationFrame) return;
+    cancelAnimationFrame(scrollAnimationFrame);
+    scrollAnimationFrame = 0;
+  }
+  function animateScrollTo(top) {
+    stopScrollAnimation();
+    const start = window.scrollY;
+    const distance = top - start;
+    if (reduceMotion || Math.abs(distance) < 2) {
+      window.scrollTo({ top, behavior: "auto" });
+      return;
+    }
+    const duration = Math.min(
+      520,
+      Math.max(280, 280 + Math.abs(distance) / 45),
+    );
+    const startedAt = performance.now();
+    const step = (now) => {
+      const progress = Math.min(1, (now - startedAt) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      window.scrollTo({
+        top: start + distance * eased,
+        behavior: "auto",
+      });
+      if (progress < 1) scrollAnimationFrame = requestAnimationFrame(step);
+      else scrollAnimationFrame = 0;
+    };
+    scrollAnimationFrame = requestAnimationFrame(step);
   }
   function scrollToHashTarget(behavior = scrollBehavior) {
     if (!window.location.hash) return;
@@ -227,14 +289,16 @@
     );
     if (!target) return;
     const offset = window.innerWidth < 1024 ? 150 : 94;
-    window.scrollTo({
-      top: Math.max(
-        0,
-        target.getBoundingClientRect().top + window.scrollY - offset,
-      ),
-      behavior,
-    });
-    updateActiveNavigation();
+    const top = Math.max(
+      0,
+      target.getBoundingClientRect().top + window.scrollY - offset,
+    );
+    if (behavior === "smooth") animateScrollTo(top);
+    else {
+      stopScrollAnimation();
+      window.scrollTo({ top, behavior: "auto" });
+    }
+    scheduleActiveNavigationUpdate();
   }
   async function copySectionLink(section) {
     const url = new URL(window.location.href);
@@ -272,6 +336,7 @@
     const target = document.getElementById(targetId);
     if (!target) return;
     event.preventDefault();
+    stopAnchorPreservation();
     history.pushState(null, "", `#${targetId}`);
     closeMenu({ restoreFocus: false });
     renderSearchResults("");
@@ -282,10 +347,12 @@
   enhanceStaticComponents();
   createChapterNavigator();
   addSectionTools();
+  refreshSectionOffsets();
   menuButton?.setAttribute("aria-expanded", "false");
   menuButton?.setAttribute("aria-controls", "mobile-menu");
   menu?.setAttribute("aria-hidden", "true");
   menuButton?.addEventListener("click", window.toggleMenu);
+  menuCloseButton?.addEventListener("click", () => closeMenu());
   overlay?.addEventListener("click", () => closeMenu());
   modalClose?.setAttribute("tabindex", "-1");
   modalClose?.addEventListener("click", (event) => {
@@ -297,7 +364,9 @@
   });
   modalImage?.addEventListener("click", (event) => event.stopPropagation());
   backToTopButton?.addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: scrollBehavior }),
+    scrollBehavior === "smooth"
+      ? animateScrollTo(0)
+      : window.scrollTo({ top: 0, behavior: "auto" }),
   );
   guideSearch?.addEventListener("input", () =>
     renderSearchResults(guideSearch.value),
@@ -310,37 +379,47 @@
       renderSearchResults("");
     }
   });
-  window.addEventListener("scroll", updateActiveNavigation, { passive: true });
+  window.addEventListener("scroll", scheduleActiveNavigationUpdate, {
+    passive: true,
+  });
+  window.addEventListener("resize", scheduleOffsetRefresh, { passive: true });
+  window.addEventListener("wheel", stopScrollAnimation, { passive: true });
+  window.addEventListener("touchstart", stopScrollAnimation, { passive: true });
   window.addEventListener("hashchange", () =>
     requestAnimationFrame(() => scrollToHashTarget()),
   );
   window.addEventListener("load", () => {
+    scheduleOffsetRefresh();
     if (!window.location.hash) return;
     scrollToHashTarget("auto");
     window.setTimeout(() => scrollToHashTarget("auto"), 220);
     if ("ResizeObserver" in window) {
       let preserveAnchor = true;
-      const stopPreserving = () => {
+      let observer;
+      stopAnchorPreservation = () => {
         preserveAnchor = false;
+        observer?.disconnect();
       };
-      const observer = new ResizeObserver(() => {
+      observer = new ResizeObserver(() => {
         if (preserveAnchor)
           requestAnimationFrame(() => scrollToHashTarget("auto"));
       });
       observer.observe(document.querySelector("main"));
-      window.addEventListener("wheel", stopPreserving, {
+      window.addEventListener("wheel", stopAnchorPreservation, {
         once: true,
         passive: true,
       });
-      window.addEventListener("touchstart", stopPreserving, {
+      window.addEventListener("touchstart", stopAnchorPreservation, {
         once: true,
         passive: true,
       });
-      window.setTimeout(() => {
-        preserveAnchor = false;
-        observer.disconnect();
-      }, 3500);
+      window.setTimeout(stopAnchorPreservation, 3500);
     }
   });
+  if ("ResizeObserver" in window) {
+    const layoutObserver = new ResizeObserver(scheduleOffsetRefresh);
+    const main = document.querySelector("main");
+    if (main) layoutObserver.observe(main);
+  }
   updateActiveNavigation();
 })();
