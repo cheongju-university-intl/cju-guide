@@ -1,11 +1,22 @@
 /* Small, isolated refinements. Kept outside the generated Tailwind bundle. */
-.portal-home-main {
-  display: flex;
-  flex-direction: column;
+.portal-nav-links .portal-nav-qa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 11px;
+  border: 1px solid #bed2ec;
+  border-radius: 8px;
+  color: #0b4f92;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
-.portal-home-main > .portal-faq-section {
-  order: -1;
+.portal-nav-links .portal-nav-qa:hover {
+  border-color: #0b4f92;
+  background: #edf5ff;
+  color: #073b7a;
 }
 
 .guide-page .activity-guide {
