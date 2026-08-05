@@ -88,6 +88,125 @@
   }
 }
 
+/* 留学生活动 */
+.guide-page .activity-guide {
+  border: 1px solid #dbe5f1;
+  box-shadow: 0 12px 30px rgba(20, 56, 94, 0.07);
+}
+.guide-page .activity-guide-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #dbe5f1;
+}
+.guide-page .activity-guide-heading .guide-eyebrow {
+  margin-bottom: 6px;
+}
+.guide-page .activity-guide-heading h3 {
+  margin: 0;
+  color: var(--portal-blue-950);
+}
+.guide-page .activity-guide-heading > p {
+  max-width: 290px;
+  margin: 0;
+  color: #63748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.guide-page .activity-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.guide-page .activity-guide-card {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 14px;
+  min-height: 148px;
+  padding: 20px;
+  border: 1px solid #dbe5f1;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f8fbff 0%, #fff 100%);
+}
+.guide-page .activity-guide-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 12px;
+  background: #e8f1ff;
+  color: var(--portal-blue-700);
+}
+.guide-page .activity-guide-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.guide-page .activity-guide-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #69809f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+.guide-page .activity-guide-card h4 {
+  margin: 0;
+  color: var(--portal-blue-950);
+  font-size: 18px;
+  line-height: 1.45;
+}
+.guide-page .activity-guide-card h4 small {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+}
+.guide-page .activity-guide-card p {
+  margin: 9px 0 0;
+  color: #5d6c80;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.guide-page .activity-guide-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 13px 15px;
+  border: 1px solid #d9e7f8;
+  border-radius: 10px;
+  background: #f4f8fd;
+  color: #3f5877;
+}
+.guide-page .activity-guide-note svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: var(--portal-blue-700);
+}
+.guide-page .activity-guide-note p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+@media (max-width: 760px) {
+  .guide-page .activity-guide-heading {
+    display: block;
+  }
+  .guide-page .activity-guide-heading > p {
+    margin-top: 10px;
+  }
+  .guide-page .activity-guide-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .guide-page .activity-guide-card {
+    min-height: 0;
+  }
+}
+
 /* Shared brand mark */
 .service-brand-mark,
 .guide-rail-logo {
