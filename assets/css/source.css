@@ -1944,6 +1944,13 @@
 .portal-faq-panel[hidden] {
   display: none !important;
 }
+.portal-home-main {
+  display: flex;
+  flex-direction: column;
+}
+.portal-home-main > .portal-faq-section {
+  order: -1;
+}
 .portal-faq-card {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr) 17px;
