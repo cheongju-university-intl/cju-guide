@@ -64,7 +64,7 @@
       id: "certificate-printing",
       title: "怎么打印在学证明、成绩证明等文件？",
       description: "查看各种学校证明的打印方法",
-      href: "guide.html#cert-print",
+      href: "faq.html#certificate-printing",
       icon: "printer",
       keywords: "证明 在学证明 成绩证明 打印 宿舍入住证明",
     },

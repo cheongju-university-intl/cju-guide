@@ -1938,7 +1938,7 @@
 }
 .portal-faq-panel {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 .portal-faq-panel[hidden] {
@@ -2087,8 +2087,28 @@
   font-size: 12px;
   line-height: 1.4;
 }
+.faq-directory nav {
+  margin-top: 17px;
+}
+.faq-directory nav:first-of-type {
+  margin-top: 14px;
+}
+.faq-directory nav span {
+  display: block;
+  color: var(--portal-blue-950);
+  font-size: 12px;
+  font-weight: 800;
+}
+.faq-directory nav a {
+  margin-top: 8px;
+}
 .faq-directory a:hover {
   color: var(--portal-blue-700);
+}
+@media (min-width: 1280px) {
+  .portal-faq-panel {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 .faq-phase {
   scroll-margin-top: 108px;
