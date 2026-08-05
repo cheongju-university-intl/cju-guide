@@ -1705,24 +1705,6 @@
 .portal-nav-links a:hover {
   color: var(--portal-blue-700);
 }
-.portal-nav-links .portal-nav-qa {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 32px;
-  padding: 0 11px;
-  border: 1px solid #bed2ec;
-  border-radius: 8px;
-  color: #0b4f92;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-.portal-nav-links .portal-nav-qa:hover {
-  border-color: #0b4f92;
-  background: #edf5ff;
-  color: #073b7a;
-}
 .portal-nav-action {
   display: inline-flex;
   min-height: 42px;
