@@ -128,11 +128,24 @@
     },
   ];
 
+  const faqConfig = window.studentFaqConfig || {
+    studentFaqItems: [],
+  };
+  const faqItems = faqConfig.studentFaqItems || [];
+
   const form = document.querySelector(".portal-search");
   const input = document.getElementById("home-search");
   const results = document.getElementById("home-search-results");
   const year = document.getElementById("current-year");
-  let guideIndex = guides.map((guide) => ({ ...guide, content: "" }));
+  let guideIndex = [
+    ...guides.map((guide) => ({
+      ...guide,
+      href: `guide.html#${guide.anchor}`,
+      type: "guide",
+      content: "",
+    })),
+    ...faqItems.map((item) => ({ ...item, type: "faq", content: "" })),
+  ];
   let contentIndexReady = false;
   let matches = [];
   let activeIndex = -1;
@@ -163,7 +176,8 @@
       const html = await response.text();
       const documentIndex = new DOMParser().parseFromString(html, "text/html");
 
-      guideIndex = guides.map((guide) => {
+      guideIndex = guideIndex.map((guide) => {
+        if (guide.type !== "guide") return guide;
         const section = documentIndex.getElementById(guide.anchor);
         if (!section) return { ...guide, content: "" };
         const searchableSection = section.cloneNode(true);
@@ -224,6 +238,87 @@
     return svg;
   }
 
+  function renderFaqCards() {
+    const panels = document.querySelectorAll("[data-faq-panel]");
+    panels.forEach((panel) => {
+      const phase = panel.dataset.faqPanel;
+      const items = faqItems.filter((item) => item.phase === phase);
+      panel.replaceChildren();
+      items.forEach((item) => {
+        const link = document.createElement("a");
+        link.className = "portal-faq-card";
+        link.href = item.href;
+        const icon = document.createElement("span");
+        icon.className = "portal-faq-icon";
+        icon.append(createResultIcon(item.icon));
+        const copy = document.createElement("span");
+        const title = document.createElement("strong");
+        const description = document.createElement("small");
+        title.textContent = item.title;
+        description.textContent = item.description;
+        copy.append(title, description);
+        link.append(
+          icon,
+          copy,
+          createResultIcon("arrow-right", "portal-arrow"),
+        );
+        panel.append(link);
+      });
+    });
+  }
+
+  function setupFaqTabs() {
+    const tabs = Array.from(document.querySelectorAll("[data-faq-phase]"));
+    const panels = Array.from(document.querySelectorAll("[data-faq-panel]"));
+    if (!tabs.length || !panels.length) return;
+    const activate = (phase, focus = false) => {
+      tabs.forEach((tab) => {
+        const active = tab.dataset.faqPhase === phase;
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+        if (active && focus) tab.focus();
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.faqPanel !== phase;
+      });
+    };
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activate(tab.dataset.faqPhase));
+      tab.addEventListener("keydown", (event) => {
+        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
+          return;
+        event.preventDefault();
+        const next =
+          event.key === "Home"
+            ? 0
+            : event.key === "End"
+              ? tabs.length - 1
+              : (index + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) %
+                tabs.length;
+        activate(tabs[next].dataset.faqPhase, true);
+      });
+    });
+  }
+
+  function setupMobileNavigation() {
+    const button = document.querySelector(".portal-menu-button");
+    const menu = document.getElementById("portal-mobile-nav");
+    if (!button || !menu) return;
+    const close = () => {
+      menu.hidden = true;
+      button.setAttribute("aria-expanded", "false");
+    };
+    button.addEventListener("click", () => {
+      const open = menu.hidden;
+      menu.hidden = !open;
+      button.setAttribute("aria-expanded", String(open));
+    });
+    menu.addEventListener("click", close);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    });
+  }
+
   function setActive(index) {
     const options = Array.from(results.querySelectorAll("a"));
     activeIndex = options.length
@@ -254,13 +349,16 @@
     } else {
       matches.forEach((guide, index) => {
         const link = document.createElement("a");
-        link.href = `guide.html#${guide.anchor}`;
+        link.href = guide.href;
         const copy = document.createElement("span");
         const title = document.createElement("strong");
         const description = document.createElement("small");
         title.textContent = guide.title;
         description.textContent = guide.matchDescription || guide.description;
-        copy.append(title, description);
+        const type = document.createElement("em");
+        type.className = `portal-result-type ${guide.type}`;
+        type.textContent = guide.type === "faq" ? "Q&A" : "指南";
+        copy.append(title, description, type);
         link.append(
           createResultIcon(guide.icon),
           copy,
@@ -276,6 +374,9 @@
 
   input.setAttribute("aria-expanded", "false");
   input.setAttribute("aria-controls", "home-search-results");
+  renderFaqCards();
+  setupFaqTabs();
+  setupMobileNavigation();
   input.addEventListener("input", () => renderResults(input.value));
   input.addEventListener("keydown", (event) => {
     if (event.key === "ArrowDown" && matches.length) {
@@ -307,7 +408,7 @@
       matches = rankedMatches(input.value);
     }
     const target = matches[activeIndex >= 0 ? activeIndex : 0];
-    if (target) window.location.assign(`guide.html#${target.anchor}`);
+    if (target) window.location.assign(target.href);
     else renderResults(input.value);
   });
 
