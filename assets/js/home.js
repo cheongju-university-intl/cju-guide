@@ -106,6 +106,13 @@
       icon: "book-open",
     },
     {
+      title: "法定教育指南",
+      description: "年度必修教育与 QQ 群通知",
+      keywords: "法定教育 教育部 必修课程 QQ 群 年度课程",
+      anchor: "legal-education",
+      icon: "badge-check",
+    },
+    {
       title: "登陆证办理以及延长",
       description: "材料清单与 PDF 下载",
       keywords: "登陆证 外国人登录证 arc 签证 延长 材料",
