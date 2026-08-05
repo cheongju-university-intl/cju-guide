@@ -1705,6 +1705,20 @@
 .portal-nav-links a:hover {
   color: var(--portal-blue-700);
 }
+.guide-page .course-name-highlight {
+  display: inline-block;
+  margin: 2px 3px;
+  padding: 2px 8px;
+  color: #0b4f92 !important;
+  border: 1px solid #9fc2e4;
+  border-radius: 7px;
+  background: #eef6ff;
+  font-size: 0.94em;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  white-space: nowrap;
+}
 .portal-nav-action {
   display: inline-flex;
   min-height: 42px;
