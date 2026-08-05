@@ -168,17 +168,36 @@
     return `${start > 0 ? "…" : ""}${excerpt}${end < content.length ? "…" : ""}`;
   }
 
+  async function loadPageIndex(url, label) {
+    try {
+      const response = await fetch(url, { cache: "no-cache" });
+      if (!response.ok)
+        throw new Error(`${label} index request failed: ${response.status}`);
+      return new DOMParser().parseFromString(
+        await response.text(),
+        "text/html",
+      );
+    } catch (error) {
+      console.warn(
+        `${label} content search is using its fallback index.`,
+        error,
+      );
+      return null;
+    }
+  }
+
   async function loadGuideContentIndex() {
     try {
-      const response = await fetch("guide.html", { cache: "no-cache" });
-      if (!response.ok)
-        throw new Error(`Guide index request failed: ${response.status}`);
-      const html = await response.text();
-      const documentIndex = new DOMParser().parseFromString(html, "text/html");
+      const [guideDocument, faqDocument] = await Promise.all([
+        loadPageIndex("guide.html", "Guide"),
+        loadPageIndex("faq.html", "FAQ"),
+      ]);
 
       guideIndex = guideIndex.map((guide) => {
-        if (guide.type !== "guide") return guide;
-        const section = documentIndex.getElementById(guide.anchor);
+        const documentIndex =
+          guide.type === "guide" ? guideDocument : faqDocument;
+        const targetId = guide.type === "guide" ? guide.anchor : guide.id;
+        const section = documentIndex?.getElementById(targetId);
         if (!section) return { ...guide, content: "" };
         const searchableSection = section.cloneNode(true);
         searchableSection
@@ -189,8 +208,6 @@
           content: collapseWhitespace(searchableSection.textContent || ""),
         };
       });
-    } catch (error) {
-      console.warn("Guide content search is using its fallback index.", error);
     } finally {
       contentIndexReady = true;
       if (normalize(input.value)) renderResults(input.value);
@@ -204,7 +221,7 @@
       .map((guide) => {
         const title = normalize(guide.title);
         const metadata = normalize(
-          `${guide.title} ${guide.description} ${guide.keywords} ${guide.anchor}`,
+          `${guide.title} ${guide.description} ${guide.keywords} ${guide.anchor || guide.id || ""}`,
         );
         const content = normalize(guide.content || "");
         let score = 0;
