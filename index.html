@@ -9,7 +9,7 @@
       name="description"
       content="清州大学国际学生常用系统、选课学业、校园生活及签证证件办事指南。"
     />
-    <link href="assets/css/site.css?v=20260729-1" rel="stylesheet" />
+    <link href="assets/css/site.css?v=20260805-1" rel="stylesheet" />
   </head>
   <body class="portal-page">
     <header class="portal-header">
@@ -28,6 +28,8 @@
           >
         </a>
         <nav class="portal-nav-links" aria-label="主导航">
+          <a href="index.html" aria-current="page">首页</a>
+          <a href="faq.html">常见问题</a>
           <a href="#popular">常用办事</a>
           <a href="#all-guides">全部指南</a>
           <a href="#notices">重要通知</a>
@@ -39,7 +41,29 @@
             <use href="assets/icons/lucide.svg#book-open"></use>
           </svg>
         </a>
+        <button
+          class="portal-menu-button"
+          type="button"
+          aria-label="打开导航菜单"
+          aria-expanded="false"
+          aria-controls="portal-mobile-nav"
+        >
+          <svg aria-hidden="true">
+            <use href="assets/icons/lucide.svg#menu"></use>
+          </svg>
+        </button>
       </div>
+      <nav
+        id="portal-mobile-nav"
+        class="portal-mobile-nav"
+        aria-label="手机端主导航"
+        hidden
+      >
+        <a href="index.html">首页</a><a href="faq.html">常见问题</a
+        ><a href="#popular">高频办事</a><a href="#all-guides">全部指南</a
+        ><a href="#notices">重要通知</a><a href="guide.html#contact">联系我们</a
+        ><a href="guide.html">完整指南</a>
+      </nav>
     </header>
 
     <main>
@@ -86,6 +110,91 @@
               <a href="guide.html#arc">登陆证</a>
             </nav>
           </div>
+        </div>
+      </section>
+
+      <section
+        class="portal-section portal-faq-section"
+        id="faq"
+        aria-labelledby="faq-title"
+      >
+        <div class="portal-container portal-faq-shell">
+          <div class="portal-faq-heading">
+            <div>
+              <span class="portal-eyebrow">STUDENT SUPPORT</span>
+              <h2 id="faq-title">学生常见问题</h2>
+              <p>不知道从哪里找？根据当前阶段选择问题。</p>
+            </div>
+            <span class="portal-faq-badge" aria-hidden="true">Q&amp;A</span>
+          </div>
+          <div class="portal-faq-tabs" role="tablist" aria-label="学生所处阶段">
+            <button
+              type="button"
+              id="faq-tab-before"
+              role="tab"
+              aria-selected="true"
+              aria-controls="faq-panel-before"
+              data-faq-phase="before"
+            >
+              <svg aria-hidden="true">
+                <use href="assets/icons/lucide.svg#calendar-days"></use></svg
+              >开学前
+            </button>
+            <button
+              type="button"
+              id="faq-tab-during"
+              role="tab"
+              aria-selected="false"
+              aria-controls="faq-panel-during"
+              data-faq-phase="during"
+              tabindex="-1"
+            >
+              <svg aria-hidden="true">
+                <use href="assets/icons/lucide.svg#book-open-check"></use></svg
+              >学期内
+            </button>
+            <button
+              type="button"
+              id="faq-tab-after"
+              role="tab"
+              aria-selected="false"
+              aria-controls="faq-panel-after"
+              data-faq-phase="after"
+              tabindex="-1"
+            >
+              <svg aria-hidden="true">
+                <use href="assets/icons/lucide.svg#graduation-cap"></use></svg
+              >学期后
+            </button>
+          </div>
+          <div
+            id="faq-panel-before"
+            class="portal-faq-panel"
+            role="tabpanel"
+            aria-labelledby="faq-tab-before"
+            data-faq-panel="before"
+          ></div>
+          <div
+            id="faq-panel-during"
+            class="portal-faq-panel"
+            role="tabpanel"
+            aria-labelledby="faq-tab-during"
+            data-faq-panel="during"
+            hidden
+          ></div>
+          <div
+            id="faq-panel-after"
+            class="portal-faq-panel"
+            role="tabpanel"
+            aria-labelledby="faq-tab-after"
+            data-faq-panel="after"
+            hidden
+          ></div>
+          <noscript
+            ><p class="portal-faq-fallback">
+              请在 <a href="faq.html">学生常见问题页面</a> 查看全部问题与说明。
+            </p></noscript
+          >
         </div>
       </section>
 
@@ -560,6 +669,7 @@
         </p>
       </div>
     </footer>
-    <script src="assets/js/home.js?v=20260729-2" defer></script>
+    <script src="assets/js/faq-data.js?v=20260805-1" defer></script>
+    <script src="assets/js/home.js?v=20260805-1" defer></script>
   </body>
 </html>
