@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#073b7a" />
     <title>清州大学国际学生指南</title>
     <link href="assets/css/site.css?v=20260730-3" rel="stylesheet" />
-    <link href="assets/css/portal-fixes.css?v=20260805-1" rel="stylesheet" />
+    <link href="assets/css/portal-fixes.css?v=20260810-1" rel="stylesheet" />
   </head>
   <body class="guide-page bg-gray-50 text-gray-800">
     <!-- Mobile Navigation Bar -->
@@ -20,16 +20,24 @@
             <use href="assets/icons/lucide.svg#university"></use></svg
           ><span id="mobile-current-chapter">清州大学国际学生指南</span>
         </h1>
-        <button
-          id="mobile-menu-btn"
-          type="button"
-          aria-label="打开菜单"
-          class="text-white focus:outline-none p-2 rounded hover:bg-blue-800 transition"
-        >
-          <svg class="lucide-icon text-2xl" aria-hidden="true">
-            <use href="assets/icons/lucide.svg#menu"></use>
-          </svg>
-        </button>
+        <div class="guide-mobile-actions">
+          <a class="guide-mobile-home" href="index.html">
+            <svg class="lucide-icon" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#house"></use>
+            </svg>
+            <span>首页</span>
+          </a>
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="打开菜单"
+            class="text-white focus:outline-none p-2 rounded hover:bg-blue-800 transition"
+          >
+            <svg class="lucide-icon text-2xl" aria-hidden="true">
+              <use href="assets/icons/lucide.svg#menu"></use>
+            </svg>
+          </button>
+        </div>
       </div>
       <!-- Mobile Menu Overlay -->
       <div
@@ -190,6 +198,15 @@
               清州大学国际<br />学生指南
             </h1>
             <p>按任务选择模块，右侧保留完整流程与截图。</p>
+            <a class="guide-sidebar-home" href="index.html">
+              <svg class="lucide-icon" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#house"></use>
+              </svg>
+              <span>返回网站首页</span>
+              <svg class="lucide-icon" aria-hidden="true">
+                <use href="assets/icons/lucide.svg#arrow-right"></use>
+              </svg>
+            </a>
           </div>
           <nav class="mt-2 pb-20" id="desktop-nav" aria-label="指南目录">
             <a
@@ -345,8 +362,8 @@
             <div>
               <a href="index.html" class="guide-breadcrumb"
                 ><svg class="lucide-icon" aria-hidden="true">
-                  <use href="assets/icons/lucide.svg#house"></use></svg
-                >首页导航</a
+                  <use href="assets/icons/lucide.svg#arrow-left"></use></svg
+                >返回网站首页</a
               >
               <p class="guide-eyebrow">CJU International Student Guide</p>
               <h2 id="page-title">清州大学国际学生指南</h2>

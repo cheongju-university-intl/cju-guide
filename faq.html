@@ -27,12 +27,12 @@
           ></a
         >
         <nav class="portal-nav-links" aria-label="主导航">
-          <a href="index.html">首页</a><a href="faq.html">常见问题</a
+          <a href="index.html">首页</a
+          ><a href="faq.html" aria-current="page">常见问题</a
           ><a href="index.html#popular">高频办事</a
           ><a href="index.html#all-guides">全部指南</a
           ><a href="index.html#notices">重要通知</a
-          ><a href="guide.html#contact">联系我们</a
-          ><a href="faq.html" aria-current="page">Q&amp;A</a>
+          ><a href="guide.html#contact">联系我们</a>
         </nav>
         <a class="portal-nav-action" href="guide.html"
           >完整指南
@@ -57,12 +57,12 @@
         aria-label="手机端主导航"
         hidden
       >
-        <a href="index.html">首页</a><a href="faq.html">常见问题</a
+        <a href="index.html">首页</a
+        ><a href="faq.html" aria-current="page">常见问题</a
         ><a href="index.html#popular">高频办事</a
         ><a href="index.html#all-guides">全部指南</a
         ><a href="index.html#notices">重要通知</a
         ><a href="guide.html#contact">联系我们</a
-        ><a href="faq.html" aria-current="page">Q&amp;A</a
         ><a href="guide.html">完整指南</a>
       </nav>
     </header>
@@ -106,7 +106,8 @@
             ><a href="#travel-before-registration">未办理登陆证离境</a>
           </nav>
           <nav aria-label="学期后问题">
-            <span>学期后</span><a href="#graduation-certificate">毕业证领取</a
+            <span>学期后</span><a href="#grade-inquiry">成绩查询</a
+            ><a href="#graduation-certificate">毕业证领取</a
             ><a href="#documents-for-other-schools">申请其他学校材料</a
             ><a href="#graduation-report">毕业申报与登陆证</a
             ><a href="#leave-and-return">休学与复学</a>
@@ -464,6 +465,40 @@
                 <use href="assets/icons/lucide.svg#graduation-cap"></use></svg
               >学期后
             </h2>
+            <article class="faq-article" id="grade-inquiry">
+              <h3 data-faq-title="grade-inquiry">
+                成绩在哪里查询？对成绩有疑问怎么办？
+              </h3>
+              <ul>
+                <li>
+                  成绩查询开放时间会在 QQ
+                  群内通知。在成绩录入和修改期间，完成课程评价后即可通过综合系统查看成绩。
+                </li>
+                <li>
+                  对成绩有疑问时，请务必在规定的成绩修改期内直接联系任课教授。国际交流处没有修改成绩的权限，也不能代替教授处理成绩异议。
+                </li>
+                <li>
+                  通常情况下，出勤达到要求、按时提交作业并参加两次考试，一般不会被评为
+                  F；最终成绩仍以任课教授的评定为准。
+                </li>
+              </ul>
+              <div class="faq-callout">
+                <svg aria-hidden="true">
+                  <use href="assets/icons/lucide.svg#circle-alert"></use>
+                </svg>
+                <div>
+                  <strong>重要：成绩修改期结束后</strong>
+                  <p>
+                    成绩修改期结束后，请前往个人信息页面查看成绩，或进入打印证明页面打印成绩单。
+                  </p>
+                </div>
+              </div>
+              <div class="faq-actions">
+                <a href="guide.html#personal-info">前往个人信息页面</a
+                ><a href="guide.html#cert-print">前往打印成绩单页面</a
+                ><a href="#after">返回学期后问题顶部</a>
+              </div>
+            </article>
             <article class="faq-article" id="graduation-certificate">
               <h3 data-faq-title="graduation-certificate">
                 毕业证什么时候发？能提前拿或晚点拿吗？
@@ -633,7 +668,7 @@
         </p>
       </div>
     </footer>
-    <script src="assets/js/faq-data.js?v=20260805-1" defer></script>
+    <script src="assets/js/faq-data.js?v=20260810-1" defer></script>
     <script src="assets/js/faq.js?v=20260805-1" defer></script>
   </body>
 </html>

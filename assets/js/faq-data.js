@@ -134,6 +134,16 @@
     },
     {
       phase: "after",
+      id: "grade-inquiry",
+      title: "成绩在哪里查询？对成绩有疑问怎么办？",
+      description: "按 QQ 群通知查询成绩，有异议请在修改期内联系教授",
+      href: "faq.html#grade-inquiry",
+      icon: "chart-column",
+      keywords:
+        "成绩 查询 成绩修改 成绩录入 课程评价 教授 任课教授 F 挂科 出勤 作业 考试 成绩单 个人信息",
+    },
+    {
+      phase: "after",
       id: "graduation-certificate",
       title: "毕业证什么时候发？能提前拿或晚点拿吗？",
       description: "毕业证问题需要咨询所属学科办公室",

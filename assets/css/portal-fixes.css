@@ -1,5 +1,84 @@
 /* Small, isolated refinements. Kept outside the generated Tailwind bundle. */
 
+.guide-page .guide-sidebar-home {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  margin-top: 17px;
+  padding: 10px 12px;
+  color: #082f63;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(3, 22, 48, 0.18);
+  font-size: 13px;
+  font-weight: 850;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.guide-page .guide-sidebar-home:hover {
+  background: #eef6ff;
+  transform: translateY(-1px);
+}
+
+.guide-page .guide-sidebar-home svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+.guide-page .guide-sidebar-home span {
+  flex: 1;
+}
+
+.guide-page .guide-mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.guide-page .guide-mobile-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 11px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.guide-page .guide-mobile-home:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.guide-page .guide-mobile-home svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (min-width: 1024px) {
+  .guide-page .guide-mobile-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .guide-page .guide-mobile-home {
+    padding-inline: 9px;
+  }
+
+  .guide-page .guide-mobile-home span {
+    display: none;
+  }
+}
+
 .guide-page .course-name-highlight {
   display: inline-block;
   margin: 2px 3px;
