@@ -560,6 +560,11 @@
   line-height: 1.7;
 }
 
+.course-registration-page .course-year-step .course-year-result-image {
+  width: min(100%, 900px);
+  margin-top: 16px;
+}
+
 @media (max-width: 520px) {
   .course-registration-page .course-alert-critical {
     grid-template-columns: 38px minmax(0, 1fr);
