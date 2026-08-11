@@ -13,72 +13,7 @@
     <link href="assets/css/portal-fixes.css?v=20260811-1" rel="stylesheet" />
   </head>
   <body class="portal-page faq-page course-registration-page">
-    <header class="portal-header">
-      <div class="portal-container portal-nav">
-        <a
-          class="portal-brand"
-          href="index.html"
-          aria-label="返回清州大学国际学生指南首页"
-          ><span class="portal-brand-mark" aria-hidden="true"
-            ><svg>
-              <use href="assets/icons/lucide.svg#university"></use></svg></span
-          ><span
-            ><strong>清州大学国际学生指南</strong
-            ><small>CJU International Student Guide</small></span
-          ></a
-        >
-        <nav class="portal-nav-links" aria-label="主导航">
-          <a href="index.html">首页</a><a href="faq.html">常见问题</a
-          ><a href="index.html#popular">常用办事</a
-          ><a
-            class="portal-course-link"
-            href="course-registration.html"
-            aria-current="page"
-            ><svg aria-hidden="true">
-              <use href="assets/icons/lucide.svg#mouse-pointer-click"></use></svg
-            >选课教程</a
-          ><a href="index.html#all-guides">全部指南</a
-          ><a href="index.html#notices">重要通知</a
-          ><a href="guide.html#contact">联系我们</a>
-        </nav>
-        <a class="portal-nav-action" href="guide.html"
-          >完整指南
-          <svg aria-hidden="true">
-            <use href="assets/icons/lucide.svg#book-open"></use></svg
-        ></a>
-        <button
-          class="portal-menu-button"
-          type="button"
-          aria-label="打开导航菜单"
-          aria-expanded="false"
-          aria-controls="portal-mobile-nav"
-        >
-          <svg aria-hidden="true">
-            <use href="assets/icons/lucide.svg#menu"></use>
-          </svg>
-        </button>
-      </div>
-      <nav
-        id="portal-mobile-nav"
-        class="portal-mobile-nav"
-        aria-label="手机端主导航"
-        hidden
-      >
-        <a href="index.html">首页</a><a href="faq.html">常见问题</a
-        ><a href="index.html#popular">常用办事</a
-        ><a
-          class="portal-course-link"
-          href="course-registration.html"
-          aria-current="page"
-          ><svg aria-hidden="true">
-            <use href="assets/icons/lucide.svg#mouse-pointer-click"></use></svg
-          >选课教程</a
-        ><a href="index.html#all-guides">全部指南</a
-        ><a href="index.html#notices">重要通知</a
-        ><a href="guide.html#contact">联系我们</a
-        ><a href="guide.html">完整指南</a>
-      </nav>
-    </header>
+    <header class="portal-header" data-portal-page="course"></header>
 
     <main>
       <section class="faq-hero course-registration-hero">
@@ -490,6 +425,7 @@
       <img src="" alt="" />
       <p></p>
     </div>
+    <script src="assets/js/portal-header.js?v=20260811-1" defer></script>
     <script src="assets/js/course-registration.js?v=20260810-1" defer></script>
   </body>
 </html>
