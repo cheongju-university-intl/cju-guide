@@ -63,6 +63,10 @@
   height: 16px;
 }
 
+.guide-page .schedule-notice-callout {
+  margin-top: 36px !important;
+}
+
 @media (min-width: 1024px) {
   .guide-page .guide-mobile-actions {
     display: none;
@@ -434,6 +438,15 @@
   color: #203a58;
 }
 
+.course-registration-page .course-alert-heading {
+  display: block;
+  margin-bottom: 7px;
+  color: #725216 !important;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
 .course-registration-page .course-alert-warning {
   border-color: #eadfbf #eadfbf #eadfbf #b58a2d;
   background: #fcfaf3;
@@ -494,6 +507,19 @@
   background: #0759a8;
   box-shadow: 0 5px 12px rgba(7, 89, 168, 0.2);
   font-weight: 850;
+}
+
+.course-registration-page .course-year-scope-note {
+  margin: 18px 0 0 !important;
+  padding: 14px 16px;
+  color: #173f69 !important;
+  border: 1px solid #a9cce8;
+  border-left: 5px solid #0b64ae;
+  border-radius: 9px;
+  background: #eaf5ff;
+  box-shadow: 0 7px 18px rgba(11, 100, 174, 0.1);
+  font-weight: 800;
+  line-height: 1.75;
 }
 
 @media (max-width: 520px) {

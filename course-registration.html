@@ -10,7 +10,7 @@
       content="清州大学国际学生课程筛选、预选课、正式选课和常见报错教程。"
     />
     <link href="assets/css/site.css?v=20260805-3" rel="stylesheet" />
-    <link href="assets/css/portal-fixes.css?v=20260811-3" rel="stylesheet" />
+    <link href="assets/css/portal-fixes.css?v=20260811-4" rel="stylesheet" />
   </head>
   <body class="portal-page faq-page course-registration-page">
     <header class="portal-header" data-portal-page="course"></header>
@@ -298,7 +298,7 @@
                   <strong>找不到课程时先检查“수강학년（选课学年）”</strong>
                   <p>
                     Excel 中课程标注为第几学年，系统里就选择第几学年。<span
-                      >每次修改筛选条件后，都要点击右上角蓝色按钮刷新。</span
+                      >每次修改筛选条件后，都要点击蓝色按钮刷新。</span
                     >
                   </p>
                 </div>
@@ -306,8 +306,8 @@
               <button class="course-image-button course-single-image" type="button">
                 <img src="sugang_refresh.png" alt="选择学年并刷新课程列表" />
               </button>
-              <p>
-                高年级学生可以选择低年级课程：大四学生可查看大一至大四课程，大三学生可查看大一至大三课程；请仍以培养方案和学科办公室要求为准。
+              <p class="course-year-scope-note">
+                高年级学生可以选择低年级课程：大四学生可选择大一至大四课程，大三学生可选择大一至大三课程；请仍以培养方案和学科办公室要求为准。
               </p>
             </article>
 
@@ -336,10 +336,15 @@
               <h3>常见提示怎么处理？</h3>
               <div class="course-alert course-alert-warning">
                 <svg aria-hidden="true"><use href="assets/icons/lucide.svg#wifi"></use></svg>
-                <p>
-                  网课学分不能超过本学期总学分的 30%。例如总学分为 18 分，网课最多不能超过
-                  5.4 分。
-                </p>
+                <div>
+                  <strong class="course-alert-heading"
+                    >非双语学生注意（插班大三和从大一开始的学生）</strong
+                  >
+                  <p>
+                    网课学分不能超过本学期总学分的 30%。例如总学分为 18 分，网课最多不能超过
+                    5.4 分。
+                  </p>
+                </div>
               </div>
               <div class="course-error-grid">
                 <figure>
