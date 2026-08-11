@@ -10,7 +10,7 @@
       content="清州大学国际学生课程筛选、预选课、正式选课和常见报错教程。"
     />
     <link href="assets/css/site.css?v=20260805-3" rel="stylesheet" />
-    <link href="assets/css/portal-fixes.css?v=20260811-4" rel="stylesheet" />
+    <link href="assets/css/portal-fixes.css?v=20260811-5" rel="stylesheet" />
   </head>
   <body class="portal-page faq-page course-registration-page">
     <header class="portal-header" data-portal-page="course"></header>
@@ -303,9 +303,45 @@
                   </p>
                 </div>
               </div>
-              <button class="course-image-button course-single-image" type="button">
-                <img src="sugang_refresh.png" alt="选择学年并刷新课程列表" />
-              </button>
+              <div class="course-year-steps">
+                <figure class="course-year-step course-year-step-filter">
+                  <button class="course-image-button" type="button">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="course_major_filter.png"
+                      alt="在 Excel 专业列中筛选自己的专业"
+                    />
+                  </button>
+                  <figcaption>在这里筛选自己的专业。</figcaption>
+                </figure>
+                <figure class="course-year-step course-year-step-excel">
+                  <button class="course-image-button" type="button">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="course_year_excel.png"
+                      alt="在 Excel 选课学年列中确认每节课的学年"
+                    />
+                  </button>
+                  <figcaption>
+                    在 Excel 表里，先找到每节课的学年，每节课的学年不一样。
+                  </figcaption>
+                </figure>
+                <figure class="course-year-step course-year-step-system">
+                  <button class="course-image-button" type="button">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="course_year_system.png"
+                      alt="在选课网站切换到课程对应的选课学年"
+                    />
+                  </button>
+                  <figcaption>
+                    然后在选课的网站更换到相对应的学年，右边就会出来相应的课程。
+                  </figcaption>
+                </figure>
+              </div>
               <p class="course-year-scope-note">
                 高年级学生可以选择低年级课程：大四学生可选择大一至大四课程，大三学生可选择大一至大三课程；请仍以培养方案和学科办公室要求为准。
               </p>

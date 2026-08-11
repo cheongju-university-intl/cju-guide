@@ -522,6 +522,44 @@
   line-height: 1.75;
 }
 
+.course-registration-page .course-year-steps {
+  display: grid;
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.course-registration-page .course-year-step {
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #d4e0eb;
+  border-radius: 12px;
+  background: #f8fbfe;
+}
+
+.course-registration-page .course-year-step .course-image-button {
+  background: #fff;
+}
+
+.course-registration-page .course-year-step-filter .course-image-button {
+  width: min(100%, 680px);
+}
+
+.course-registration-page .course-year-step-system .course-image-button {
+  width: min(100%, 380px);
+}
+
+.course-registration-page .course-year-step figcaption {
+  margin-top: 12px;
+  padding: 10px 12px;
+  color: #173f69;
+  border-left: 4px solid #0b64ae;
+  border-radius: 6px;
+  background: #eaf5ff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
 @media (max-width: 520px) {
   .course-registration-page .course-alert-critical {
     grid-template-columns: 38px minmax(0, 1fr);
