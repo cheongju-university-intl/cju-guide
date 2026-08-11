@@ -12,6 +12,8 @@
   const guideSearch = document.getElementById("guide-search");
   const guideSearchResults = document.getElementById("guide-search-results");
   const mobileCurrent = document.getElementById("mobile-current-chapter");
+  const portalMenuButton = document.querySelector(".portal-menu-button");
+  const portalMobileNav = document.getElementById("portal-mobile-nav");
   const guideSections = Array.from(
     document.querySelectorAll("main section[id]"),
   );
@@ -95,6 +97,21 @@
       },
       reduceMotion ? 0 : 180,
     );
+  }
+  function setPortalMenuOpen(open) {
+    if (!portalMenuButton || !portalMobileNav) return;
+    portalMobileNav.hidden = !open;
+    portalMenuButton.setAttribute("aria-expanded", String(open));
+    portalMenuButton.setAttribute(
+      "aria-label",
+      open ? "关闭导航菜单" : "打开导航菜单",
+    );
+    const use = portalMenuButton.querySelector("use");
+    if (use)
+      use.setAttribute(
+        "href",
+        open ? "assets/icons/lucide.svg#x" : "assets/icons/lucide.svg#menu",
+      );
   }
   window.toggleMenu = () =>
     menu?.classList.contains("hidden") ? openMenu() : closeMenu();
@@ -189,7 +206,7 @@
     });
   }
   function activeSectionIndex() {
-    const marker = window.scrollY + (window.innerWidth < 1024 ? 152 : 96);
+    const marker = window.scrollY + (window.innerWidth < 1024 ? 228 : 172);
     let index = 0;
     sectionOffsets.forEach((offset, itemIndex) => {
       if (offset <= marker) index = itemIndex;
@@ -288,7 +305,7 @@
       decodeURIComponent(window.location.hash.slice(1)),
     );
     if (!target) return;
-    const offset = window.innerWidth < 1024 ? 150 : 94;
+    const offset = window.innerWidth < 1024 ? 226 : 170;
     const top = Math.max(
       0,
       target.getBoundingClientRect().top + window.scrollY - offset,
@@ -352,6 +369,14 @@
   menuButton?.setAttribute("aria-controls", "mobile-menu");
   menu?.setAttribute("aria-hidden", "true");
   menuButton?.addEventListener("click", window.toggleMenu);
+  portalMenuButton?.addEventListener("click", () =>
+    setPortalMenuOpen(
+      portalMenuButton.getAttribute("aria-expanded") !== "true",
+    ),
+  );
+  portalMobileNav?.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setPortalMenuOpen(false);
+  });
   menuCloseButton?.addEventListener("click", () => closeMenu());
   overlay?.addEventListener("click", () => closeMenu());
   modalClose?.setAttribute("tabindex", "-1");
@@ -374,6 +399,7 @@
   document.addEventListener("click", handleDocumentClick);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      setPortalMenuOpen(false);
       if (modal?.classList.contains("is-open")) closeModal();
       else closeMenu();
       renderSearchResults("");

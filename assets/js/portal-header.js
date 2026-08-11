@@ -51,7 +51,7 @@
         </span>
       </a>
       <nav class="portal-nav-links" aria-label="主导航">${primaryLinks}</nav>
-      <a class="portal-nav-action" href="guide.html">
+      <a class="portal-nav-action" href="guide.html"${current("complete")}>
         完整指南
         <svg aria-hidden="true"><use href="assets/icons/lucide.svg#book-open"></use></svg>
       </a>

@@ -79,6 +79,32 @@
   }
 }
 
+/* Keep the shared portal header visible above the complete guide workspace. */
+.guide-page .guide-doc-sidebar {
+  top: 76px;
+  height: calc(100dvh - 76px);
+}
+
+.guide-page .guide-chapter-nav {
+  top: 88px;
+}
+
+@media (max-width: 1023px) {
+  .guide-page > nav:first-of-type {
+    top: 76px;
+  }
+
+  .guide-page .guide-chapter-nav {
+    top: 158px;
+  }
+}
+
+@media (max-width: 520px) {
+  .guide-page .guide-chapter-nav {
+    top: 154px;
+  }
+}
+
 /* Dedicated course-registration tutorial. */
 .portal-page .portal-nav-links .portal-course-link {
   display: inline-flex;
