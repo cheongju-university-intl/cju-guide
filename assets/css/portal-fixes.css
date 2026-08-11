@@ -79,6 +79,366 @@
   }
 }
 
+/* Dedicated course-registration tutorial. */
+.course-registration-page .course-registration-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 24%, rgba(45, 128, 202, 0.13), transparent 28%),
+    #fff;
+}
+
+.course-registration-page .course-registration-hero .portal-container {
+  position: relative;
+}
+
+.course-registration-page .course-registration-hero .portal-breadcrumb {
+  margin-right: 10px;
+}
+
+.course-registration-page .course-system-button,
+.course-registration-page .course-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 9px;
+  background: #0d3a6c;
+  box-shadow: 0 8px 20px rgba(13, 58, 108, 0.17);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.course-registration-page .course-system-button {
+  margin-top: 22px;
+}
+
+.course-registration-page .course-system-button:hover,
+.course-registration-page .course-inline-link:hover {
+  background: #0f4f8a;
+}
+
+.course-registration-page .course-system-button svg,
+.course-registration-page .course-inline-link svg {
+  width: 17px;
+  height: 17px;
+}
+
+.course-registration-page .course-registration-content {
+  min-width: 0;
+}
+
+.course-registration-page .course-step-grid,
+.course-registration-page .course-image-grid,
+.course-registration-page .course-error-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.course-registration-page .course-step-card,
+.course-registration-page .course-error-grid figure,
+.course-registration-page .course-image-grid figure {
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid #d8e2eb;
+  border-radius: 13px;
+  background: #f9fbfd;
+}
+
+.course-registration-page .course-step-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-content: start;
+  gap: 12px;
+}
+
+.course-registration-page .course-step-card > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: #fff;
+  border-radius: 8px;
+  background: #0d3a6c;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.course-registration-page .course-step-card h4,
+.course-registration-page .course-error-grid h4 {
+  margin: 0 0 4px;
+  color: #10243e;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.course-registration-page .course-step-card p {
+  margin: 0;
+  color: #66798d;
+  font-size: 12px;
+}
+
+.course-registration-page .course-step-card .course-image-button {
+  grid-column: 2;
+}
+
+.course-registration-page .course-step-wide {
+  grid-column: 1 / -1;
+}
+
+.course-registration-page .course-subtitle {
+  margin: 28px 0 0;
+  color: #10243e;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.course-registration-page .course-download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.course-registration-page .course-download-grid section {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #d8e2eb;
+  border-radius: 11px;
+  background: #f9fbfd;
+}
+
+.course-registration-page .course-download-grid section > svg {
+  width: 24px;
+  height: 24px;
+  color: #13795b;
+}
+
+.course-registration-page .course-download-grid strong {
+  color: #10243e;
+  font-size: 13px;
+}
+
+.course-registration-page .course-download-grid p {
+  margin: 4px 0 9px;
+  color: #66798d;
+  font-size: 11px;
+}
+
+.course-registration-page .course-download-grid a {
+  color: #0f4f8a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.course-registration-page .course-term-table {
+  margin-top: 22px;
+  overflow: hidden;
+  border: 1px solid #d8e2eb;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.course-registration-page .course-term-table summary {
+  padding: 14px 16px;
+  color: #0d3a6c;
+  background: #f3f7fb;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.course-registration-page .course-term-table > div {
+  max-height: 560px;
+  overflow: auto;
+}
+
+.course-registration-page .course-term-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.course-registration-page .course-term-table th,
+.course-registration-page .course-term-table td {
+  padding: 9px 11px;
+  border: 1px solid #e2e9f0;
+  text-align: left;
+}
+
+.course-registration-page .course-term-table th {
+  position: sticky;
+  top: 0;
+  color: #10243e;
+  background: #edf3f8;
+}
+
+.course-registration-page .course-term-table td:first-child {
+  width: 48px;
+  text-align: center;
+}
+
+.course-registration-page .course-term-table tbody tr:first-child {
+  color: #8a4b12;
+  background: #fff9e8;
+  font-weight: 800;
+}
+
+.course-registration-page .course-image-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.course-registration-page .course-image-button {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 7px;
+  overflow: hidden;
+  border: 1px solid #d8e2eb;
+  border-radius: 9px;
+  background: #fff;
+  cursor: zoom-in;
+}
+
+.course-registration-page .course-image-button:hover {
+  border-color: #8cb0d2;
+  box-shadow: 0 8px 20px rgba(13, 58, 108, 0.09);
+}
+
+.course-registration-page .course-image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.course-registration-page .course-image-grid figcaption,
+.course-registration-page .course-error-grid figcaption {
+  margin-top: 10px;
+  color: #52677f;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.course-registration-page .course-alert {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 11px;
+  margin: 16px 0;
+  padding: 14px 16px;
+  color: #405269;
+  border: 1px solid #d9e4ef;
+  border-left: 4px solid #3979b7;
+  border-radius: 9px;
+  background: #f3f8fd;
+}
+
+.course-registration-page .course-alert > svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.course-registration-page .course-alert p {
+  margin: 0;
+}
+
+.course-registration-page .course-alert strong {
+  color: #203a58;
+}
+
+.course-registration-page .course-alert-warning {
+  border-color: #eadfbf #eadfbf #eadfbf #b58a2d;
+  background: #fcfaf3;
+}
+
+.course-registration-page .course-alert-danger {
+  border-color: #ead6da #ead6da #ead6da #a74f5e;
+  background: #fcf7f8;
+}
+
+.course-registration-page .course-single-image {
+  width: min(100%, 520px);
+  margin: 18px 0;
+}
+
+.course-registration-page .course-success-image {
+  width: min(100%, 420px);
+  margin: 18px 0;
+}
+
+.course-registration-page .course-image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  place-items: center;
+  gap: 12px;
+  padding: 24px;
+  color: #fff;
+  background: rgba(5, 18, 35, 0.92);
+}
+
+.course-registration-page .course-image-modal[hidden] {
+  display: none;
+}
+
+.course-registration-page .course-image-modal img {
+  max-width: min(96vw, 1440px);
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.course-registration-page .course-image-modal p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.course-registration-page .course-modal-close {
+  justify-self: end;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 28px;
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .course-registration-page .course-step-grid,
+  .course-registration-page .course-image-grid,
+  .course-registration-page .course-image-grid-three,
+  .course-registration-page .course-error-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .course-registration-page .course-download-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .course-registration-page .course-step-wide {
+    grid-column: auto;
+  }
+
+  .course-registration-page .course-image-modal {
+    padding: 12px;
+  }
+}
+
 .guide-page .course-name-highlight {
   display: inline-block;
   margin: 2px 3px;
