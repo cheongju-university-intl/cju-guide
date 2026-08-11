@@ -10,7 +10,7 @@
       id: "course-screening",
       title: "预选课怎么操作？我应该选什么课？",
       description: "先筛选适合自己的课程，再查看选课步骤",
-      href: "guide.html#course-screening",
+      href: "course-registration.html#prepare",
       icon: "list-filter",
       keywords: "预选课 选课 课程 筛选 双语",
     },

@@ -35,6 +35,7 @@
       anchor: "course-schedule",
       icon: "table-properties",
     },
+    /* 选课教程已迁移至独立的 course-registration.html 页面。
     {
       title: "选课前的课程筛选",
       description: "筛选并确认适合的课程",
@@ -49,6 +50,7 @@
       anchor: "sugang",
       icon: "book-open-check",
     },
+    */
     {
       title: "毕业剩余学分查询",
       description: "确认毕业要求与学分进度",
