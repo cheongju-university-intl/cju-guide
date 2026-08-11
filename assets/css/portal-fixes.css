@@ -80,6 +80,60 @@
 }
 
 /* Dedicated course-registration tutorial. */
+.portal-page .portal-nav-links .portal-course-link {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  color: #fff !important;
+  border: 1px solid #1883ce;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #1688d4 0%, #0c5ca3 100%);
+  box-shadow: 0 7px 16px rgba(12, 92, 163, 0.2);
+  font-weight: 800;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.portal-page .portal-nav-links .portal-course-link:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #087ea4 0%, #084a87 100%);
+  box-shadow: 0 10px 22px rgba(8, 74, 135, 0.26);
+  transform: translateY(-1px);
+}
+
+.portal-page .portal-nav-links .portal-course-link[aria-current="page"] {
+  border-color: #06608b;
+  background: linear-gradient(135deg, #087ea4 0%, #064a75 100%);
+  box-shadow:
+    0 0 0 3px rgba(8, 126, 164, 0.13),
+    0 8px 18px rgba(6, 74, 117, 0.22);
+}
+
+.portal-page .portal-course-link svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1023px) {
+  .portal-page .portal-mobile-nav .portal-course-link {
+    display: flex;
+    min-height: 42px;
+    align-items: center;
+    gap: 8px;
+    margin: 2px;
+    padding: 10px 12px;
+    color: #fff !important;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1688d4 0%, #0c5ca3 100%);
+    box-shadow: 0 5px 12px rgba(12, 92, 163, 0.16);
+  }
+}
+
 .course-registration-page .course-registration-hero {
   position: relative;
   overflow: hidden;
