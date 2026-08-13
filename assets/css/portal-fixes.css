@@ -668,6 +668,66 @@
 }
 
 /* Academic guide additions: seasonal semester, attendance and official absence. */
+.guide-page .initial-password-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  margin: 22px 0 14px;
+  padding: 20px;
+  overflow: hidden;
+  color: white;
+  border: 2px solid #f0c95f;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #073b7a 0%, #0b559a 100%);
+  box-shadow: 0 12px 28px rgba(7, 59, 122, 0.18);
+}
+.guide-page .initial-password-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: #073b7a;
+  border-radius: 12px;
+  background: #f6d878;
+}
+.guide-page .initial-password-icon svg { width: 24px; height: 24px; }
+.guide-page .initial-password-copy span,
+.guide-page .initial-password-example span {
+  display: block;
+  color: #d9e9fa;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+.guide-page .initial-password-copy strong {
+  display: block;
+  margin-top: 2px;
+  color: white !important;
+  font-size: 25px;
+  line-height: 1.25;
+}
+.guide-page .initial-password-copy p {
+  margin: 4px 0 0;
+  color: #dceafa !important;
+  font-size: 12px;
+}
+.guide-page .initial-password-example {
+  min-width: 158px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.guide-page .initial-password-example code {
+  display: block;
+  margin-top: 3px;
+  color: #fff5c7;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
 .guide-page .academic-subtitle {
   margin: 5px 0 0;
   color: #64748b !important;
@@ -972,6 +1032,17 @@
 }
 
 @media (max-width: 680px) {
+  .guide-page .initial-password-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+  .guide-page .initial-password-icon { width: 42px; height: 42px; }
+  .guide-page .initial-password-copy strong { font-size: 22px; }
+  .guide-page .initial-password-example {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
   .guide-page .academic-subtitle { font-size: 12px; }
   .guide-page .academic-fact-grid,
   .guide-page .term-grid,
