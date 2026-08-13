@@ -667,6 +667,308 @@
   }
 }
 
+/* Academic guide additions: seasonal semester, attendance and official absence. */
+.guide-page .academic-subtitle {
+  margin: 5px 0 0;
+  color: #64748b !important;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.guide-page .academic-block {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid #dbe5f1;
+}
+
+.guide-page .academic-block > h4 {
+  margin: 0 0 14px;
+  color: #082f63 !important;
+  font-size: 19px;
+  font-weight: 850;
+}
+
+.guide-page .academic-fact-grid,
+.guide-page .term-grid,
+.guide-page .limit-grid,
+.guide-page .result-grid,
+.guide-page .contact-grid,
+.guide-page .issue-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.guide-page .academic-fact-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.guide-page .academic-fact-grid article,
+.guide-page .term-grid article,
+.guide-page .limit-grid article,
+.guide-page .contact-grid article {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid #dbe5f1;
+  border-radius: 12px;
+  background: #f8fbff;
+}
+
+.guide-page .academic-fact-grid span,
+.guide-page .term-grid span,
+.guide-page .limit-grid span,
+.guide-page .contact-grid span,
+.guide-page .tuition-card span,
+.guide-page .support-card span,
+.guide-page .device-rule span,
+.guide-page .leave-deadline span {
+  display: block;
+  margin-bottom: 5px;
+  color: #667b95;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guide-page .academic-fact-grid strong,
+.guide-page .term-grid strong,
+.guide-page .limit-grid strong {
+  display: block;
+  color: #0b4f92;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.guide-page .academic-fact-grid p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.guide-page .term-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.guide-page .limit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.guide-page .limit-grid article { border-top: 3px solid #3979b7; }
+.guide-page .academic-note { margin: 10px 0 0; color: #64748b !important; font-size: 12px; }
+
+.guide-page .result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.guide-page .result-grid article {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dbe5f1;
+  border-radius: 11px;
+  background: #fbfcfe;
+}
+.guide-page .result-grid span {
+  padding: 5px 8px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 850;
+  text-align: center;
+}
+.guide-page .result-grid p { margin: 0; font-size: 13px; }
+.guide-page .result-yes span { color: #27624f; background: #e8f5ef; }
+.guide-page .result-no span { color: #6b5a2a; background: #f8f1dc; }
+
+.guide-page .tuition-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #073b7a, #1461a8);
+}
+.guide-page .tuition-card span,
+.guide-page .tuition-card strong,
+.guide-page .tuition-card li { color: white !important; }
+.guide-page .tuition-card strong { font-size: 23px; }
+.guide-page .tuition-card ul { margin: 0; padding-left: 22px; }
+
+.guide-page .path-card {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  overflow-wrap: anywhere;
+  padding: 14px;
+  border: 1px solid #c9dbec;
+  border-radius: 11px;
+  background: #f4f8fd;
+}
+.guide-page .path-card span { color: #1f4f7d; font-size: 12px; font-weight: 750; }
+.guide-page .path-card svg { flex: 0 0 auto; width: 15px; height: 15px; color: #7894b0; }
+
+.guide-page .academic-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.guide-page .academic-two-column > div,
+.guide-page .leave-rule-grid > article {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #dbe5f1;
+  border-radius: 12px;
+  background: #fbfcfe;
+}
+.guide-page .academic-two-column h4 { margin: 0 0 8px; font-size: 16px; }
+.guide-page .academic-two-column p { margin: 0; font-size: 13px; }
+.guide-page .check-list { margin: 0; padding-left: 21px; }
+
+.guide-page .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.guide-page .contact-grid strong { display: block; min-height: 44px; font-size: 13px; }
+.guide-page .contact-grid a { display: inline-block; margin-top: 8px; color: #0b5da8 !important; font-weight: 850; }
+
+.guide-page .official-source {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  margin-top: 30px;
+  padding: 16px;
+  border: 1px solid #d9e1e9;
+  border-radius: 11px;
+  background: #f7f9fb;
+}
+.guide-page .official-source > svg { width: 22px; height: 22px; color: #56718d; }
+.guide-page .official-source strong,
+.guide-page .official-source span { display: block; }
+.guide-page .official-source strong { font-size: 12px; }
+.guide-page .official-source span,
+.guide-page .official-source p { margin: 2px 0 0; color: #738196 !important; font-size: 10px; line-height: 1.5; }
+.guide-page .official-source > a { color: #315f8b !important; font-size: 11px; font-weight: 750; white-space: nowrap; }
+
+.guide-page .attendance-deadline {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  border: 1px solid #bed5eb;
+  border-radius: 13px;
+  background: #eef6fd;
+}
+.guide-page .attendance-deadline svg { width: 32px; height: 32px; color: #1461a8; }
+.guide-page .attendance-deadline span { display: block; color: #536b83; font-size: 11px; }
+.guide-page .attendance-deadline strong { display: block; color: #073b7a; font-size: 22px; }
+
+.guide-page .flow-steps,
+.guide-page .approval-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.guide-page .flow-steps li,
+.guide-page .approval-flow li {
+  position: relative;
+  min-width: 0;
+  padding: 14px 12px;
+  border: 1px solid #dbe5f1;
+  border-radius: 11px;
+  background: #fbfcfe;
+}
+.guide-page .flow-steps li:not(:last-child)::after,
+.guide-page .approval-flow li:not(:last-child)::after {
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  z-index: 1;
+  content: "›";
+  color: #7791aa;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+.guide-page .flow-steps li span,
+.guide-page .approval-flow li span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 9px;
+  place-items: center;
+  color: white;
+  border-radius: 7px;
+  background: #1461a8;
+  font-size: 10px;
+  font-weight: 850;
+}
+.guide-page .flow-steps li strong,
+.guide-page .approval-flow li strong { display: block; font-size: 12px; line-height: 1.5; }
+
+.guide-page .compact-callout { margin: 0 !important; }
+.guide-page .device-rule { display: grid; grid-template-columns: 230px minmax(0, 1fr); align-items: center; gap: 18px; }
+.guide-page .device-rule strong { display: block; color: #8f3444 !important; font-size: 21px; }
+.guide-page .device-rule p { margin: 0; }
+.guide-page .issue-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.guide-page .issue-grid span { padding: 10px; border: 1px solid #dbe5f1; border-radius: 8px; background: #fbfcfe; color: #4b6179; font-size: 11px; text-align: center; }
+
+.guide-page .support-card {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 15px;
+  margin-top: 28px;
+  padding: 18px;
+  border: 1px solid #c9dbec;
+  border-radius: 12px;
+  background: #f4f8fd;
+}
+.guide-page .support-card > svg { width: 28px; height: 28px; color: #1461a8; }
+.guide-page .support-card p { margin: 3px 0 0; font-size: 12px; }
+.guide-page .support-links { display: grid; gap: 4px; }
+.guide-page .support-links a { color: #0b5da8 !important; font-size: 12px; font-weight: 800; }
+.guide-page .browser-note { display: flex; gap: 9px; margin-top: 18px; padding: 11px 13px; border-radius: 9px; background: #f5f6f8; }
+.guide-page .browser-note svg { flex: 0 0 auto; width: 15px; height: 15px; margin-top: 4px; color: #7a8796; }
+.guide-page .browser-note p { margin: 0; color: #788493 !important; font-size: 10px; }
+
+.guide-page .leave-deadline { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 14px; }
+.guide-page .leave-deadline > svg { width: 30px; height: 30px; color: #a74f5e; }
+.guide-page .leave-deadline strong { display: block; color: #8f3444 !important; font-size: 17px; }
+.guide-page .leave-deadline p { margin: 5px 0 0; }
+.guide-page .leave-rule-grid { padding-top: 0; border-top: 0; }
+.guide-page .leave-rule-grid article h4 { color: #183e68 !important; }
+.guide-page .leave-path { flex-wrap: wrap; }
+.guide-page .approval-flow { grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 18px; }
+.guide-page .after-approval-card { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 14px; padding: 18px; border: 1px solid #bcdacb; border-radius: 12px; background: #f1f8f5; }
+.guide-page .after-approval-card svg { width: 30px; height: 30px; color: #35725d; }
+.guide-page .after-approval-card p { margin: 4px 0 0; }
+
+@media (max-width: 980px) {
+  .guide-page .academic-fact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .guide-page .flow-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .guide-page .approval-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .guide-page .flow-steps li::after,
+  .guide-page .approval-flow li::after { display: none; }
+}
+
+@media (max-width: 680px) {
+  .guide-page .academic-subtitle { font-size: 12px; }
+  .guide-page .academic-fact-grid,
+  .guide-page .term-grid,
+  .guide-page .limit-grid,
+  .guide-page .result-grid,
+  .guide-page .academic-two-column,
+  .guide-page .contact-grid,
+  .guide-page .flow-steps,
+  .guide-page .approval-flow { grid-template-columns: minmax(0, 1fr); }
+  .guide-page .tuition-card,
+  .guide-page .device-rule { display: block; }
+  .guide-page .tuition-card ul { margin-top: 12px; }
+  .guide-page .device-rule p { margin-top: 10px; }
+  .guide-page .path-card { align-items: flex-start; flex-direction: column; }
+  .guide-page .path-card svg { transform: rotate(90deg); }
+  .guide-page .issue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .guide-page .official-source,
+  .guide-page .support-card { grid-template-columns: 28px minmax(0, 1fr); }
+  .guide-page .official-source > a,
+  .guide-page .support-links { grid-column: 2; }
+  .guide-page .contact-grid strong { min-height: 0; }
+}
+
 .guide-page .course-name-highlight {
   display: inline-block;
   margin: 2px 3px;

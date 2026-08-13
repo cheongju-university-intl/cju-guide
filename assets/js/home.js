@@ -52,6 +52,13 @@
     },
     */
     {
+      title: "季节学期",
+      description: "寒暑假选课、学分、学费与上课规则",
+      keywords: "季节学期 계절학기 暑假 寒假 暑假补课 补课 补修 学分 学费",
+      anchor: "seasonal-semester",
+      icon: "calendar-range",
+    },
+    {
       title: "毕业剩余学分查询",
       description: "确认毕业要求与学分进度",
       keywords: "毕业 学分 剩余 要求 查询",
@@ -59,9 +66,17 @@
       icon: "graduation-cap",
     },
     {
-      title: "请假申请指南",
-      description: "请假申请与材料提交",
-      keywords: "请假 缺勤 申请 病假 公假",
+      title: "电子考勤 / HeyYoung Campus",
+      description: "签到、出勤查询及签到失败处理",
+      keywords: "签到 出勤 考勤 전자출결 HeyYoung 声波 缺勤 迟到",
+      anchor: "attendance",
+      icon: "scan-line",
+    },
+    {
+      title: "请假 / 公假许可",
+      description: "公假条件、证明材料与 Portal 申请",
+      keywords:
+        "请假 缺勤 申请 病假 公假 공결허가 공결허가신청 诊断书 7天",
       anchor: "leave-request",
       icon: "calendar-check",
     },
