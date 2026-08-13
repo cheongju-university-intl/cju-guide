@@ -90,11 +90,11 @@
     {
       phase: "during",
       id: "seasonal-semester",
-      title: "寒暑假想补课或提前修学分，季节学期怎么申请？",
-      description: "查看申请时间、学分上限、学费和上课规则",
+      title: "寒暑假想补课或提前修学分，小假期怎么申请？",
+      description: "查看非双语提醒、申请时间、学分上限、学费和上课规则",
       href: "guide.html#seasonal-semester",
       icon: "calendar-range",
-      keywords: "季节学期 暑假 寒假 补课 学分 계절학기",
+      keywords: "小假期 季节学期 暑假 寒假 补课 学分 계절학기 非双语 没有中文",
     },
     {
       phase: "during",

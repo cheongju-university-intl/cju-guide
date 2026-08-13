@@ -850,6 +850,32 @@
   border-radius: 13px;
   background: #eef6fd;
 }
+
+.guide-page .seasonal-language-warning {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0 22px !important;
+  padding: 18px 20px !important;
+  border-left-width: 5px !important;
+}
+.guide-page .seasonal-language-warning > svg {
+  width: 30px;
+  height: 30px;
+  color: #a74f5e;
+}
+.guide-page .seasonal-language-warning strong {
+  display: block;
+  color: #8f3444 !important;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.guide-page .seasonal-language-warning p {
+  margin: 5px 0 0;
+  color: #704a51 !important;
+  font-weight: 700;
+}
 .guide-page .attendance-deadline svg { width: 32px; height: 32px; color: #1461a8; }
 .guide-page .attendance-deadline span { display: block; color: #536b83; font-size: 11px; }
 .guide-page .attendance-deadline strong { display: block; color: #073b7a; font-size: 22px; }

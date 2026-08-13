@@ -52,9 +52,9 @@
     },
     */
     {
-      title: "季节学期",
-      description: "寒暑假选课、学分、学费与上课规则",
-      keywords: "季节学期 계절학기 暑假 寒假 暑假补课 补课 补修 学分 学费",
+      title: "小假期",
+      description: "寒暑假非双语选课、学分、学费与上课规则",
+      keywords: "小假期 季节学期 계절학기 暑假 寒假 暑假补课 补课 补修 学分 学费 非双语 没有中文",
       anchor: "seasonal-semester",
       icon: "calendar-range",
     },
