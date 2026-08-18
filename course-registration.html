@@ -10,7 +10,7 @@
       content="清州大学国际学生课程筛选、预选课、正式选课和常见报错教程。"
     />
     <link href="assets/css/site.css?v=20260805-3" rel="stylesheet" />
-    <link href="assets/css/portal-fixes.css?v=20260818-1" rel="stylesheet" />
+    <link href="assets/css/portal-fixes.css?v=20260818-2" rel="stylesheet" />
   </head>
   <body class="portal-page faq-page course-registration-page">
     <header class="portal-header" data-portal-page="course"></header>
@@ -55,7 +55,8 @@
           </nav>
           <nav aria-label="正式选课">
             <span>正式选课</span><a href="#login">登录选课系统</a
-            ><a href="#choose-year">选择学年并刷新</a
+            ><a href="#choose-year">选择专业课</a
+            ><a href="#choose-general">选择教养课</a
             ><a href="#check-remarks">确认备注栏</a>
           </nav>
           <nav aria-label="选课结果">
@@ -311,7 +312,10 @@
             </article>
 
             <article class="faq-article" id="choose-year">
-              <h3>选择正确的学年并刷新</h3>
+              <h3>选择专业课</h3>
+              <p class="course-section-lead">
+                先在双语专业课 Excel 中确认自己的专业、课程学年和目标课程，再回到选课网站完成筛选与申请。
+              </p>
               <div class="course-alert course-alert-critical" role="alert">
                 <svg aria-hidden="true"><use href="assets/icons/lucide.svg#triangle-alert"></use></svg>
                 <div>
@@ -323,6 +327,43 @@
                   </p>
                 </div>
               </div>
+              <ol class="course-selection-flow" aria-label="专业课选择步骤">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <strong>在 Excel 中找到自己的专业</strong>
+                    <p>打开双语专业课 Excel，在 <b>학과(전공)（专业）</b>列筛选并确认自己的专业。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <strong>确认专业课对应的学年</strong>
+                    <p>查看目标专业课的 <b>수강학년（选课学年）</b>。同一专业的不同课程可能对应不同学年，要逐门确认。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <strong>回到选课网站设置学年并刷新</strong>
+                    <p>把网站左侧的选课学年改成 Excel 中目标课程的学年，再点击右上角的蓝色查询按钮。</p>
+                  </div>
+                </li>
+                <li class="course-selection-match">
+                  <span>4</span>
+                  <div>
+                    <strong>右侧课程必须与 Excel 三项一致</strong>
+                    <p>逐项核对 <b>分班（분반）</b>、<b>课名（과목명）</b>和<b>课号（교과목코드）</b>，三项完全一致后，点击该课程左侧蓝色“申请（신청）”按钮。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>5</span>
+                  <div>
+                    <strong>确认申请完成</strong>
+                    <p>在下方选课申请明细中确认课程已经出现，表示本门专业课申请完成。</p>
+                  </div>
+                </li>
+              </ol>
               <div class="course-year-steps">
                 <figure class="course-year-step course-year-step-filter">
                   <button class="course-image-button" type="button">
@@ -376,6 +417,70 @@
               <p class="course-year-scope-note">
                 高年级学生可以选择低年级课程：大四学生可选择大一至大四课程，大三学生可选择大一至大三课程；请仍以培养方案和学科办公室要求为准。
               </p>
+            </article>
+
+            <article class="faq-article" id="choose-general">
+              <h3>选择教养课</h3>
+              <p class="course-section-lead">
+                教养课不按个人专业筛选。先从双语教养课 Excel 确定目标课程，再按下方条件让网站显示全部教养课。
+              </p>
+              <ol class="course-selection-flow" aria-label="教养课选择步骤前半部分">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <strong>打开双语教养课 Excel</strong>
+                    <p>先打开网站提供的最新双语教养课表格。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <strong>确定自己要选择的教养课</strong>
+                    <p>在 Excel 中记下目标课程的课名、课号和分班，然后回到选课网站。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <strong>按图设置红框中的筛选条件</strong>
+                    <p>选择“教养（교양）”，将教养修读区分设为“教养选择（교양선택）”，教养领域和选课学年均选择“全部”，再点击蓝色查询按钮。</p>
+                  </div>
+                </li>
+              </ol>
+              <figure class="course-general-filter-figure">
+                <button class="course-image-button" type="button">
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src="course_general_filter.png"
+                    alt="教养课筛选条件：选择教养、教养选择，并将教养领域和选课学年设为全部"
+                  />
+                </button>
+                <figcaption>图中红框为教养课筛选条件；修改后点击左侧“전체강좌（全部课程）”右侧的蓝色查询按钮。</figcaption>
+              </figure>
+              <ol class="course-selection-flow course-selection-flow-continued" aria-label="教养课选择步骤后半部分">
+                <li>
+                  <span>4</span>
+                  <div>
+                    <strong>查看右侧显示的全部教养课</strong>
+                    <p>刷新后，网站右侧会显示符合条件的教养课程列表。</p>
+                  </div>
+                </li>
+                <li class="course-selection-match">
+                  <span>5</span>
+                  <div>
+                    <strong>必须核对三项完全一致</strong>
+                    <p>对照 Excel 找到相同的 <b>分班（분반）</b>、<b>课名（과목명）</b>和<b>课号（교과목코드）</b>。三项缺一不可，尤其分班不同可能导致选错课程。</p>
+                  </div>
+                </li>
+                <li>
+                  <span>6</span>
+                  <div>
+                    <strong>点击申请并确认结果</strong>
+                    <p>核对无误后点击蓝色“申请（신청）”按钮，并在下方申请明细中确认课程已经加入。</p>
+                  </div>
+                </li>
+              </ol>
             </article>
 
             <article class="faq-article" id="check-remarks">
