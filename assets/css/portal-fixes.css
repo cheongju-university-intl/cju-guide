@@ -595,61 +595,188 @@
   font-weight: 850;
 }
 
+.course-registration-page .course-path-module {
+  overflow: hidden;
+  padding: 0 !important;
+  border-color: #ccdae8;
+  box-shadow: 0 18px 46px rgba(21, 57, 92, 0.08);
+}
+
+.course-registration-page .course-path-module > :not(.course-path-header) {
+  margin-right: 28px;
+  margin-left: 28px;
+}
+
+.course-registration-page .course-path-module > :last-child {
+  margin-bottom: 28px !important;
+}
+
+.course-registration-page .course-path-module > .course-alert-critical {
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 0;
+  margin-bottom: 26px;
+  padding: 14px 16px;
+  border-width: 1px 1px 1px 5px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.course-registration-page .course-path-module > .course-alert-critical > svg {
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+}
+
+.course-registration-page .course-path-module > .course-alert-critical strong {
+  font-size: 16px;
+}
+
+.course-registration-page .course-path-module > .course-alert-critical p {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.course-registration-page .course-path-module > .course-alert-critical p span {
+  margin-top: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.course-registration-page .course-path-header {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 18px;
+  margin: 0 0 26px;
+  padding: 26px 28px 24px;
+  border-bottom: 1px solid #cfe0ef;
+  background:
+    radial-gradient(circle at 93% 10%, rgba(38, 137, 204, 0.18), transparent 34%),
+    linear-gradient(135deg, #f7fbff 0%, #edf6fd 100%);
+}
+
+.course-registration-page .course-path-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  color: #fff;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #0f77b8, #064680);
+  box-shadow: 0 10px 22px rgba(7, 89, 168, 0.22);
+}
+
+.course-registration-page .course-path-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+}
+
+.course-registration-page .course-path-heading h3 {
+  margin: 3px 0 6px;
+  color: #092f56;
+  font-size: clamp(22px, 2.3vw, 28px);
+  letter-spacing: -0.03em;
+}
+
+.course-registration-page .course-path-eyebrow {
+  display: block;
+  color: #2675ad;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.course-registration-page .course-path-count {
+  display: grid;
+  min-width: 64px;
+  padding: 9px 12px;
+  color: #174c77;
+  border: 1px solid #b9d2e7;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.course-registration-page .course-path-count strong {
+  color: #0759a8;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.course-registration-page .course-path-count small {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
 .course-registration-page .course-section-lead {
-  margin: 0 0 18px !important;
-  padding: 13px 15px;
-  color: #254969 !important;
-  border-left: 5px solid #3979b7;
-  border-radius: 8px;
-  background: #f2f7fc;
-  font-size: 14px;
-  font-weight: 750;
+  margin: 0 !important;
+  padding: 0;
+  color: #45647f !important;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1.75;
 }
 
 .course-registration-page .course-selection-flow {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px;
-  margin: 20px 0 22px;
-  padding: 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin-top: 24px;
+  margin-bottom: 28px;
+  padding: 2px 0 0;
   list-style: none;
 }
 
 .course-registration-page .course-selection-flow > li {
+  position: relative;
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
+  grid-template-columns: 44px minmax(0, 1fr);
   align-items: start;
-  gap: 12px;
+  gap: 16px;
   min-width: 0;
-  padding: 16px;
-  border: 1px solid #d5e1ec;
-  border-radius: 11px;
-  background: #f9fbfd;
+  padding: 0 0 24px;
 }
 
-.course-registration-page .course-selection-flow > li:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
+.course-registration-page .course-selection-flow > li:not(:last-child)::after {
+  position: absolute;
+  top: 40px;
+  bottom: 4px;
+  left: 21px;
+  width: 2px;
+  content: "";
+  background: linear-gradient(#a9cbe5, #dce9f3);
 }
 
 .course-registration-page .course-selection-flow > li > span {
   display: grid;
-  width: 34px;
-  height: 34px;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
   place-items: center;
-  color: #fff;
-  border-radius: 9px;
-  background: #0d5da6;
-  box-shadow: 0 5px 12px rgba(13, 93, 166, 0.18);
-  font-size: 13px;
+  color: #0759a8;
+  border: 2px solid #83b4d7;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 5px #eef6fc;
+  font-size: 14px;
   font-weight: 900;
+}
+
+.course-registration-page .course-selection-flow > li > div {
+  min-height: 42px;
+  padding: 2px 8px 0 0;
 }
 
 .course-registration-page .course-selection-flow strong {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   color: #102f50;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 900;
   line-height: 1.5;
 }
@@ -657,7 +784,7 @@
 .course-registration-page .course-selection-flow p {
   margin: 0;
   color: #566c83;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.75;
 }
 
@@ -667,34 +794,94 @@
 }
 
 .course-registration-page .course-selection-flow .course-selection-match {
-  border: 2px solid #d9a654;
-  background: #fffbf2;
-  box-shadow: 0 8px 18px rgba(156, 103, 27, 0.1);
+  margin: 2px 0 24px;
+  padding-bottom: 0;
 }
 
 .course-registration-page .course-selection-flow .course-selection-match > span {
-  background: #b66b18;
+  color: #fff;
+  border-color: #bd711c;
+  background: #bd711c;
+  box-shadow: 0 0 0 5px #fff4e3;
+}
+
+.course-registration-page .course-selection-flow .course-selection-match > div {
+  padding: 15px 17px;
+  border: 1px solid #e8bc7e;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fffaf1, #fff4df);
 }
 
 .course-registration-page .course-selection-flow .course-selection-match strong {
   color: #8b4a0c;
 }
 
+.course-registration-page .course-match-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.course-registration-page .course-match-pills em {
+  padding: 4px 9px;
+  color: #81460d;
+  border: 1px solid #e0b16f;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+}
+
 .course-registration-page .course-selection-flow-continued {
-  margin-top: 16px;
+  margin-top: 24px;
+}
+
+.course-registration-page .course-reference-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px !important;
+  margin-bottom: 14px !important;
+  padding-top: 22px;
+  border-top: 1px solid #dbe6ef;
+}
+
+.course-registration-page .course-reference-heading span {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 7px;
+  background: #0759a8;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.course-registration-page .course-reference-heading p {
+  margin: 0;
+  color: #597086;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.course-registration-page .course-reference-heading-compact {
+  margin-top: 4px !important;
 }
 
 .course-registration-page .course-general-filter-figure {
-  margin: 20px 0 0;
-  padding: 12px;
-  border: 1px solid #d4e0eb;
-  border-radius: 12px;
-  background: #f8fbfe;
+  overflow: hidden;
+  margin-top: 0;
+  padding: 10px;
+  border: 1px solid #c9d9e7;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(21, 57, 92, 0.1);
 }
 
 .course-registration-page .course-general-filter-figure figcaption {
-  margin-top: 11px;
-  padding: 10px 12px;
+  margin: 8px 0 0;
+  padding: 11px 13px;
   color: #173f69;
   border-left: 4px solid #0b64ae;
   border-radius: 6px;
@@ -719,16 +906,22 @@
 
 .course-registration-page .course-year-steps {
   display: grid;
-  gap: 22px;
-  margin-top: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 0;
 }
 
 .course-registration-page .course-year-step {
   margin: 0;
-  padding: 16px;
-  border: 1px solid #d4e0eb;
-  border-radius: 12px;
-  background: #f8fbfe;
+  padding: 10px;
+  border: 1px solid #cddce9;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(21, 57, 92, 0.08);
+}
+
+.course-registration-page .course-year-step-system {
+  grid-column: 1 / -1;
 }
 
 .course-registration-page .course-year-step .course-image-button {
@@ -736,7 +929,7 @@
 }
 
 .course-registration-page .course-year-step-filter .course-image-button {
-  width: min(100%, 680px);
+  width: 100%;
 }
 
 .course-registration-page .course-year-step-system .course-image-button {
@@ -744,13 +937,13 @@
 }
 
 .course-registration-page .course-year-step figcaption {
-  margin-top: 12px;
-  padding: 10px 12px;
+  margin: 8px 0 0;
+  padding: 9px 11px;
   color: #173f69;
   border-left: 4px solid #0b64ae;
   border-radius: 6px;
   background: #eaf5ff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   line-height: 1.7;
 }
@@ -885,6 +1078,54 @@
 
   .course-registration-page .course-selection-flow {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .course-registration-page .course-path-module > :not(.course-path-header) {
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .course-registration-page .course-path-header {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 13px;
+    padding: 21px 18px;
+  }
+
+  .course-registration-page .course-path-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+
+  .course-registration-page .course-path-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .course-registration-page .course-path-count {
+    grid-column: 2;
+    display: inline-flex;
+    width: max-content;
+    min-width: 0;
+    align-items: baseline;
+    gap: 4px;
+    padding: 5px 9px;
+  }
+
+  .course-registration-page .course-path-count strong {
+    font-size: 15px;
+  }
+
+  .course-registration-page .course-path-count small {
+    margin-top: 0;
+  }
+
+  .course-registration-page .course-year-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .course-registration-page .course-year-step-system {
+    grid-column: auto;
   }
 
   .course-registration-page .course-selection-flow > li:last-child:nth-child(odd) {
