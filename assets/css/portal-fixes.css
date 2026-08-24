@@ -524,6 +524,17 @@
   color: #203a58;
 }
 
+.course-registration-page .course-keyword-highlight {
+  display: inline-block;
+  padding: 0 0.35em;
+  color: #9f1d12;
+  border: 1px solid #f3b7ad;
+  border-radius: 0.35em;
+  background: #fff0a8;
+  font-weight: 850;
+  line-height: 1.4;
+}
+
 .course-registration-page .course-alert-heading {
   display: block;
   margin-bottom: 7px;
